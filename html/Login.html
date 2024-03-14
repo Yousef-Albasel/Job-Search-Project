@@ -8,30 +8,41 @@
 </head>
 
 <body>
-    <h3>Home</h3>
-    <h1>Login</h1>
-    <form action="">
-        <label for="Email"> E-Mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-        <input type="text" id="Email" name="Email" title="enter your email" placeholder="EX. ahmed@Fcai.edu">
-        <br>
-        <br>
-        <label for="Password">Password&nbsp;</label>
-        <input type="password" id="Password" name="Password" title="enter your password" placeholder="********">
-        <br>
-        <br>
-        <input type="checkbox" id="rememberMe" name="rememberMe" title="Remember Me">
-        <label for="rememberMe">Keep me logged in</label>
-        <br>
-        <br>
-        <input type="button" id="loginButton" name="loginButton" title="Login" value="Login">
-        <br>
-        <p>Don't have account <a href="register.html">Register</a> Now!</p>
-    </form>
+    <center>
+        <h1>Login</h1>
+        <form action="">
+            <table>
+                <tr>
+                    <td><label for="Email">E-Mail: </label></td>
+                    <td><input type="text" id="email" name="email" title="Enter your email"
+                            placeholder="Eg. abc@examble.edu" requried></td>
+                </tr>
+                <tr>
+                    <td><label for="Password">Password</label></td>
+                    <td><input type="password" id="Password" name="Password" title="enter your password"
+                            placeholder="Enter Your Passwrod" required></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="remember-me" name="remember-me" title="Remember Me"></td>
+                    <td><label for="remember-me">Keep me logged in</label></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" id="login-button" name="login-button" title="login" value="Login"></td>
+                    <td>
+                        <p>Don't have account <a href="register.html">Register</a> Now!</p>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
     <br>
     <footer>
-        <a href="contact.html">Get in touch</a>
-        <a href="about.html">About us</a>
-        <!-- <a href="help.html">Help</a> -->
+        <center>
+            <a href="contact.html">Get in touch</a>
+            <a href="about.html">About us</a>
+            <a href="help.html">Help</a>
+        </center>
     </footer>
 </body>
+
 </html>
