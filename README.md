@@ -15,6 +15,9 @@ Team project for **IS231 Web Technology Course**, the project is a simple Job se
 		/Login.html
 		/addJob.html
 		/browseJob.html
+		/editJob.html
+		/editDeleteJob.html
+		/jobDescription.html
 		...
 /css
 		/style.css
