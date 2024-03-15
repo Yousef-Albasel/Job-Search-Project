@@ -13,7 +13,8 @@ Team project for **IS231 Web Technology Course**, the project is a simple Job se
 		/index.html
 		/signup.html
 		/Login.html
-		/addJop.html
+		/addJob.html
+		/browseJob.html
 		...
 /css
 		/style.css
