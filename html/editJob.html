@@ -1,42 +1,75 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>edite job details</title>
-    </head>
-    <body>
-        <form action="">
-            <div>
-                <label for="id">ID:</label>
-                <input type="text" id="id">
-            </div>
-            <br>
-            <div>
-                <label for="title">Job Title:</label>
-                <input type="text"  id="title">
-            </div>
-            <br>
-            <div>
-                <label for="salary">Salary:</label>
-                <input type="text" id="salary">
-            </div>
-            <br>
-            <div>
-                <label for="comp_name">Company Name:</label>
-                <input type="text" id="comp_name">
-            </div>
 
-            <p>Job status</p>
-            <div>
-                <input type="radio" name="Job status" id="status">
-                <label for="status">open</label>
-            </div>
-            <div>
-                <input type="radio" name="Job status" id="status">
-                <label for="status">closed</label>
-            </div>
-            <br>
-            <input type="submit" value="save" >
-        </form>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>edite job details</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <table>
+                <tr>
+                    <td>
+                        <h1>Logo</h1>
+                    </td>
+                    <td>
+                        <a href="#">Home</a>
+                    </td>
+                    <td>
+                        <a href="browseJob.html">Browse</a>
+                    </td>
+                    <td>
+                        <a href="Login.html">Login</a>
+                    </td>
+                    <td>
+                        <a href="signup.html">Sign up</a>
+                    </td>
+                </tr>
+            </table>
+        </nav>
+    </header>
+    <form action="">
+        <div>
+            <label for="id">ID:</label>
+            <input type="text" id="id">
+        </div>
+        <br>
+        <div>
+            <label for="title">Job Title:</label>
+            <input type="text" id="title">
+        </div>
+        <br>
+        <div>
+            <label for="salary">Salary:</label>
+            <input type="text" id="salary">
+        </div>
+        <br>
+        <div>
+            <label for="comp_name">Company Name:</label>
+            <input type="text" id="comp_name">
+        </div>
+
+        <p>Job status</p>
+        <div>
+            <input type="radio" name="Job status" id="status">
+            <label for="status">open</label>
+        </div>
+        <div>
+            <input type="radio" name="Job status" id="status">
+            <label for="status">closed</label>
+        </div>
+        <br>
+        <input type="submit" value="save">
+    </form>
+    <footer>
+        <center>
+            <a href="contact.html">Get in touch</a>
+            <a href="about.html">About us</a>
+            <a href="help.html">Help</a>
+        </center>
+    </footer>
+</body>
+
 </html>
