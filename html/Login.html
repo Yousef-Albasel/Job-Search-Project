@@ -8,6 +8,22 @@
 </head>
 
 <body>
+    <header>
+        <nav>
+            <table>
+                <tr>
+                    <td>
+                        <h1>Logo</h1>
+                    </td>
+                    <td>
+                        <a href="index.html">Home</a>
+                    </td>
+
+                </tr>
+            </table>
+        </nav>
+    </header>
+
     <center>
         <h1>Login</h1>
         <form action="">
@@ -27,9 +43,10 @@
                     <td><label for="remember-me">Keep me logged in</label></td>
                 </tr>
                 <tr>
-                    <td><input type="submit" id="login-button" name="login-button" title="login" value="Login"></td>
+                    <td><input type="submit" id="login-button" name="login-button" title="login" value="Login"
+                            onclick="location.href = 'BrowseJob.html';"></td>
                     <td>
-                        <p>Don't have account <a href="register.html">Register</a> Now!</p>
+                        <p>Don't have account <a href="signup.html">Register</a> Now!</p>
                     </td>
                 </tr>
             </table>
