@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/browse.css">
     <title>Browse Job</title>
     <style>
     </style>
@@ -12,29 +13,29 @@
 <body>
     <div class="header">
         <a href="index.html">
-            <img src="index.html" alt="Logo" style="width:100px;height:100px;" />
+            <img src="../images/company_logo.png" alt="Logo" class="logo" />
         </a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <b>Search for a job</b> <input type="text" placeholder="Search by job title, company name.."
-            style="width: 300px; height:30px;">
-        <button style="width: 60px; height:30px;">Search</button>
-        <button onclick="location.href = 'addJob.html';" style="float:right; ">Add
-            Job</button>
-        <a href="Profile.html" style="float:right;">Profile</a>
-
+        <div class="search">
+            <label for="search-for-job">Search for a job</label> 
+            <input id="search-for-job" type="text" placeholder="Search by job title, company name..">
+            <button style="width: 60px; height:30px;">Search</button>
+        </div>
+        <a href="Profile.html">
+            <img src="images/account_2.png" alt="Profile" class="profile" />
+        </a>
+        <button onclick="location.href = 'addJob.html';" >Add Job</button>
     </div>
-    <br />
-    <hr />
+
     <div class="content">
-        <table style="border: 1px solid; width: 900px;" align="center">
+        <table>
             <tr>
                 <td>
                     <a href="jobDescription.html">
                         <h2>JOB TITLE</h2>
                     </a>
-                    <img src="../images/company_logo.png" align="right" alt="Company Logo" />
-                    <p>Address of company</p>
-                    <p>n hours ago</p>
+                    <img src="../images/company_logo.png" alt="Company Logo" />
+                    <p><span class="bold-cmp-name">Company name</span> - Address of company</p>
+                    <span>n hours ago</span>
                     <p>Salary: </p>
                     <mark>tag</mark> <mark>tag</mark> <mark>tag</mark> <mark>tag</mark>
                     <p>Requirements: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem reiciendis commodi
@@ -46,15 +47,15 @@
             </tr>
         </table>
         <br />
-        <table style="border: 1px solid; width: 900px;" align="center">
+        <table>
             <tr>
                 <td>
                     <a href="jobDescription.html">
                         <h2>JOB TITLE</h2>
                     </a>
-                    <img src="../images/company_logo.png" align="right" alt="Company Logo" />
-                    <p>Address of company</p>
-                    <p>n hours ago</p>
+                    <img src="../images/company_logo.png" alt="Company Logo" />
+                    <p><span class="bold-cmp-name">Company name</span> - Address of company</p>
+                    <span>n hours ago</span>
                     <p>Salary: </p>
                     <mark>tag</mark> <mark>tag</mark> <mark>tag</mark> <mark>tag</mark>
                     <p>Requirements: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem reiciendis commodi
@@ -66,15 +67,15 @@
             </tr>
         </table>
         <br />
-        <table style="border: 1px solid; width: 900px;" align="center">
+        <table>
             <tr>
                 <td>
                     <a href="jobDescription.html">
                         <h2>JOB TITLE</h2>
                     </a>
-                    <img src="../images/company_logo.png" align="right" alt="Company Logo" />
-                    <p>Address of company</p>
-                    <p>n hours ago</p>
+                    <img src="../images/company_logo.png" alt="Company Logo" />
+                    <p><span class="bold-cmp-name">Company name</span> - Address of company</p>
+                    <span>n hours ago</span>
                     <p>Salary: </p>
                     <mark>tag</mark> <mark>tag</mark> <mark>tag</mark> <mark>tag</mark>
                     <p>Requirements: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem reiciendis commodi
@@ -87,15 +88,15 @@
             </tr>
         </table>
         <br />
-        <table style="border: 1px solid; width: 900px;" align="center">
+        <table>
             <tr>
                 <td>
                     <a href="jobDescription.html">
                         <h2>JOB TITLE</h2>
                     </a>
-                    <img src="../images/company_logo.png" align="right" alt="Company Logo" />
-                    <p>Address of company</p>
-                    <p>n hours ago</p>
+                    <img src="../images/company_logo.png" alt="Company Logo" />
+                    <p><span class="bold-cmp-name">Company name</span> - Address of company</p>
+                    <span>n hours ago</span>
                     <p>Salary: </p>
                     <mark>tag</mark> <mark>tag</mark> <mark>tag</mark> <mark>tag</mark>
                     <p>Requirements: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem reiciendis commodi
@@ -107,15 +108,15 @@
             </tr>
         </table>
         <br />
-        <table style="border: 1px solid; width: 900px;" align="center">
+        <table>
             <tr>
                 <td>
                     <a href="jobDescription.html">
                         <h2>JOB TITLE</h2>
                     </a>
-                    <img src="../images/company_logo.png" align="right" alt="Company Logo" />
-                    <p>Address of company</p>
-                    <p>n hours ago</p>
+                    <img src="../images/company_logo.png" alt="Company Logo" />
+                    <p><span class="bold-cmp-name">Company name</span> - Address of company</p>
+                    <span>n hours ago</span>
                     <p>Salary: </p>
                     <mark>tag</mark> <mark>tag</mark> <mark>tag</mark> <mark>tag</mark>
                     <p>Requirements: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem reiciendis commodi
@@ -128,13 +129,10 @@
             </tr>
         </table>
     </div>
-    <hr>
     <footer>
-        <center>
-            <a href="#">Get in touch</a>
-            <a href="#">About us</a>
-            <a href="#">Help</a>
-        </center>
+            <a href="contact.html">Get in touch</a>
+            <a href="about.html">About us</a>
+            <a href="help.html">Help</a>
     </footer>
 </body>
 
