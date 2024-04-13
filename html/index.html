@@ -4,39 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Workiee | Home Page</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 
 <body>
-    <header>
-        <nav>
-            <table>
-                <tr>
-                    <td><h1>Logo</h1></td>
-                    <td>
-                    <a href="#">Home</a>
-                    </td>
-                    <td>
-                        <a href="browseJob.html">Browse</a>
-                    </td>
-                    <td>
-                        <a href="Login.html">Login</a>
-                    </td>
-                    <td>
-                        <a href="signup.html">Sign up</a>
-                    </td>
-                </tr>
-            </table>
+    <!-- Header Section -->
+    <div class="header">
+        <nav class="container">
+            <h1 class="logo">Workiee</h1>
+                <div class="search-bar">
+                    <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
+                    <i class="fas fa-search"></i>
+                </div>
+                <ul>
+                    <li><a href="browseJob.html">Browse</a></li>
+                    <li name="login"><a href="Login.html">Login</a></li>
+                    <li name="register"><a href="signup.html">Register</a></li>
+                </ul>
         </nav>
-    </header>
-    <hr/>
-    <h2>Navigate Your Career Journey Together with Workiee.</h2>
-    
-    <p>Search and post jobs with ease.</p>
-    <br>
-    <div>
-        <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
-        <input type="button" id="search" name="search" value="search">
+    </div>
+
+    <!-- landing Page Body -->
+
+    <div class="landing">
+            <div class="landing-content">
+            <h2>Navigate Your Career Journey Together with Workiee.</h2>
+
+            <p>Search and post jobs with ease.</p>
+            <br>
+            <div>
+                <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
+                <input type="button" id="search" name="search" value="search">
+            </div>
+        </div>
     </div>
     <hr>
     <footer>

@@ -1,0 +1,112 @@
+    :root {
+        --primary-background: #faf8ef;
+        --primary-text-color-dark: #000000;
+        --primary-text-color-light: #ffffff;
+        --secondary-text-color: #4D4D4D;
+        --primary-style-color: #7F7FD5;
+        --primary-style-shade:#EAEBED;
+    }
+
+
+    * {
+        margin:0;
+        padding: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .header{
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        flex-grow: 1;
+    }
+
+    .container{
+        min-width: 90%;
+    }
+
+    /*=============== Header Style =============*/
+    .header nav.container{
+        display: flex;
+        height: 80px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    /*=============== Header - Logo Style =============*/
+
+    .header nav.container h1{
+        font-size: 20px;
+    }
+
+    /*=============== Header - Search Bar =============*/
+
+
+    .header .container .search-bar input{
+        padding: 10px 20px;
+        background-color: var(--primary-style-shade);
+        min-width: 25vw;
+        border-radius: 1px;
+        border: transparent 0.25px solid;
+        font-size: 12px;
+        position: relative;
+        margin-right: 2vw;
+    }
+    .header .container .search-bar input:focus {
+        outline: none;
+    }
+    .header .container .search-bar i {
+        cursor: pointer;
+    }
+    
+    /*=============== Header - UL Style =============*/
+
+    .header nav.container ul{
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    .header nav.container ul li a{
+        text-decoration: none;
+        color: var(--primary-text-color-dark);
+        font-size: 12px;
+    }
+
+    .header nav.container ul li{
+        padding: 10px 20px;
+
+    }
+    .header nav.container ul li:first-child{
+        margin-right: 50px;
+    }
+
+
+    .header nav.container ul li[name="login"]{
+        font-weight: 700;
+    }
+
+    .header nav.container ul li:first-child a:hover,
+        .header nav.container ul li[name="login"] a:hover{
+            color: var(--primary-style-color);
+        }
+
+
+    .header nav.container ul li[name="register"]{
+        font-weight: 700;
+        color: var(--primary-text-color-light);
+        background-color: var(--primary-style-color);
+        border-radius: 5px;
+    }
+
+    .header nav.container ul li[name="register"]:hover{
+        background-color: #5b5b94;
+    }
+
+    .header nav.container ul li[name="register"] a{
+        color: var(--primary-text-color-light);
+    }

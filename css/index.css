@@ -1,0 +1,12 @@
+/*========== landing styling ==========*/
+.landing {
+    justify-content: center;
+    display: flex;
+}
+.landing-content{
+    height: 600px;
+    border-radius: 20px;
+    background: rgb(127,127,213);
+    background: linear-gradient(180deg, rgba(127,127,213,1) 0%, rgba(145,234,228,1) 100%);
+    width: 95%;
+}
