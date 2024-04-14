@@ -4,7 +4,9 @@
         --primary-text-color-light: #ffffff;
         --secondary-text-color: #4D4D4D;
         --primary-style-color: #7F7FD5;
+        --primary-syle-color-hover:#5b5b94;
         --primary-style-shade:#EAEBED;
+        --primary-style-link:#0172B1;
     }
 
 
@@ -104,9 +106,25 @@
     }
 
     .header nav.container ul li[name="register"]:hover{
-        background-color: #5b5b94;
+        background-color: var(--primary-syle-color-hover);
     }
 
     .header nav.container ul li[name="register"] a{
         color: var(--primary-text-color-light);
+    }
+
+
+    /*==============Footer================*/
+
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+    }
+
+    footer a {
+        color: var(--primary-text-color-dark);
+        text-decoration: none;
+        padding: 20px;
     }
