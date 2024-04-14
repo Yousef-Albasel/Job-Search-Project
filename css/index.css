@@ -2,6 +2,8 @@
 .landing {
     justify-content: center;
     display: flex;
+    position: relative;
+    
 }
 .landing-content{
     height: 600px;
@@ -9,4 +11,60 @@
     background: rgb(127,127,213);
     background: linear-gradient(180deg, rgba(127,127,213,1) 0%, rgba(145,234,228,1) 100%);
     width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    border-bottom-right-radius: 600px;
+    position: relative;
+}
+
+.landing img {
+    position: absolute;
+    top: 0;
+    right: 4%;
+    width: 500px;
+    height: 600px;
+    z-index: 1;
+}
+
+.footer-items{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+.get-started-button{
+    color: white;
+    background-color: #7F7FD5;
+    margin-left: 60px;
+    border-radius: 40px;
+    height: 40px;
+    width: 180px;
+    border: none;
+    font-size: 20px;
+}
+
+.get-started-button:hover{
+    background-color: #7F7FD5;
+    box-shadow: 1.5px 1.5px 1.5px 1.5px #556b2f inset;
+    cursor: pointer;
+}
+
+.landing-content-text{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-left: 60px;
+    font-size: 23px;
+}
+
+p{
+    max-width: 60%;
 }
