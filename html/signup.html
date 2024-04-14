@@ -4,74 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Workiee | Register</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 
 
 <body>
-    <header>
-        <nav>
-            <table>
-                <tr>
-                    <td>
-                        <h1>Logo</h1>
-                    </td>
-                    <td>
-                        <a href="index.html">Home</a>
-                    </td>
-                </tr>
-            </table>
+    <!-- ===========Navbar============-->
+    <div class="header">
+        <nav class="container">
+            <h1 class="logo">Workiee</h1>
+                <div class="search-bar">
+                    <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
+                    <i class="fas fa-search"></i>
+                </div>
+                <ul>
+                    <li><a href="browseJob.html">Browse</a></li>
+                    <li name="login"><a href="Login.html">Login</a></li>
+                    <li name="register"><a href="signup.html">Register</a></li>
+                </ul>
         </nav>
-    </header>
+    </div>
 
-    <center>
-        <form action="" method="post">
-            <h1>Sign Up</h1>
-            <table>
-                <tr>
-                    <td><label for="username">Username: </label></td>
-                    <td><input type="text" id="username" placeholder="Enter username" maxlength="20" minlength="6"
-                            required></td>
-                </tr>
-                <tr>
-                    <td><label for="email">Email: </label></td>
-                    <td><input type="text" id="email" placeholder="eg. abc@examble.com" required></td>
-                </tr>
-                <tr>
-                    <td><label for="password">Password: </label></td>
-                    <td><input type="password" id="password" placeholder="Enter password" minlength="8" required></td>
-                </tr>
-                <tr>
-                    <td><label for="c-password">Confirm Password: </label></td>
-                    <td><input type="password" id="c-password" placeholder="Write your password again" required></td>
-                </tr>
-                <tr>
-                    <td>
-                        <h4>Are you a company owner?</h4>
-                    </td>
-                    <td><input type="radio" name="registration-type" value="company-admin" id="company-admin">Yes</td>
-                    <td><label for="user"></label></td>
-                    <td><input type="radio" name="registration-type" value="user" id="user">No</td>
-                </tr>
-                <tr>
-                    <td><label for="company-name">Company Name: </label></td>
-                    <td><input type="text" id="company-name" placeholder="eg. Google" minlength="6"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input type="submit" /></td>
-                </tr>
-            </table>
-        </form>
-    </center>
-    <hr>
-    <footer>
+    <!-- =========== Registeration form ============-->
+
+    <div class="register-form">
+        <div class="container">
+            <div class="form-box">
+                <form action="" method="post">
+                    <h1>Create Your Account</h1>    
+                    <div class="input-group">
+
+                        <div class="input-field">
+                            <label for="username">Username: </label>
+                            <input type="text" id="username" placeholder="Enter username" maxlength="20" minlength="6"
+                                    required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="email">Email: </label>
+                            <input type="text" id="email" placeholder="eg. abc@examble.com" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="password">Password: </label>
+                            <input type="password" id="password" placeholder="Enter password" minlength="8" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="c-password">Confirm Password: </label>
+                            <input type="password" id="c-password" placeholder="Write your password again" required>
+                        </div>
+
+                        <div class="input-field" name="radio-field">
+                            <input type="checkbox" name="registration-type" value="company-admin" id="company-admin">
+                            <label>Are you a company owner?</label>
+                        </div>
+
+                        <div class="input-field" name="company-field">
+                            <label for="company-name">Company Name: </label>
+                            <input type="text" id="company-name" placeholder="eg. Google" minlength="6">
+                        </div>
+
+                        <div class="input-button">
+                            <input type="submit" value="Sign up"/>
+                        </div>
+                        <div class="input-field" style="text-align: center;">
+                            <p>Already have an account? <a href="Login.html" style="text-decoration: none; color: #0172B1;">Login</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<footer>
         <center>
             <a href="#">Get in touch</a>
             <a href="#">About us</a>
             <a href="#">Help</a>
         </center>
     </footer>
+
+    <script src="../js/register.js"></script>
 </body>
 
 </html>

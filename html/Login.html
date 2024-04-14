@@ -4,62 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Workiee | Register</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 
+
 <body>
-    <header>
-        <nav>
-            <table>
-                <tr>
-                    <td>
-                        <h1>Logo</h1>
-                    </td>
-                    <td>
-                        <a href="index.html">Home</a>
-                    </td>
-
-                </tr>
-            </table>
+    <!-- ===========Navbar============-->
+    <div class="header">
+        <nav class="container">
+            <h1 class="logo">Workiee</h1>
+                <div class="search-bar">
+                    <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
+                    <i class="fas fa-search"></i>
+                </div>
+                <ul>
+                    <li><a href="browseJob.html">Browse</a></li>
+                    <li name="login"><a href="Login.html">Login</a></li>
+                    <li name="register"><a href="signup.html">Register</a></li>
+                </ul>
         </nav>
-    </header>
+    </div>
 
-    <center>
-        <h1>Login</h1>
-        <form action="">
-            <table>
-                <tr>
-                    <td><label for="Email">E-Mail: </label></td>
-                    <td><input type="text" id="email" name="email" title="Enter your email"
-                            placeholder="Eg. abc@examble.edu" requried></td>
-                </tr>
-                <tr>
-                    <td><label for="Password">Password</label></td>
-                    <td><input type="password" id="Password" name="Password" title="enter your password"
-                            placeholder="Enter Your Passwrod" required></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" id="remember-me" name="remember-me" title="Remember Me"></td>
-                    <td><label for="remember-me">Keep me logged in</label></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" id="login-button" name="login-button" title="login" value="Login"
-                            onclick="location.href = 'BrowseJob.html';"></td>
-                    <td>
-                        <p>Don't have account <a href="signup.html">Register</a> Now!</p>
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </center>
-    <hr>
-    <footer>
+    <!-- =========== Registeration form ============-->
+
+    <div class="register-form">
+        <div class="container">
+            <div class="form-box">
+                <form action="" method="post">
+                    <h1>Login</h1>    
+                    <div class="input-group">
+
+
+                        <div class="input-field">
+                            <label for="email-login">Email: </label>
+                            <input type="text" id="email-login" placeholder="eg. abc@examble.com" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="password-login">Password: </label>
+                            <input type="password" id="password-login" placeholder="Enter password" minlength="8" required>
+                        </div>
+
+                        <div class="input-field" name="radio-field">
+                            <input type="checkbox" name="registration-type" value="company-admin" id="company-admin">
+                            <label>Remember me</label>
+                        </div>
+
+                        <div class="input-button">
+                            <input type="submit" value="Login"/>
+                        </div>
+                        <div class="input-field" style="text-align: center;">
+                            <p>Don't have an account? <a href="signup.html" style="text-decoration: none; color: #0172B1;">Register</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<footer>
         <center>
             <a href="#">Get in touch</a>
             <a href="#">About us</a>
             <a href="#">Help</a>
         </center>
     </footer>
+
+    <script src="../js/register.js"></script>
 </body>
 
 </html>
