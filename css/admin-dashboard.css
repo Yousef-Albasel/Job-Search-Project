@@ -1,0 +1,26 @@
+:root {
+    --primary-background: #faf8ef;
+    --primary-text-color-dark: #000000;
+    --primary-text-color-light: #ffffff;
+    --secondary-text-color: #4D4D4D;
+    --primary-style-color: #7F7FD5;
+    --primary-syle-color-hover:#5b5b94;
+    --primary-style-shade:#EAEBED;
+    --primary-style-link:#0172B1;
+}
+
+
+.header nav ul li i{
+    width: auto;
+    font-size: 30px;
+}
+
+.header nav ul li i:hover{
+    color: var(--primary-style-color);
+
+}
+.header nav.container ul li:first-child {
+    margin-right: 20px;
+    padding: 0;
+    align-self: center;
+}
