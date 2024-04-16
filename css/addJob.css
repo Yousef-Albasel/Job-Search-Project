@@ -1,0 +1,18 @@
+:root {
+  --primary-background: #faf8ef;
+  --primary-text-color-dark: #000000;
+  --primary-text-color-light: #ffffff;
+  --secondary-text-color: #4D4D4D;
+  --primary-style-color: #7F7FD5;
+  --primary-syle-color-hover:#5b5b94;
+  --primary-style-shade:#EAEBED;
+  --primary-style-link:#0172B1;
+}
+
+
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
