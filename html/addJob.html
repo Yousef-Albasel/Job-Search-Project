@@ -4,139 +4,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../css/addJob.css">
   <title>Add job</title>
 </head>
 
 <body>
   <header>
-    <nav>
-      <table>
-        <tr>
-          <td>
-            <h1>Logo</h1>
-          </td>
-          <td>
-            <a href="index.html">Home</a>
-          </td>
-          <td>
-            <a href="browseJob.html">Browse</a>
-          </td>
-          <td>
-            <a href="Login.html">Login</a>
-          </td>
-          <td>
-            <a href="signup.html">Sign up</a>
-          </td>
-        </tr>
-      </table>
+    <nav class="container">
+      <div class="logo">
+        <a href="../html/index.html" >
+          <h1>Workiee</h1>
+        </a>
+      </div>
+    
+
+      <ul class="navbar-list">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="browseJob.html">Browse</a>
+        </li>
+
+        <li>
+          <a href="Login.html">Login</a>
+        </li>
+
+
+        <li name="register"><a href="signup.html">Register</a></li>
+
+      </ul>
+
     </nav>
   </header>
 
-  <hr>
+  <!-- <hr> -->
 
-  <center>
-    <form action="" method="post">
-      <h2>Add job</h2>
-      <table>
+  <div class="addJob-form" >
+    <div class="container">
+      <div class="form-box">
+        <form action="" method = "post"class="addJob">
+          <h1>Add job</h1>
+          <div class="input-group">
 
-        <tr>
-          <td><label for="jobTitle"> Job Title: </label></td>
-          <td><input type="text" name="jobTitle" id="jobTitle" placeholder="Job Title"></td>
-        </tr>
+            <div class="input-field">
+              <label for="jobTitle"> Job Title: </label>
+              <input type="text" name="jobTitle" id="jobTitle" placeholder="Job Title">
+            </div>
 
-        <tr>
-          <td>
-            <label for="jobTrack"> choose job track: </label>
-          </td>
-          <td>
-            <select name="jobTrack" id="jobTrack">
-              <option value="Devops">Devops</option>
-              <option value="Frontend">Frontend</option>
-              <option value="Backend">Backend</option>
-              <option value="Fullstack" selected>Fullstack</option>
-            </select>
-          </td>
-        </tr>
+            <!-- <div class="input-field">
+              <label for="jobTrack">Job track: </label>
+              <select name="jobTrack" id="jobTrack">
+                <option value="Devops">Devops</option>
+                <option value="Frontend">Frontend</option>
+                <option value="Backend">Backend</option>
+                <option value="Fullstack" selected>Fullstack</option>
+              </select>
+            </div>
+             -->
+            <div class="input-field">
+              <label for="jopDescription">Jop Description: </label>
+              <input type="text" id="jopDescription" placeholder="Jop Description">
+            </div>
+            <div class="input-field">
+              <label for="jopSalary">Jop Salary:</label>
+              <input type="number" name="jopSalary" id="jopSalary" placeholder="Salary">
+  
+            </div>
 
-        <tr>
-          <td>
-            <label for="jopDescription">Jop Description: </label>
-          </td>
-          <td>
-            <input type="text" id="jopDescription" placeholder="Jop Description">
-          </td>
-        </tr>
 
-        <tr>
-          <td>
-            <label for="jopSalary">Jop Salary:</label>
-          </td>
-          <td>
-            <input type="number" name="jopSalary" id="jopSalary" placeholder="Salary">
-          </td>
-        </tr>
+            <!-- <div class="input-field">
+              <label for="location">Location:</label>
+              <input type="text" name="location" id="location" placeholder="Location">
+            </div> -->
 
-        <tr>
-          <td>
-            <label for="location">Location:</label>
-          </td>
-          <td>
-            <input type="text" name="location" id="location" placeholder="Location">
-          </td>
-        </tr>
 
-        <tr>
-          <td>
-            <label for="requiredSkills">Required Skills:</label>
-          </td>
-          <td>
-            <input type="text" id="requiredSkills" placeholder="Required Skills">
-          </td>
-        </tr>
+            <div class="input-field">
+              <label for="requiredSkills">Required Skills:</label>
+              <input type="text" id="requiredSkills" placeholder="Required Skills">
+            </div>
 
-        <tr>
-          <td>
-            <label for="educationLevel">Selcet Education Level:</label>
-          </td>
-          <td>
-            <select name="educationLevel" id="educationLevel">
-              <option value="highSchool">High School</option>
-              <option value="highSchool">Diploma</option>
-              <option value="highSchool">Bachelor's degree</option>
-            </select>
-          </td>
-        </tr>
 
-        <tr>
-          <td>
-            <label for="experienceLevel">Select Experience Level</label>
-          </td>
-          <td>
-            <select name="experienceLevel" id="experienceLevel">
-              <option value="Junior">Junior</option>
-              <option value="Senior">Senior</option>
-            </select>
-          </td>
-        </tr>
+            <div class="input-field">
+              <label for="educationLevel">Education Level:</label>
+              <select name="educationLevel" id="educationLevel">
+                <option value="highSchool">High School</option>
+                <option value="highSchool">Diploma</option>
+                <option value="highSchool">Bachelor's degree</option>
+              </select>
+            </div>
 
-        <tr>
-          <td></td>
-          <td><input type="submit" /></td>
-        </tr>
 
-      </table>
+            <div class="input-field">
+              <label for="experienceLevel">Experience Level</label>
+              <select name="experienceLevel" id="experienceLevel">
+                <option value="Junior">Junior</option>
+                <option value="Senior">Senior</option>
+              </select>
+            </div>
 
-    </form>
-  </center>
 
-  <hr>
+            <div class="input-button">
+              <input type="submit" value="save"/>
+          </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- <hr> -->
 
   <footer>
-    <center>
+    <div>
         <a href="#">Get in touch</a>
         <a href="#">About us</a>
         <a href="#">Help</a>
-    </center>
+    </div>
 </footer>
 
 </body>
