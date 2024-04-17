@@ -1,18 +1,33 @@
 :root {
-    --primary-background: #faf8ef;
+    --primary-background: #fcfcfc;
+    --secondary-background: #f6f7f9;
     --primary-text-color-dark: #000000;
     --primary-text-color-light: #ffffff;
     --secondary-text-color: #4D4D4D;
     --primary-style-color: #7F7FD5;
     --primary-syle-color-hover:#5b5b94;
     --primary-style-shade:#EAEBED;
+    --secondary-style-shade:#c3c5ca;
     --primary-style-link:#0172B1;
+    
 }
 
+.header nav.container{
+    display: flex;
+    height: 80px;
+    justify-content: space-around;
+    align-items: center;
+}
+.header nav.container ul{
+    list-style: none;
+    display: flex;
+    gap: 0;
+}
 
 .header nav ul li i{
     width: auto;
     font-size: 30px;
+    margin-left: 30px;
 }
 
 .header nav ul li i:hover{
@@ -24,3 +39,179 @@
     padding: 0;
     align-self: center;
 }
+
+.header nav.container ul a[name="logout"] {
+    font-weight: 700;
+    color: var(--primary-text-color-light);
+    background-color: var(--primary-style-color);
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 10px;
+    text-decoration: none;
+    align-self: center;
+}
+
+/*====================================================*/
+
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 60px 1fr;
+}
+
+
+.dashboard-header{
+    background-color: var(--primary-background);
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.dashboard{
+    background-color: var(--secondary-style-shade);
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 1fr;
+    gap: 15px;
+    padding: 20px;
+    grid-template-areas: 
+    "c1 c2 c3"
+    "c4 c4 c5"
+    "c4 c4 c5";
+}
+
+.side-bar{
+    background-color: 
+    var(--primary-style-color);
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+.card{
+    background-color: var(--secondary-background);
+    border-radius: 10px;
+}
+
+.card:nth-child(1),.card:nth-child(2),.card:nth-child(3){
+    display: flex;
+    color: rgba(255, 255, 255, 0.726);
+    background: rgb(127,127,213);
+    background: linear-gradient(180deg, rgba(127,127,213,1) 0%, rgba(90,90,163,1) 100%);
+    font-size: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.card:nth-child(1) i,.card:nth-child(2) i,.card:nth-child(3) i{
+    font-size: 25px;
+
+}
+.card:nth-child(1){
+    grid-area: c1;
+}
+
+.card:nth-child(2){
+    grid-area: c2;
+}
+.card:nth-child(3){
+    grid-area: c3;
+}
+.card:nth-child(4){
+    grid-area: c4;
+}
+.card:nth-child(5){
+    grid-area: c5;
+}
+.card:nth-child(6){
+    grid-area: c6;
+}
+
+.applicants{
+    display: flex;
+    flex-direction: column;
+}
+
+.applicants .applicants-head{
+    padding:20px;
+    display: flex;
+    justify-content: space-between;
+}
+.applicants .applicants-head h1{
+    font-size: 20px;
+}
+.applicants .applicants-head a{
+    text-decoration: underline;
+    font-size: 12px;
+    align-self: center;
+    color: var(--primary-style-link);
+}
+.applicants .application{
+    display: flex;
+    padding: 10px;
+    position: relative;
+}
+.applicants .application img{
+    border-radius: 50%;
+}
+.applicants .application div{
+    margin-left: 10px;
+    align-self: center;
+}
+.applicants .application h1{
+    font-size: 12px;
+}
+.applicants .application p{
+    font-size: 10px;
+    color:var(--secondary-text-color);
+}
+.applicants .application a{
+    font-size: 10px;
+    position: absolute;
+    align-self: center;
+    text-decoration: none;
+    right: 10%;
+    color:var(--primary-style-link);
+}
+
+
+.listed-jobs{
+    display: flex;
+    flex-direction: column;
+}
+
+.listed-jobs .control-panel{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.listed-jobs .control-panel h1{
+    font-size: 20px;
+}
+
+.listed-jobs .control-panel button{
+border: 0;
+padding: 10px 15px;
+background-color: var(--primary-style-color);
+color: var(--primary-text-color-light);
+font-weight: 700;
+font-size: 11px;
+border-radius: 5px;
+}
+
+.listed-jobs .control-panel button:hover{
+    cursor: pointer;
+    background-color: var(--primary-syle-color-hover);
+}
+
+.listed-jobs .control-panel button[name="delete-button"]{
+    margin-left: 10px;
+    background-color: rgb(209, 49, 49);
+}.listed-jobs .control-panel button[name="delete-button"]:hover{
+    background-color: rgb(223, 72, 72);;
+} 
