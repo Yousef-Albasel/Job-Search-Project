@@ -26,6 +26,7 @@
         justify-content: center;
         gap: 50px;
         flex-grow: 1;
+        align-items: center;
     }
 
     .container{
@@ -85,9 +86,10 @@
 
     .header nav.container ul li{
         padding: 10px 20px;
+        align-self: center;
 
     }
-    .header nav.container ul li:first-child{
+    .header nav.container ul li[name="register"]{
         margin-right: 50px;
     }
 
@@ -96,8 +98,8 @@
         font-weight: 700;
     }
 
-    .header nav.container ul li:first-child a:hover,
-        .header nav.container ul li[name="login"] a:hover{
+        .header nav.container ul li[name="login"] a:hover,
+            .header nav.container ul li a:hover{
             color: var(--primary-style-color);
         }
 
