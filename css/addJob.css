@@ -1,0 +1,222 @@
+/* start global rules*/
+:root {
+  --primary-background: #faf8ef;
+  --primary-text-color-dark: #000000;
+  --primary-text-color-light: #ffffff;
+  --secondary-text-color: #4D4D4D;
+  --primary-style-color: #7F7FD5;
+  --primary-syle-color-hover:#5b5b94;
+  --primary-style-shade:#EAEBED;
+  --primary-style-link:#0172B1;
+}
+
+
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  justify-content: center;
+}
+
+
+.container{
+  margin: 0px auto;
+  
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+@media (min-width:576px){
+  .container {
+    width: 560px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+
+/* end global rules */
+
+/* start Header */
+header{
+  height: 4rem;
+}
+nav.container{
+  display: flex;
+  justify-content: space-between;
+  margin: 1em auto;
+
+} 
+
+
+.logo a{
+  
+  color: black;
+  font-size: 1rem;
+}
+
+
+/* ul style */
+ul.navbar-list{
+  display: flex;
+
+}
+
+header nav.container ul li{
+  padding: 10px 20px;
+  margin-right: 1em;
+}
+
+ul.navbar-list>li:last-child{
+  margin-right: 0px;
+}
+
+header nav.container ul li a{
+  color: var(--primary-text-color-dark);
+  font-weight: 200;
+}
+
+
+
+header nav.container ul li[name="register"]{
+  color: var(--primary-text-color-light);
+  background-color: var(--primary-style-color);
+  border-radius: 5px;
+}
+
+header nav.container ul li[name="register"]:hover{
+  background-color: var(--primary-syle-color-hover);
+}
+
+header nav.container ul li[name="register"] a{
+  color: var(--primary-text-color-light);
+  font-weight: 700;
+
+}
+
+
+/* end Header */
+
+hr{
+  border: none;
+  height: 1px;
+  background-color: var(--primary-style-color);
+  margin: 20px auto;
+  width: 85%;
+}
+
+/* start  addJob form*/
+.addJob-form{
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-style-color);
+  height:calc(100vh - 6rem );
+  width: 100%;
+
+}
+
+.addJob-form .container .form-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+
+  width: clamp(320px, 40%, 600px);
+
+}
+.addJob-form .container .form-box form{
+  background-color: var(--primary-text-color-light);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px 0px;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+.addJob-form .container .form-box form .input-group{
+  display: flex;
+  flex-direction:column;
+
+  gap:10px;
+}
+
+.addJob-form .container .form-box form h1{
+  font-size: 30px;
+  color: var(--primary-text-color-dark);
+  text-align: center;
+  position: relative;
+}
+
+
+.addJob-form .container .form-box form .input-field input{
+  width: clamp(150px , 100% , 300px);
+  background: transparent;
+  border: 0.5px solid var(--secondary-text-color);
+  border-radius: 4px;
+  outline: 0;
+  padding: 15px 15px;
+}
+#jopDescription ,
+  #requiredSkills{
+    width: clamp(200px , 100% , 400px);
+}
+
+.addJob-form .container .form-box form .input-button input{
+  width: 100%;
+  padding: 15px 30px;
+  background-color: var(--primary-style-color);
+  border: none;
+  color:var(--primary-text-color-light);
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* end  addJob form*/
+
+/* start footer */
+footer{
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer a{
+  text-decoration: none;
+  color: var(--primary-text-color-dark);
+  margin-right: 3rem;
+}
+footer a:last-child{
+  margin-right: 0px;
+
+}
+/* end footer */

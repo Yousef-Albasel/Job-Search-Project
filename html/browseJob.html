@@ -4,123 +4,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/browse.css">
-    <title>Browse Job</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Workiee | Browse Job</title>
     <style>
     </style>
 </head>
 
 <body>
+    <!-- ===========Navbar============-->
     <div class="header">
-        <a href="index.html">
-            <img src="../images/company_logo.png" alt="Logo" title="Home" class="logo" />
-        </a>
-        <div class="search">
-            <label for="search-for-job">Search for a job</label> 
-            <input id="search-for-job" type="search" placeholder="Search by job title, company name..">
-            <button>Search</button>
-        </div>
-        <a href="Profile.html">
-            <img src="../images/pfp.png" alt="Profile" title="Profile" class="profile" />
-        </a>
+        <nav class="container">
+            <h1 class="logo">Workiee</h1>
+            <div class="search-bar">
+                <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
+                <i class="fas fa-search"></i>   
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li name="login"><a href="Login.html">Login</a></li>
+                <li name="register"><a href="signup.html">Register</a></li>
+            </ul>
+        </nav>
     </div>
+    <br>
+    <!-- ===========Content============-->
     <div class="content">
-        <table>
-            <tr>
-                <td>
-                    <a href="jobDescription.html">
-                        <h2>JOB TITLE</h2>
-                    </a>
-                    <img src="../images/company_logo.png" alt="Company Logo" />
-                    <p>Address of company</p>
-                    <p>n hours ago</p>
-                    <p>Salary: </p>
-                    <mark>tag</mark> <mark>tag</mark> <mark>tag</mark> <mark>tag</mark>
-                    <p>Requirements: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem reiciendis commodi
-                        quisquam totam quos eum accusantium facilis, consequatur necessitatibus eligendi alias
-                        voluptatibus minus doloremque fugit dolore voluptates, error libero nisi.</p>
-                    <button onclick="location.href = 'jobApplication.html';">Apply</button>
-                </td>
-            </tr>
-        </table>
+        <div class="block">
+            <a href="jobDescription.html"> Hotel Reservations Supervisor (Online Systems) </a>
+            <img src="../images/company_logo.png" alt="Company Logo" />
+            <p class="company"><span>Nugget Tours</span> - Downtown, Cairo, Egypt</p>
+            <p class="ago">7 hours ago</p>
+            <p>Salary: 10,000 E£ </p>
+            <div class="tags"><mark>Full Time</mark> <mark>On-site</mark></div>
+            <p>We are Looking for a Hotel Reservations Supervisor with Experience working on online Systems like (Rezlive, Nirvana, TBo, GTE, etc.)</p>
+            <button onclick="location.href = 'jobApplication.html';">Quick Apply</button>
+        </div>
         <br />
-        <table>
-            <tr>
-                <td>
-                    <a href="jobDescription.html">
-                        <h2>JOB TITLE</h2>
-                    </a>
-                    <img src="../images/company_logo.png" alt="Company Logo" />
-                    <p>Address of company</p>
-                    <p>n hours ago</p>
-                    <p>Salary: </p>
-                    <mark>tag</mark> <mark>tag</mark> <mark>tag</mark> <mark>tag</mark>
-                    <p>Requirements: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem reiciendis commodi
-                        quisquam totam quos eum accusantium facilis, consequatur necessitatibus eligendi alias
-                        voluptatibus minus doloremque fugit dolore voluptates, error libero nisi.</p>
-                    <button onclick="location.href = 'jobApplication.html';">Apply</button>
-                </td>
-            </tr>
-        </table>
+
+        <div class="block">
+            <a href="jobDescription.html"> Hotels Operations Specialist </a>
+            <img src="../images/company_logo.png" alt="Company Logo" />
+            <p class="company"><span>Safa International Travel </span> - Dokki, Giza, Egypt</p>
+            <p class="ago">13 hours ago</p>
+            <p>Salary: 12,000 E£ </p>
+            <div class="tags"><mark>Full Time</mark> <mark>On-site</mark></div>
+            <button onclick="location.href = 'jobApplication.html';">Quick Apply</button>
+        </div>
         <br />
-        <table>
-            <tr>
-                <td>
-                    <a href="jobDescription.html">
-                        <h2>JOB TITLE</h2>
-                    </a>
-                    <img src="../images/company_logo.png" alt="Company Logo" />
-                    <p>Address of company</p>
-                    <p>n hours ago</p>
-                    <p>Salary: </p>
-                    <mark>tag</mark> <mark>tag</mark> <mark>tag</mark> <mark>tag</mark>
-                    <p>Requirements: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem reiciendis commodi
-                        quisquam totam quos eum accusantium facilis, consequatur necessitatibus eligendi alias
-                        voluptatibus minus doloremque fugit dolore voluptates, error libero nisi.</p>
-                    <button onclick="location.href = 'jobApplication.html';">Apply</button>
-                </td>
-            </tr>
-        </table>
+
+        <div class="block">
+            <a href="jobDescription.html"> Online B2B Assistant Contract Manager - Hotels </a>
+            <img src="../images/company_logo.png" alt="Company Logo" />
+            <p class="company"><span>Alouf Travel</span> - 6th of October, Giza, Egypt</p>
+            <p class="ago">17 hours ago</p>
+            <p>Salary: 8,000 E£ </p>
+            <div class="tags"><mark>Full Time</mark> <mark>Remote</mark></div>
+            <p>The online B2B assistant contract manager will support in establishing and managing partnerships with hotels to sell their inventory online. You will assist in negotiating and updating contracts that allow customers to book hotel rooms on our platform.</p>
+            <button onclick="location.href = 'jobApplication.html';">Quick Apply</button>
+        </div>
         <br />
-        <table>
-            <tr>
-                <td>
-                    <a href="jobDescription.html">
-                        <h2>JOB TITLE</h2>
-                    </a>
-                    <img src="../images/company_logo.png" alt="Company Logo" />
-                    <p>Address of company</p>
-                    <p>n hours ago</p>
-                    <p>Salary: </p>
-                    <mark>tag</mark> <mark>tag</mark> <mark>tag</mark> <mark>tag</mark>
-                    <p>Requirements: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem reiciendis commodi
-                        quisquam totam quos eum accusantium facilis, consequatur necessitatibus eligendi alias
-                        voluptatibus minus doloremque fugit dolore voluptates, error libero nisi.</p>
-                    <button onclick="location.href = 'jobApplication.html';">Apply</button>
-                </td>
-            </tr>
-        </table>
+
+        <div class="block">
+            <a href="jobDescription.html"> Reservation Specialist </a>
+            <img src="../images/company_logo.png" alt="Company Logo" />
+            <p class="company"><span>Confidential</span> - Nasr City, Cairo, Egypt</p>
+            <p class="ago">1 day ago</p>
+            <p>Salary: 12,000 E£ </p>
+            <div class="tags"><mark>Part Time</mark> <mark>Remote</mark></div>
+            <p>The Reservation Specialist plays a crucial role in the hospitality department by handling reservation requests and ensuring efficient and accurate booking processes. This position requires exceptional communication skills, attention to detail, and a strong customer service orientation. The Reservation Specialist interacts with guests, travel agents, and other team members to facilitate seamless reservations and provide outstanding service.  </p>
+            <button onclick="location.href = 'jobApplication.html';">Quick Apply</button>
+        </div>
         <br />
-        <table>
-            <tr>
-                <td>
-                    <a href="jobDescription.html">
-                        <h2>JOB TITLE</h2>
-                    </a>
-                    <img src="../images/company_logo.png" alt="Company Logo" />
-                    <p>Address of company</p>
-                    <p>n hours ago</p>
-                    <p>Salary: </p>
-                    <mark>tag</mark> <mark>tag</mark> <mark>tag</mark> <mark>tag</mark>
-                    <p>Requirements: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem reiciendis commodi
-                        quisquam totam quos eum accusantium facilis, consequatur necessitatibus eligendi alias
-                        voluptatibus minus doloremque fugit dolore voluptates, error libero nisi.</p>
-                    <button onclick="location.href = 'jobApplication.html';">Apply</button>
-                </td>
-            </tr>
-        </table>
+
+        <div class="block">
+            <a href="jobDescription.html"> Commercial Manager </a>
+            <img src="../images/company_logo.png" alt="Company Logo" />
+            <p class="company"><span>Misr Radiology Center</span> - New Cairo, Cairo, Egypt</p>
+            <p class="ago">2 days ago</p>
+            <p>Salary: 22,000 E£ </p>
+            <div class="tags"><mark>Full Time</mark> <mark>Hybrid</mark></div>
+            <p>As a Commercial Manager for services, you will play a pivotal role in driving our sales strategy, expanding our market presence, and forging strong relationships with healthcare providers. You will be instrumental in identifying new business opportunities, negotiating contracts, and ensuring our service offerings meet the evolving needs of our clients for our vast array of services including teleradiology, medical tourism, and medical training and consultancy.</p>
+            <button onclick="location.href = 'jobApplication.html';">Quick Apply</button>
+        </div>
+        <br />
+
+        <div class="block">
+            <a href="jobDescription.html"> Telesales Executive </a>
+            <img src="../images/company_logo.png" alt="Company Logo" />
+            <p class="company"><span>Reservella</span> - New Cairo, Cairo, Egypt</p>
+            <p class="ago">2 days ago</p>
+            <p>Salary: 7,650 E£</p>
+            <div class="tags"><mark>Part Time</mark> <mark>On-Site</mark></div>
+            <button onclick="location.href = 'jobApplication.html';">Quick Apply</button>
+        </div>
+        <br />
+
+        <div class="block">
+            <a href="jobDescription.html"> Travel Consultant </a>
+            <img src="../images/company_logo.png" alt="Company Logo" />
+            <p class="company"><span>Trivia Travel</span> - Giza, Egypt</p>
+            <p class="ago">2 days ago</p>
+            <p>Salary: 8,000 E£</p>
+            <div class="tags"><mark>Full Time</mark> <mark>On-Site</mark></div>
+            <button onclick="location.href = 'jobApplication.html';">Quick Apply</button>
+        </div>
+        <br />  
+
     </div>
-    <hr>
+    <!-- ===========Footer============-->
     <footer>
         <a href="#">Get in touch</a>
         <a href="#">About us</a>
