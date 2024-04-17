@@ -9,6 +9,80 @@
     --primary-style-link:#0172B1;
 }
 
+ /* =============== Modify nav bar style ============= */
+ .header {
+    position: sticky;
+    top: 0;
+    background-color: var(--primary-text-color-light);
+    z-index: 99;
+    box-shadow: 1px 1px 10px #aaaaaa;
+ }
+
+  /*=============== Table Style =============*/
+
+ .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+ }
+
+ .content .block {    
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 15px;  
+    border: 1px black solid;
+    border-radius: 5px;
+ }
+
+ .content .block a {
+    font-size:25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--primary-style-color);
+    width: fit-content;
+    
+ }
+ .content .block a:hover {
+    color: var(--primary-syle-color-hover);
+ }
+
+ .content .block img {
+    align-self: flex-end;
+    width: 60px;
+    height: 60px;
+ }
+
+.content .block .company span {
+    font-weight: bold;
+}
+
+.content .block .ago {
+    color: #2C9266;
+}
+.content .block .tags mark {
+    background-color: #EAEBED;
+}
+
+.content .block .buttons {
+    align-self: center;
+}
+
+.content .block button {
+    width: 150px;
+    height: 40px;
+    font-weight: 700;
+    color: var(--primary-text-color-light);
+    background-color: var(--primary-style-color);
+    border-radius: 5px;
+    border: none;
+}
+.content .block button:hover {
+    background-color: var(--primary-syle-color-hover);
+}
+
+/*=============== Navbar of admin =============*/
 
 .header nav ul li i{
     width: auto;
@@ -19,7 +93,7 @@
     color: var(--primary-style-color);
 
 }
-.header nav.container ul li:first-child {
+.header nav.container ul li[name="profile"] {
     margin-right: 20px;
     padding: 0;
     align-self: center;

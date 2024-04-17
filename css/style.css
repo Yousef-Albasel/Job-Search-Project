@@ -32,6 +32,10 @@
         min-width: 90%;
     }
 
+    a, li, button{
+        transition: 0.25s ease;
+    }
+
     /*=============== Header Style =============*/
     .header nav.container{
         display: flex;
