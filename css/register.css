@@ -9,7 +9,9 @@
     --primary-style-link:#0172B1;
 
 }
-
+body{
+    font-family: "Montserrat", sans-serif;
+}
 .register-form{
     display: flex;
     justify-content: center;

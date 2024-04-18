@@ -5,6 +5,7 @@
         --secondary-text-color: #4D4D4D;
         --primary-style-color: #7F7FD5;
         --primary-syle-color-hover:#5b5b94;
+        --secondary-style-color-hover:#9292de;
         --primary-style-shade:#EAEBED;
         --primary-style-link:#0172B1;
     }
@@ -26,10 +27,15 @@
         justify-content: center;
         gap: 50px;
         flex-grow: 1;
+        align-items: center;
     }
 
     .container{
         min-width: 90%;
+    }
+
+    a, li, button{
+        transition: 0.25s ease;
     }
 
     /*=============== Header Style =============*/
@@ -81,9 +87,10 @@
 
     .header nav.container ul li{
         padding: 10px 20px;
+        align-self: center;
 
     }
-    .header nav.container ul li:first-child{
+    .header nav.container ul li[name="register"]{
         margin-right: 50px;
     }
 
@@ -92,8 +99,8 @@
         font-weight: 700;
     }
 
-    .header nav.container ul li:first-child a:hover,
-        .header nav.container ul li[name="login"] a:hover{
+        .header nav.container ul li[name="login"] a:hover,
+            .header nav.container ul li a:hover{
             color: var(--primary-style-color);
         }
 

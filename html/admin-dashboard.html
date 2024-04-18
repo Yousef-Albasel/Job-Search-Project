@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/admin-dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -15,22 +17,154 @@
      <div class="header">
         <nav class="container">
             <h1 class="logo">Workiee</h1>
-                <div class="search-bar">
-                    <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
-                    <i class="fas fa-search"></i>
-                </div>
                 <ul>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="browseJob.html">Browse</a></li>
                     <li name="profile"><a href="profile.html"><i class="fas fa-user-circle"></i></a></li>
+                    <a href="index.html" name="logout">Log out</a>
                 </ul>
         </nav>
     </div>
 
-    <footer>
-            <a href="contact.html">Get in touch</a>
-            <a href="about.html">About us</a>
-            <a href="help.html">Help</a>
-    </footer>
+    <div class="side-bar">
+        <h1>Dashboard</h1>
+        <p>You can find below options to manage your job applications, accept applicants, view more details about your active jobs.</p>
+        <div class="side-panel" name="active">
+            <i class="fas fa-columns"></i>
+            <a href="#">Dashboard</a>
+        </div>
+        <div class="side-panel">
+            <i class="fas fa-users"></i>
+            <a href="#">Applicants</a>
+        </div>
+        <div class="side-panel">
+            <i class="fas fa-cog"></i>
+            <a href="#">Settings</a>
+        </div>
+    </div>
+    <div class="dashboard">
+        <div class="card">
+            <div><h1>Jobs</h1>
+            <p>You have listed <span>0</span> jobs!</p></div>
+            <i class="fas fa-briefcase"></i>
+        </div>
+        <div class="card">
+            <div>
+            <h1>Applicants</h1>
+            <p> You have <span>0</span> applicants!</p></div>
+            <i class="fas fa-users"></i>
+            </div>
+        <div class="card">
+            <div>
+            <h1>Engagement</h1>
+            <p>Your jobs got <span>0</span> clicks!</p></div>
+            <i class="fas fa-hand-sparkles"></i>
+            </div>
+        <div class="card">
+            <div class="listed-jobs">
+                <div class="control-panel">
+                <h1>Listed Jobs</h1>
+                    <div class="buttons">
+                        <button onclick="location.href = 'addJob.html';">Add Job</button>
+                        <button>Edit Job</button>
+                        <button name="delete-button">Delete Job</button>
+                    </div>
+                </div>
+                
+                <div class="job-container">
+                    <div class="job-container-header">
+                            <input type="checkbox" for="select-job" name="select-job">
+                            <h1>IOS Developer</h1> <span>Confidential</span>
+                    </div>
+                        <p>We are a leading tech company dedicated to revolutionizing the way people interact with technology. Our innovative products have redefined user experiences across various industries, and we're constantly pushing the boundaries of what's possible in the digital world. As we continue to grow, we are seeking a talented iOS Developer to join our dynamic team and contribute to the development of cutting-edge mobile applications.</p>
+                        <div class="required-skills">
+                            <span class="tag">C#</span>
+                            <span class="tag">Problem Solving</span>
+                            <span class="tag">OOP</span>
+                            <span>Junior Level</span>
+                        </div>
+                        <hr/>
+                </div>
+
+                
+                <div class="job-container">
+                    <div class="job-container-header">
+                            <input type="checkbox" for="select-job" name="select-job">
+                            <h1>IOS Developer</h1> <span>Confidential</span>
+                    </div>
+                        <p>We are a leading tech company dedicated to revolutionizing the way people interact with technology. Our innovative products have redefined user experiences across various industries, and we're constantly pushing the boundaries of what's possible in the digital world. As we continue to grow, we are seeking a talented iOS Developer to join our dynamic team and contribute to the development of cutting-edge mobile applications.</p>
+                        <div class="required-skills">
+                            <span class="tag">C#</span>
+                            <span class="tag">Problem Solving</span>
+                            <span class="tag">OOP</span>
+                            <span>Junior Level</span>
+                        </div>
+                        <hr/>
+                </div>
+                
+                <div class="job-container">
+                    <div class="job-container-header">
+                            <input type="checkbox" for="select-job" name="select-job">
+                            <h1>IOS Developer</h1> <span>Confidential</span>
+                    </div>
+                        <p>We are a leading tech company dedicated to revolutionizing the way people interact with technology. Our innovative products have redefined user experiences across various industries, and we're constantly pushing the boundaries of what's possible in the digital world. As we continue to grow, we are seeking a talented iOS Developer to join our dynamic team and contribute to the development of cutting-edge mobile applications.</p>
+                        <div class="required-skills">
+                            <span class="tag">C#</span>
+                            <span class="tag">Problem Solving</span>
+                            <span class="tag">OOP</span>
+                            <span>Junior Level</span>
+                        </div>
+                        <hr/>
+                    </div>
+
+                
+            </div>
+        </div>
+        <div class="card">
+            <div class="applicants"> 
+                <div class="applicants-head">             
+                <h1>Applicants</h1>
+                <a>See All</a>
+                </div>
+                <div class="application">
+                    <img src="https://i.pravatar.cc/50">
+                    <div>
+                    <h1>Yousef Amgad</h1>
+                    <p>Applied for <span>IOS Developer</span></p>
+                </div>
+                <a href="#">View Profile</a>
+                </div>
+                <div class="application">
+                    <img src="https://i.pravatar.cc/50">
+                    <div>
+                    <h1>Yousef Amgad</h1>
+                    <p>Applied for <span>IOS Developer</span></p>
+                </div>
+                <a href="#">View Profile</a>
+                </div>
+                <div class="application">
+                    <img src="https://i.pravatar.cc/50">
+                    <div>
+                    <h1>Yousef Amgad</h1>
+                    <p>Applied for <span>IOS Developer</span></p>
+                </div>
+                <a href="#">View Profile</a>
+                </div>
+                <div class="application">
+                    <img src="https://i.pravatar.cc/50">
+                    <div>
+                    <h1>Yousef Amgad</h1>
+                    <p>Applied for <span>IOS Developer</span></p>
+                </div>
+                <a href="#">View Profile</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+<script src="../js/admin-dashboard.js"></script>
 </body>
 
 </html>
