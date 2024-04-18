@@ -44,45 +44,49 @@
   <div class="addJob-form" >
     <div class="container">
       <div class="form-box">
-        <form action="" method = "post"class="addJob">
+        <form action="" method = "post" id = "addJob" class="addJob">
           <h1>Add job</h1>
           <div class="input-group">
 
             <div class="input-field">
               <label for="jobTitle"> Job Title: </label>
               <br>
-              <input type="text" name="jobTitle" id="jobTitle" placeholder="Job Title">
+              <input type="text" name="jobTitle" id="jobTitle" placeholder="Job Title" required>
             </div>
 
             <div class="input-field">
               <label for="CompanyName">Company Name :</label>
-              <input type="text" name="CompanyName" id="CompanyName" placeholder="Company Name">
+              <br>
+              <input type="text" name="CompanyName" id="CompanyName" placeholder="Company Name" required>
             </div>
 
             <div class="input-field">
               <label for="yearsOfExperiance">Years of experiance :</label>
-              <input type="number" name="yearsOfExperiance" id="yearsOfExperiance" placeholder="Years of experiance">
+              <br>
+              <input type="number" name="yearsOfExperiance" id="yearsOfExperiance" placeholder="Years of experiance" required>
             </div>
 
             <div class="input-field">
               <label for="jobDescription">job Description: </label>
-              <input type="text" id="jobDescription" placeholder="job Description">
+              <br>
+              <input type="text" name = "jobDescription" id="jobDescription" placeholder="job Description" required>
             </div>
 
              <div class="input-field">
               <label for="jobSalary">job Salary:</label>
               <br>
-              <input type="number" name="jobSalary" id="jobSalary" placeholder="Salary">
+              <input type="number" name="jobSalary" id="jobSalary" placeholder="Salary" required>
   
             </div>
 
             <div class="input-field">
               <label for="jobStatus">Job status : </label>
+              <br>
               <div class="jobStatus">
-                <input type="checkbox" name="open" id="open">
+                <input type="radio" name="JobStatus" value="open" required>
                 <label for="open">Open</label>
 
-                <input type="checkbox" name="close" id="close">
+                <input type="radio" name="JobStatus" value="close" required>
                 <label for="close">Close</label>
               </div>
              
@@ -110,6 +114,9 @@
     </div>
 </footer>
 
+
+<script src="../js/addJob.js"></script>
 </body>
 
 </html>
+
