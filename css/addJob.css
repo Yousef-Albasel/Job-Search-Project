@@ -39,6 +39,10 @@ ul{
   list-style: none;
 }
 
+.container{
+  width: 100%;
+}
+
 @media (min-width:576px){
   .container {
     width: 560px;
@@ -126,49 +130,80 @@ header nav.container ul li[name="register"] a{
 
 /* end Header */
 
-hr{
-  border: none;
-  height: 1px;
-  background-color: var(--primary-style-color);
-  margin: 20px auto;
-  width: 85%;
-}
 
 /* start  addJob form*/
 .addJob-form{
   display: flex;
-  align-items: center;
+  justify-content: center;
+
   background-color: var(--primary-style-color);
   height:calc(100vh - 6rem );
   width: 100%;
 
 }
-
+.addJob-form .container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .addJob-form .container .form-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0px auto;
-
-
-  width: clamp(400px, 50%, 600px);
-
+  width: 70%;
+  /* width: clamp(400px, 50%, 600px); */
 
 }
 .addJob-form .container .form-box form{
   background-color: var(--primary-text-color-light);
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  justify-content: center;
   margin: 20px 0px;
   padding: 1rem 2rem;
   border-radius: 10px;
 }
 .addJob-form .container .form-box form .input-group{
-  display: flex;
-  flex-direction:column;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap:30px 15px;
 
-  gap:10px;
+  padding: 40px;
+  font-size: 24px;
+}
+
+@media (max-width: 768px ){
+  .addJob-form .container .form-box{
+    width: 80%;
+  }
+  .addJob-form .container .form-box form .input-group {
+    gap:15px 5px;
+
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width:576px){
+  .addJob-form .container .form-box{
+    width: 90%;
+  }
+  
+  .addJob-form .container .form-box form .input-group {
+    gap:5px 5px;
+    grid-template-columns: 1fr;
+  }
+  
+}
+.addJob-form .container .form-box form .input-group input[type="text" ]
+, input[type = "number"]
+{
+  height: 1.5rem;
+  background: transparent;
+  border: 0.5px solid var(--secondary-text-color);
+  border-radius: 4px;
+  outline: 0;
+  padding: 15px 15px;
 }
 
 .addJob-form .container .form-box form h1{
@@ -178,22 +213,9 @@ hr{
   position: relative;
 }
 
-
-
- .input-field input[type="text" ] 
- ,.input-field input[type="number" ] 
- {
-
-  width: clamp(150px , 100% , 300px);
-  background: transparent;
-  border: 0.5px solid var(--secondary-text-color);
-  border-radius: 4px;
-  outline: 0;
-  padding: 15px 15px;
-}
-#jopDescription ,
-  #requiredSkills{
-    width: clamp(200px , 100% , 400px);
+.jobStatusOpt{
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .addJob-form .container .form-box form .input-button input{
