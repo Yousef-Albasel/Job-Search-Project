@@ -3,130 +3,105 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/editjob.css">
     <title>Edit job</title>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <table>
-                <tr>
-                    <td>
-                        <h1>Logo</h1>
-                    </td>
-                    <td>
-                        <a href="index.html">Home</a>
-                    </td>
-                    <td>
-                        <a href="browseJob.html">Browse</a>
-                    </td>
-                    <td>
-                        <a href="Login.html">Login</a>
-                    </td>
-                    <td>
-                        <a href="signup.html">Sign up</a>
-                    </td>
-                </tr>
-            </table>
-        </nav>
-    </header>
-
-    <hr>
+  <header>
+    <nav class="container">
+      <div class="logo">
+        <a href="../html/index.html" >
+          <h1>Workiee</h1>
+        </a>
+      </div>
     
-    <center>
-        <form action="" method="post">
-            <h2>Edit job </h2>
-            <table>
-      
-              <tr>
-                <td><label for="jobTitle"> Job Title: </label></td>
-                <td><input type="text" name="jobTitle" id="jobTitle" placeholder="Job Title"></td> 
-              </tr>
-      
-              <tr>
-                <td>
-                  <label for="jobTrack"> choose job track: </label>
-                </td>
-                <td>
-                  <select name="jobTrack" id="jobTrack" >
-                    <option value="Devops">Devops</option>
-                    <option value="Frontend">Frontend</option>
-                    <option value="Backend">Backend</option>
-                    <option value="Fullstack" selected>Fullstack</option>
-                  </select>
-                </td>
-              </tr>
-      
-              <tr>
-                <td>
-                  <label for="jopDescription">Jop Description: </label>
-                </td>
-                <td>
-                  <input type="text" id="jopDescription" placeholder="Jop Description">
-                </td>
-              </tr>
-              
-              <tr>
-                <td>
-                  <label for="jopSalary">Jop Salary:</label>
-                </td>
-                <td>
-                  <input type="number" name="jopSalary" id="jopSalary" placeholder="Salary">
-                </td>
-              </tr>
-      
-              <tr>
-                <td>
-                  <label for="location">Location:</label>
-                </td>
-                <td>
-                  <input type="text" name="location" id="location" placeholder="Location">
-                </td>
-              </tr>
-      
-              <tr>
-                <td>
-                  <label for="requiredSkills">Required Skills:</label>
-                </td>
-                <td>
-                  <input type="text" id = "requiredSkills" placeholder="Required Skills">
-                </td>
-              </tr>
-      
-              <tr>
-                <td>
-                  <label for="educationLevel">Selcet Education Level:</label>
-                </td>
-                <td>
-                  <select name="educationLevel" id="educationLevel">
-                    <option value="highSchool">High School</option>
-                    <option value="highSchool">Diploma</option>
-                    <option value="highSchool">Bachelor's degree</option>
-                  </select>
-                </td>
-              </tr>
-      
-              <tr>
-                <td>
-                  <label for="experienceLevel">Select Experience Level</label>
-                </td>
-                <td>
-                  <select name="experienceLevel" id="experienceLevel">
-                    <option value="Junior">Junior</option>
-                    <option value="Senior">Senior</option>
-                  </select>
-                </td>
-              </tr>
-      
-              <tr>
-                <td></td>
-                <td><input type="submit" value="Save Changes" /></td>
-            </tr>
-      
-            </table>
-           
+
+      <ul class="navbar-list">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="browseJob.html">Browse</a>
+        </li>
+
+        <li>
+          <a href="Login.html">Login</a>
+        </li>
+
+
+        <li name="register"><a href="signup.html">Register</a></li>
+
+      </ul>
+
+    </nav>
+  </header>
+
+    <div class="editJob-form" >
+      <div class="container">
+        <div class="form-box">
+  
+          <form action="" method = "post" id = "editJob" class="editJob">
+  
+            <h1>edit job</h1>
+            <div class="input-group">
+  
+              <div class="input-field">
+                <label for="jobTitle"> Job Title: </label>
+  
+                <br>
+                <input type="text" name="jobTitle" id="jobTitle" placeholder="Job Title" required>
+              </div>
+  
+              <div class="input-field">
+                <label for="CompanyName">Company Name :</label>
+                <br>
+                <input type="text" name="CompanyName" id="CompanyName" placeholder="Company Name" required>
+              </div>
+  
+              <div class="input-field">
+                <label for="yearsOfExperiance">Years of experiance :</label>
+                <br>
+                <input type="number" name="yearsOfExperiance" id="yearsOfExperiance" placeholder="Years of experiance" required>
+              </div>
+  
+              <div class="input-field">
+                <label for="jobDescription">job Description: </label>
+                <br>
+                <input type="text" name = "jobDescription" id="jobDescription" placeholder="job Description" required>
+              </div>
+  
+               <div class="input-field">
+                <label for="jobSalary">job Salary:</label>
+                <br>
+                <input type="number" name="jobSalary" id="jobSalary" placeholder="Salary" required>
+    
+              </div>
+  
+              <div class="input-field">
+                <label for="jobStatus">Job status : </label>
+                <br>
+                <div class="jobStatus">
+                  <input type="radio" name="JobStatus" value="open" required>
+                  <label for="open">Open</label>
+  
+                  <input type="radio" name="JobStatus" value="close" required>
+                  <label for="close">Close</label>
+                </div>
+               
+              </div>
+  
+             
+            </div>
+            <div class="input-button">
+              <input type="submit" value="save"/>
+          </div>
           </form>
-    </center>
+        </div>
+      </div>
+    </div>
+  
 
     <hr>
     
