@@ -40,6 +40,28 @@
 }
 
 
+@media only screen and (max-width: 846px){
+ .landing img{
+    display:none;
+ }       
+ .landing-content button{
+    display: none;
+ }
+ .landing-content{
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+ }
+ .landing-content .landing-content-text{
+    margin: 0;
+ }
+ .landing-content .landing-content-text div{
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+ }
+
+}
 
 
 .landing-content-text{
@@ -163,3 +185,11 @@
     color: var(--primary-style-color);
     cursor: pointer;
 }
+
+@media only screen and (max-width:540px){
+    .categories .container .card-grid .row{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+

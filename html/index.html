@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
@@ -19,17 +20,21 @@
     <!-- Header Section -->
     <div class="header">
         <nav class="container">
-            <h1 class="logo">Workiee</h1>
-            <div class="search-bar">
+            <h1 class="logo"><a href="index.html">Workiee</a></h1>
+            <div class="search-bar"> <!-- Canceled -->
                 <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
                 <i class="fas fa-search"></i>
             </div>
             <ul>
+                <li><a href="index.html" class="selected">Home</a></li>
                 <li><a href="browseJob.html">Browse</a></li>
                 <li name="login"><a href="Login.html">Login</a></li>
                 <li name="register"><a href="signup.html">Register</a></li>
             </ul>
         </nav>
+        <div class="drop-menu">
+            <i class="fas fa-bars"></i>
+        </div>
     </div>
     <!-- landing Page Body -->
 
@@ -112,6 +117,7 @@
             <a href="#">About us</a>
             <a href="#">Help</a>
     </footer>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

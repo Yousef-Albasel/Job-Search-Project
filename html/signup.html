@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
 </head>
 
 
@@ -17,16 +19,17 @@
     <!-- ===========Navbar============-->
     <div class="header">
         <nav class="container">
-            <h1 class="logo">Workiee</h1>
-                <div class="search-bar">
-                    <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
-                    <i class="fas fa-search"></i>
-                </div>
-                <ul>
-                    <li><a href="browseJob.html">Browse</a></li>
-                    <li name="login"><a href="Login.html">Login</a></li>
-                    <li name="register"><a href="signup.html">Register</a></li>
-                </ul>
+            <h1 class="logo"><a href="index.html">Workiee</a></h1>
+            <div class="search-bar"> <!-- Canceled -->
+                <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
+                <i class="fas fa-search"></i>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browseJob.html">Browse</a></li>
+                <li name="login"><a href="Login.html">Login</a></li>
+                <li name="register"><a href="signup.html">Register</a></li>
+            </ul>
         </nav>
     </div>
 
@@ -35,29 +38,32 @@
     <div class="register-form">
         <div class="container">
             <div class="form-box">
-                <form action="" method="post">
+                <form action="/" id="form">
                     <h1>Create Your Account</h1>    
                     <div class="input-group">
 
                         <div class="input-field">
                             <label for="username">Username: </label>
-                            <input type="text" id="username" placeholder="Enter username" maxlength="20" minlength="6"
-                                    required>
+                            <input type="text" id="username" placeholder="Enter username">
+                            <div class="error-message"></div>
                         </div>
 
                         <div class="input-field">
                             <label for="email">Email: </label>
-                            <input type="text" id="email" placeholder="eg. abc@examble.com" required>
+                            <input type="text" id="email" placeholder="eg. abc@examble.com" >
+                            <div class="error-message"></div>
                         </div>
 
                         <div class="input-field">
                             <label for="password">Password: </label>
-                            <input type="password" id="password" placeholder="Enter password" minlength="8" required>
+                            <input type="password" id="password" placeholder="Enter password">
+                            <div class="error-message"></div>
                         </div>
 
                         <div class="input-field">
                             <label for="c-password">Confirm Password: </label>
-                            <input type="password" id="c-password" placeholder="Write your password again" required>
+                            <input type="password" id="c-password" placeholder="Write your password again" >
+                            <div class="error-message"></div>
                         </div>
 
                         <div class="input-field" name="radio-field">
@@ -67,11 +73,12 @@
 
                         <div class="input-field" name="company-field">
                             <label for="company-name">Company Name: </label>
-                            <input type="text" id="company-name" placeholder="eg. Google" minlength="6">
+                            <input type="text" id="company-name" placeholder="eg. Google">
+                            <div class="error-message"></div>
                         </div>
 
                         <div class="input-button">
-                            <input type="submit" value="Sign up"/>
+                            <input type="submit" name="sign-up" id="sign-up"  value="Sign Up"/></input>
                         </div>
                         <div class="input-field" style="text-align: center;">
                             <p>Already have an account? <a href="Login.html" style="text-decoration: none; color: #0172B1;">Login</a></p>

@@ -10,35 +10,21 @@
 </head>
 
 <body>
-  <header>
+  <div class="header">
     <nav class="container">
-      <div class="logo">
-        <a href="../html/index.html" >
-          <h1>Workiee</h1>
-        </a>
-      </div>
-    
-
-      <ul class="navbar-list">
-        <li>
-          <a href="index.html">Home</a>
-        </li>
-
-        <li>
-          <a href="browseJob.html">Browse</a>
-        </li>
-
-        <li>
-          <a href="Login.html">Login</a>
-        </li>
-
-
-        <li name="register"><a href="signup.html">Register</a></li>
-
-      </ul>
-
+        <h1 class="logo"><a href="index.html">Workiee</a></h1>
+        <div class="search-bar"> <!-- Canceled -->
+            <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
+            <i class="fas fa-search"></i>
+        </div>
+        <ul>
+            <li><a href="index.html" class="selected">Home</a></li>
+            <li><a href="browseJob.html">Browse</a></li>
+            <li name="login"><a href="Login.html">Login</a></li>
+            <li name="register"><a href="signup.html">Register</a></li>
+        </ul>
     </nav>
-  </header>
+</div>
 
 
   <div class="addJob-form" >

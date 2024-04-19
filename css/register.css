@@ -7,6 +7,8 @@
     --primary-syle-color-hover:#5b5b94;
     --primary-style-shade:#EAEBED;
     --primary-style-link:#0172B1;
+    --color-input-success: #09c372;
+    --color-input-error: #ff3860;
 
 }
 body{
@@ -78,7 +80,24 @@ body{
     border: 0.5px solid var(--secondary-text-color);
     border-radius: 4px;
     outline: 0;
+    transition: 0.4s;
     padding: 15px 15px;
+}
+
+
+.register-form .container .form-box form .input-field input[type="text"]:focus,
+.register-form .container .form-box form .input-field input[type="password"]:focus{
+    outline: none;
+    border: 0.5px solid var(--primary-style-color);
+    box-shadow: 0 0 0 1px var(--primary-style-color);
+}
+
+.register-form .container .form-box form .input-field input.success{
+    border: 0.5px solid var(--color-input-success);
+}
+.register-form .container .form-box form .input-field input.error{
+    border: 0.5px solid var(--color-input-error);
+    
 }
 
 .register-form .container .form-box form .input-field[name="radio-field"]{
@@ -110,4 +129,10 @@ body{
 }
 .register-form .container .form-box form .input-button input:hover{
     background-color: var(--primary-syle-color-hover);
+}
+
+.error-message{
+    color: var(--color-input-error);
+    font-weight: bold;
+    font-size: 12px;
 }
