@@ -2,111 +2,70 @@
 <html>
 
 <head>
-    <title>Job description</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/jobDescription.css"> 
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Workiee | Job Description</title>
+    <style>
+    </style>
 </head>
 
-<body>
-    <header>
-        <nav>
-            <table>
-                <tr>
-                    <td>
-                        <h1>Logo</h1>
-                    </td>
-                    <td>
-                        <a href="index.html">Home</a>
-                    </td>
-                    <td>
-                        <a href="browseJob.html">Browse</a>
-                    </td>
-                    <td>
-                        <a href="Login.html">Login</a>
-                    </td>
-                    <td>
-                        <a href="signup.html">Sign up</a>
-                    </td>
-                </tr>
-            </table>
+<div>
+    <!-- ===========Navbar============-->
+    <div class="header">
+        <nav class="container">
+            <h1 class="logo">Workiee</h1>   
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li name="login"><a href="Login.html">Login</a></li>
+                <li name="register"><a href="signup.html">Register</a></li>
+            </ul>
         </nav>
-    </header>
-    <h1><i>Job description</i></h1>
-    <div>
-        <dl>
-            <dt>Requirement to win the job</dt>
-            <dd>
-                <p>
-                    <b>job description</b>
-                </p>
-
-            </dd>
-        </dl>
-        <br>
-        <b>Job salary = <b>
-                <br>
-                <br>
-                <b>Work time<b>
-                        <dd>
-                            <table border="3">
-                                <thead>
-                                    <tr>
-                                        <th>Day</th>
-                                        <th>Time</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    <tr>
-                                        <td>Saturday</td>
-                                        <td>8 am to 3 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sunday</td>
-                                        <td>8 am to 3 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Monday</td>
-                                        <td>8 am to 3 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>tuesday</td>
-                                        <td>8 am to 3 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Wednsday</td>
-                                        <td>8 am to 3 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>thursday</td>
-                                        <td>8 am to 3 pm</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </dd>
-                        <br>
-                        </dl>
     </div>
-    <hr>
-    <div>
-        <h1><i>Our branches</i></h1>
-        <h3>branch 1</h3>
+    <!-- ===========Content============-->
+    <div class="content">
+        <div class="job-header">
+            <h1>Job Title</h1>
+            <p class="comp"><span class="comp-name">Company Name</span> - Company Address</p>
+            <p class="pos"><span class="n-pos">n</span> open positions</p>
+            <button onclick="location.href='applyJob.html'">Apply</button>
+        </div>
+        <div class="job-details">
+            <h3>Job Details</h3>
+            <p class="y-exp">Experience Needed: </p>
+            <p class="career-lvl">Career level: </p>
+            <p class="edu-lvl">Education level: </p>
+            <p class="salary">Salary: </p>
 
-        <h3>branch 1</h3>
+        </div>
+        <div class="job-description">
+            <h3>Job Description</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam consequuntur asperiores voluptatum inventore saepe, error atque mollitia eos soluta labore excepturi maiores, ratione porro tempora dolores repellat. Assumenda, iste dolore.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis voluptate unde sequi blanditiis fugiat facilis repellat incidunt eveniet quidem pariatur inventore earum nihil itaque quos, mollitia vitae amet tempora. Obcaecati.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam blanditiis tempora neque aliquam? Quaerat soluta id fugiat nisi a natus error nostrum fugit? Facere, culpa! Saepe, corporis? Dicta, possimus commodi.
+            </p>
+        </div>
+        <div class="job-requirements">
+            <h3>Job Requirements</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam consequuntur asperiores voluptatum inventore saepe, error atque mollitia eos soluta labore excepturi maiores, ratione porro tempora dolores repellat. Assumenda, iste dolore.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis voluptate unde sequi blanditiis fugiat facilis repellat incidunt eveniet quidem pariatur inventore earum nihil itaque quos, mollitia vitae amet tempora. Obcaecati.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam blanditiis tempora neque aliquam? Quaerat soluta id fugiat nisi a natus error nostrum fugit? Facere, culpa! Saepe, corporis? Dicta, possimus commodi.
+            </p>
 
-        <h3>branch 1</h3>
-
+        </div>
     </div>
-    <hr>
-
-    <label>Email us</label>
-    <input type="email" placeholder="HR email">
-    <hr>
+    <!-- ===========Footer============-->
     <footer>
-        <center>
-            <a href="#">Get in touch</a>
-            <a href="#">About us</a>
-            <a href="#">Help</a>
-        </center>
+        <a href="#">Get in touch</a>
+        <a href="#">About us</a>
+        <a href="#">Help</a>
     </footer>
 </body>
 

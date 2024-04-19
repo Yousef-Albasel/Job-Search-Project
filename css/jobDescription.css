@@ -1,0 +1,99 @@
+:root {
+    --primary-background: #fafaf8;
+    --primary-text-color-dark: #000000;
+    --primary-text-color-light: #ffffff;
+    --secondary-text-color: #4D4D4D;
+    --primary-style-color: #7F7FD5;
+    --primary-syle-color-hover:#5b5b94;
+    --secondary-style-color-hover:#9292de;
+    --primary-style-shade:#EAEBED;
+    --primary-style-link:#0172B1;
+}
+
+/*=============== Modify navbar style =============*/
+.header {
+    position: sticky;
+    top: 0;
+    background-color: var(--primary-text-color-light);
+    z-index: 99;
+    box-shadow: 1px 1px 10px #aaaaaa88;
+}
+
+/*=============== Content style =============*/
+.content{
+    background-color: var(--primary-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 3% 10%;
+    
+}
+
+.job-header {
+    background: #ffffff;
+    width: 75%;
+    padding: 16px;
+    border: 1px solid #D9DDE4;
+    border-radius: 4px;
+    
+    
+}
+.job-header .comp {
+    padding: 0 16px;
+}
+.job-header .pos {
+    padding: 32px 16px;
+}
+.job-header button {
+    justify-self: center;
+    margin: auto;
+    width: 150px;
+    height: 40px;
+    font-weight: 700;
+    color: var(--primary-text-color-light);
+    background-color: var(--primary-style-color);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+ }
+ .job-header button:hover {
+    background-color: var(--primary-syle-color-hover);
+ }
+
+.job-details {
+    position: relative;
+    background: #ffffff;
+    width: 75%;
+    padding: 16px;
+    border: 1px solid #D9DDE4;
+    border-radius: 4px;
+}
+.job-details p {
+    padding: 16px;
+}
+
+.job-description {
+    position: relative;
+    background: #ffffff;
+    width: 75%;
+    padding: 16px;
+    border: 1px solid #D9DDE4;
+    border-radius: 4px;
+}
+.job-description p {
+    padding: 16px;
+}
+
+.job-requirements {
+    position: relative;
+    background: #ffffff;
+    width: 75%;
+    padding: 16px;
+    border: 1px solid #D9DDE4;
+    border-radius: 4px;
+}
+.job-requirements p{
+    padding: 16px;
+}
