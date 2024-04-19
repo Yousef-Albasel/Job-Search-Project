@@ -1,0 +1,36 @@
+:root {
+    --primary-background: #faf8ef;
+    --primary-text-color-dark: #000000;
+    --primary-text-color-light: #ffffff;
+    --secondary-text-color: #4D4D4D;
+    --primary-style-color: #7F7FD5;
+    --primary-syle-color-hover: #5b5b94;
+    --secondary-style-color-hover: #9292de;
+    --primary-style-shade: #EAEBED;
+    --primary-style-link: #0172B1;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.profile>div {
+    display: flex;
+    gap: 150px;
+    justify-content: end;
+    /* Each div takes the full width */
+    margin-bottom: 20px;
+    /* Add some gap between the blocks */
+}
