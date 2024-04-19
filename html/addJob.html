@@ -4,83 +4,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/addJob.css">
-  <title>Add job</title>
+  <title>Workiee | Add Job</title>
 </head>
 
 <body>
+  <!-- ===========Navbar============-->
   <div class="header">
     <nav class="container">
-        <h1 class="logo"><a href="index.html">Workiee</a></h1>
-        <div class="search-bar"> <!-- Canceled -->
-            <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
-            <i class="fas fa-search"></i>
-        </div>
+        <h1 class="logo">Workiee</h1>   
         <ul>
-            <li><a href="index.html" class="selected">Home</a></li>
-            <li><a href="browseJob.html">Browse</a></li>
+            <li><a href="index.html">Home</a></li>
             <li name="login"><a href="Login.html">Login</a></li>
             <li name="register"><a href="signup.html">Register</a></li>
         </ul>
     </nav>
-</div>
+  </div>
 
-
+  <!-- ===========Navbar============-->
   <div class="addJob-form" >
     <div class="container">
       <div class="form-box">
 
         <form action="" method = "post" id = "addJob" class="addJob">
-
           <h1>Add job</h1>
-          
           <div class="input-group">
-
-
             <label for="jobTitle"> Job Title</label>
-
-             
               <input type="text" name="jobTitle" id="jobTitle" placeholder="Job Title" required>
 
             <label for="CompanyName">Company Name</label>
-              
-            <input type="text" name="CompanyName" id="CompanyName" placeholder="Company Name" required>
+              <input type="text" name="CompanyName" id="CompanyName" placeholder="Company Name" required>
 
-            
+            <label for="CompanyAddress">Company Address</label>
+              <input type="text" name="CompanyAddress" id="CompanyAddress" placeholder="Company Address" required>
 
-            <label for="yearsOfExperiance">Years of experiance</label>
-              
-              <input type="number" name="yearsOfExperiance" id="yearsOfExperiance" placeholder="Years of experiance" required>
+            <label for="AvailablePositions">Available positions</label>
+              <input type="number" name="AvailablePositions" id="AvailablePositions" value="0" required>
 
-            
+            <label>Years of experience</label>
+              <div class="exp">
+                <input type="checkbox" id="zero" value="zero"><label for="zero">Zero</label>
+                <input type="checkbox" id="one" value="one"><label for="one">1:3</label>
+                <input type="checkbox" id="four" value="four"><label for="four">4-5</label>
+                <input type="checkbox" id="five" value="five"><label for="five">6:10</label>
+                <input type="checkbox" id="ten" value="ten"><label for="ten">10+</label>
+              </div>
 
-            <label for="jobDescription">job Description</label>
-              
-              <input type="text" name = "jobDescription" id="jobDescription" placeholder="job Description" required>
+            <label for="jobDescription">Job Description</label>
+              <textarea name="jobDescription" id="jobDescription" cols="30" rows="10" placeholder="job Description"></textarea>
+
+            <label for="jobRequirements">Job Requirements</label>
+              <textarea name="jobRequirements" id="jobRequirements" cols="30" rows="10" placeholder="jobRequirements"></textarea>
 
             <label for="jobSalary">job Salary</label>
+              <input type="number" name="jobSalary" id="jobSalary" placeholder="Salary" required>
               
-            <input type="number" name="jobSalary" id="jobSalary" placeholder="Salary" required>
-
-            <label for="jobStatus">Job status</label>
-              
-            <div class="jobStatusOpt" id = "JobStatus">
-              <div class="opt">
-                <input type="radio" name="JobStatus" value="open" required>
-                <label for="open">Open</label>
-              </div>
-            
-              <div class="opt">
-                <input type="radio" name="JobStatus" value="close" required>
-              <label for="close">Close</label>
-              </div>
-              
-            </div>
-
-            
-            </div>
-
             <div class="input-button">
               <input type="submit" value="save"/>
           </div>
