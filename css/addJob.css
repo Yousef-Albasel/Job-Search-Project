@@ -25,6 +25,15 @@ body {
   justify-content: center;
 }
 
+/*=============== Modify navbar style =============*/
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--primary-text-color-light);
+  z-index: 99;
+  box-shadow: 1px 1px 10px #aaaaaa88;
+}
+
 
 .container{
   margin: 0px auto;
@@ -70,74 +79,12 @@ ul{
 
 /* end global rules */
 
-/* start Header */
-header{
-  height: 4rem;
-}
-nav.container{
-  display: flex;
-  justify-content: space-between;
-  margin: 1em auto;
-
-} 
-
-
-.logo a{
-  
-  color: black;
-  font-size: 1rem;
-}
-
-
-/* ul style */
-ul.navbar-list{
-  display: flex;
-
-}
-
-header nav.container ul li{
-  padding: 10px 20px;
-  margin-right: 1em;
-}
-
-ul.navbar-list>li:last-child{
-  margin-right: 0px;
-}
-
-header nav.container ul li a{
-  color: var(--primary-text-color-dark);
-  font-weight: 200;
-}
-
-
-
-header nav.container ul li[name="register"]{
-  color: var(--primary-text-color-light);
-  background-color: var(--primary-style-color);
-  border-radius: 5px;
-}
-
-header nav.container ul li[name="register"]:hover{
-  background-color: var(--primary-syle-color-hover);
-}
-
-header nav.container ul li[name="register"] a{
-  color: var(--primary-text-color-light);
-  font-weight: 700;
-
-}
-
-
-/* end Header */
-
 
 /* start  addJob form*/
 .addJob-form{
   display: flex;
   justify-content: center;
-
   background-color: var(--primary-style-color);
-  height:calc(100vh - 6rem );
   width: 100%;
 
 }
@@ -169,7 +116,6 @@ header nav.container ul li[name="register"] a{
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap:30px 15px;
-
   padding: 40px;
   font-size: 24px;
 }
@@ -223,6 +169,7 @@ header nav.container ul li[name="register"] a{
   padding: 15px 30px;
   background-color: var(--primary-style-color);
   border: none;
+  border-radius: 5px;
   color:var(--primary-text-color-light);
   font-weight: 700;
   font-size: 16px;
