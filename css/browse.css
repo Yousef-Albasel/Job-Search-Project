@@ -1,70 +1,185 @@
- /*=============== Modify nav bar style =============*/
- .header {
-    position: sticky;
-    top: 0;
-    background-color: var(--primary-text-color-light);
-    z-index: 99;
-    box-shadow: 1px 1px 10px #aaaaaa;
- }
-
-  /*=============== Table Style =============*/
-
- .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
- }
-
- .content .block {    
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    padding: 15px;  
-    border: 1px black solid;
-    border-radius: 5px;
- }
-
- .content .block a {
-    font-size:25px;
-    font-weight: bold;
-    text-decoration: none;
-    color: var(--primary-style-color);
-    width: fit-content;
-    
- }
- .content .block a:hover {
-    color: var(--primary-syle-color-hover);
- }
-
- .content .block img {
-    align-self: flex-end;
-    width: 60px;
-    height: 60px;
- }
-
-.content .block .company span {
-    font-weight: bold;
+:root {
+   --primary-background: #faf8ef;
+   --primary-text-color-dark: #000000;
+   --primary-text-color-light: #ffffff;
+   --secondary-text-color: #4D4D4D;
+   --primary-style-color: #7F7FD5;
+   --primary-syle-color-hover:#5b5b94;
+   --secondary-style-color-hover:#9292de;
+   --primary-style-shade:#EAEBED;
+   --primary-style-link:#0172B1;
+}
+ 
+/*=============== Modify navbar style =============*/
+.header {
+   position: sticky;
+   top: 0;
+   background-color: var(--primary-text-color-light);
+   z-index: 99;
+   box-shadow: 1px 1px 10px #aaaaaa88;
 }
 
-.content .block .ago {
-    color: #2C9266;
-}
-.content .block .tags mark {
-    background-color: #EAEBED;
+/*=============== Grid Style =============*/
+
+.content {
+   display: grid;
+   justify-content: center;
+   grid-template-columns: repeat(3, auto);
+   grid-template-rows: repeat(3, auto);
+   row-gap: 20px;  
 }
 
-.content .block button {
-    align-self: center;
-    width: 150px;
-    height: 40px;
-    font-weight: 700;
-    color: var(--primary-text-color-light);
-    background-color: var(--primary-style-color);
-    border-radius: 5px;
-    border: none;
+/*=============== Search Panel Style =============*/
+.search-panel {
+   background-color: var(--primary-style-shade);
+   grid-column: 1/4;
+   display: flex;
+   justify-self: center;
+   justify-content: space-evenly;
+   align-items: center;
+   height: 80px;
+   width: 1345px;
+   padding: 15px;
 }
-.content .block button:hover {
-    background-color: var(--primary-syle-color-hover);
+.search-panel .search-bar{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   background-color: var(--primary-style-shade);
+   min-width: 25vw;
+   box-shadow: 1px 1px 10px #aaaaaa88;
+   border-radius: 1px;
+   font-size: 12px;
 }
+.search-panel .search-bar input {
+   padding: 10px 10px;
+   width: 75%;
+   border: transparent;
+   background-color: var(--primary-style-shade);
+}
+.search-panel .search-bar input:focus {
+   outline: none;
+}
+.search-panel i {
+   cursor: pointer;
+}  
+.search-panel .exp {
+   margin-left: -40px;
+   background-color: var(--primary-style-shade);
+   box-shadow: 1px 1px 10px #aaaaaa88;
+   padding: 10px 20px;
+   display: flex;
+   justify-content: space-evenly;
+   min-width: 20vw;
+   border-radius: 1px;
+}
+.search-panel button {
+   margin-left: 60px;
+   width: 150px;
+   height: 40px;
+   font-weight: 700;
+   color: var(--primary-text-color-light);
+   background-color: var(--primary-style-color);
+   border-radius: 5px;
+   border: none;
+   cursor: pointer;
+}
+.search-panel button:hover {
+   background-color: var(--primary-syle-color-hover);
+}
+
+/*=============== Card Style =============*/
+
+.block {
+   margin: auto;  
+   background-color: #f1f2f4;
+   display: flex;
+   flex-direction: column;
+   width: 300px;
+   height: 300px;
+   padding: 15px;  
+}
+.block:hover {
+   transition: 250ms ease-in-out;
+   background-color: white;
+   box-shadow: 1px 1px 10px #aaaaaa88;
+}
+
+.block .comp-name {
+   display: grid;
+   grid-template-columns: auto 1fr;
+   align-content: flex-start;
+   grid-template-areas: "image text1" "image text2";
+}
+.block .comp-name img {
+   grid-area: image;
+   grid-row: span 2;
+   margin-right: 10px;
+   width: 60px;
+   height: 60px;
+}
+.block .comp-name a {
+   grid-area: text1;
+   font-weight: bold;
+   text-decoration: none;
+   overflow: hidden;
+   color: var(--primary-style-color);
+   font-size: 14px;
+}
+.block .comp-name a:hover {
+   color: var(--primary-syle-color-hover);
+}
+.block .comp-name p {
+   grid-area: text2;
+   font-size: 12px;
+   color: var(--secondary-text-color);
+}
+.block .comp-name span {
+   font-weight: bold;
+}
+
+.block .discription {
+   height: 50px;
+   overflow: hidden;
+   color: var(--secondary-text-color);
+   font-size: 10px;
+}
+.block .discription p {
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.block .y-exp {
+   margin: 10px 0;
+   color: #2C9266;
+}
+.block .tags mark {
+   background-color: var(--primary-style-shade);
+   color: var(--secondary-text-color);
+   margin: 10px 5px;
+   border-radius: 2px;
+   font-size: 14px;
+}
+.block .salary {
+   margin: 10px 0;
+}
+.block .salary span {
+   font-weight: bold;
+}
+.block button {
+   align-self: center;
+   margin: 15px 0;
+   width: 150px;
+   height: 40px;
+   font-weight: 700;
+   color: var(--primary-text-color-light);
+   background-color: var(--primary-style-color);
+   border-radius: 5px;
+   border: none;
+   cursor: pointer;
+}
+.block button:hover {
+   background-color: var(--primary-syle-color-hover);
+}
+
 
