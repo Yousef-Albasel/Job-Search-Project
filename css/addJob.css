@@ -1,197 +1,146 @@
-/* start global rules*/
 :root {
-  --primary-background: #faf8ef;
+  --primary-background: #ffffff;
   --primary-text-color-dark: #000000;
   --primary-text-color-light: #ffffff;
   --secondary-text-color: #4D4D4D;
   --primary-style-color: #7F7FD5;
+  --secondary-style-color-hover:#9292de;
   --primary-syle-color-hover:#5b5b94;
   --primary-style-shade:#EAEBED;
+  --secondary-style-shade:#c3c5ca;
   --primary-style-link:#0172B1;
-}
-
-
-* {
-  margin:0;
-  padding: 0;
-  box-sizing: border-box;
-
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  font-family: "Montserrat", sans-serif;
-  justify-content: center;
-}
-
-/*=============== Modify navbar style =============*/
-.header {
-  position: sticky;
-  top: 0;
-  background-color: var(--primary-text-color-light);
-  z-index: 99;
-  box-shadow: 1px 1px 10px #aaaaaa88;
-}
-
-
-.container{
-  margin: 0px auto;
   
 }
 
-a{
-  text-decoration: none;
-}
-
-ul{
-  list-style: none;
-}
-
-.container{
-  width: 100%;
-}
-
-@media (min-width:576px){
-  .container {
-    width: 560px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-/* Medium */
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-/* Large */
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-
-
-/* end global rules */
-
-
-/* start  addJob form*/
-.addJob-form{
+.form-box {
+  background-color: var(--primary-style-shade);
   display: flex;
+  height: auto;
   justify-content: center;
-  background-color: var(--primary-style-color);
-  width: 100%;
+}
 
-}
-.addJob-form .container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.addJob-form .container .form-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
-  /* width: clamp(400px, 50%, 600px); */
-
-}
-.addJob-form .container .form-box form{
-  background-color: var(--primary-text-color-light);
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 20px 0px;
-  padding: 1rem 2rem;
+.form-box .content {
+  margin: 20px 0;
+  width: 90%;
   border-radius: 10px;
-}
-.addJob-form .container .form-box form .input-group{
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap:30px 15px;
-  padding: 40px;
-  font-size: 24px;
+  background-color: var(--primary-background);
+  padding: 20px;
 }
 
-@media (max-width: 768px ){
-  .addJob-form .container .form-box{
-    width: 80%;
-  }
-  .addJob-form .container .form-box form .input-group {
-    gap:15px 5px;
-
-    grid-template-columns: 1fr;
-  }
-}
-@media (max-width:576px){
-  .addJob-form .container .form-box{
-    width: 90%;
-  }
-  
-  .addJob-form .container .form-box form .input-group {
-    gap:5px 5px;
-    grid-template-columns: 1fr;
-  }
-  
-}
-.addJob-form .container .form-box form .input-group input[type="text" ]
-, input[type = "number"]
-{
-  height: 1.5rem;
-  background: transparent;
-  border: 0.5px solid var(--secondary-text-color);
-  border-radius: 4px;
-  outline: 0;
-  padding: 15px 15px;
-}
-
-.addJob-form .container .form-box form h1{
-  font-size: 30px;
-  color: var(--primary-text-color-dark);
-  text-align: center;
-  position: relative;
-}
-
-.jobStatusOpt{
+.form-box .content form{
   display: flex;
-  justify-content: space-evenly;
+  padding: 20px;
+  gap: 30px;
 }
 
-.addJob-form .container .form-box form .input-button input{
-  width: 100%;
-  padding: 15px 30px;
-  background-color: var(--primary-style-color);
-  border: none;
+.form-box .content hr{
+  margin: 10px 0;
+  opacity: 50%;
+  
+}
+
+.form-box .content form .job-details{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+
+.form-box .content form .job-details label{
+  color: var(--secondary-text-color);
+  font-weight: 600;    
+  margin: 10px 0;
+}
+
+.form-box .content form .job-details input{
+  padding: 10px 20px;
   border-radius: 5px;
-  color:var(--primary-text-color-light);
-  font-weight: 700;
-  font-size: 16px;
-  cursor: pointer;
+  border: 1px solid var(--secondary-text-color);
+  transition: 0.2s;
 }
 
-/* end  addJob form*/
+.form-box .content form .job-details select{
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid var(--secondary-text-color);
+  transition: 0.2s;
+}
+.form-box .content form .job-text textarea{
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: 20vw;
+  height: 10vh;
+  border: 1px solid var(--secondary-text-color);
+  transition: 0.2s;
+}
 
-/* start footer */
-footer{
-  height: 2rem;
+.form-box .content form .job-details select:focus{
+  outline: none;
+  border: 1px solid var(--primary-style-color);
+}
+
+.form-box .content form .job-details input:focus{
+  outline: none;
+  border: 1px solid var(--primary-style-color);
+}
+
+
+
+
+.form-box .content form .job-text{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
-footer a{
-  text-decoration: none;
-  color: var(--primary-text-color-dark);
-  margin-right: 3rem;
-}
-footer a:last-child{
-  margin-right: 0px;
 
+.form-box .content form .job-text label{
+  color: var(--secondary-text-color);
+  font-weight: 600;    
+  margin: 10px 0;
 }
-/* end footer */
+
+.form-box .content form .job-text textarea:focus{
+  outline: none;
+  border: 1px solid var(--primary-style-color);
+}
+
+
+
+.form-box .content form .company-details{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.form-box .content form .company-details label{
+  color: var(--secondary-text-color);
+  font-weight: 600;    
+  margin: 10px 0;
+}
+
+.form-box .content form .company-details input{
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid var(--secondary-text-color);
+  transition: 0.2s;
+}
+
+.form-box .content form .company-details input:focus{
+  outline: none;
+  border:1px solid var(--primary-style-color);
+}
+
+.form-box .content form .input-button input{
+  background-color: var(--primary-style-color);
+  padding: 15px 20px;
+  font-size: 16px;
+  border: none;
+  font-weight:600;
+  color: var(--primary-text-color-light);
+  margin: 10px 0;
+  width: 100%;
+}
+
+.form-box .content form .input-button input:hover{
+  cursor: pointer;
+  background-color: var(--secondary-style-color-hover);
+}
