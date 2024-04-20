@@ -144,3 +144,14 @@
   cursor: pointer;
   background-color: var(--secondary-style-color-hover);
 }
+
+.form-box .content form .input-button{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-box .content form .input-button .message{
+  font-size: 12px;
+  font-weight: bold;
+  display: none;
+}
