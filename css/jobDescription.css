@@ -43,6 +43,9 @@
 .job-header .comp {
     padding: 16px;
 }
+.job-header .comp-name{
+    font-weight:600;
+}
 .job-header .pos {
     padding: 32px 16px;
 }
