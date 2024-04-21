@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
     data[jobId] = jobId;
 
     //check over data
+    if(data.jobSalary<0){
+        event.preventDefault();
+        data.jobSalary=0;
+     }
     console.log(data);
     
     //push new job to jobs array
