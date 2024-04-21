@@ -10,8 +10,6 @@ if (data){
     document.getElementsByName('JobStatus').value=data.JobStatus.value;
 }
 
-
-
 let form=document.getElementById('editJob');
 form.addEventListener('submit' , function(event){
    

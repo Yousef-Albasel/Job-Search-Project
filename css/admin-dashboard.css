@@ -94,6 +94,15 @@ body{
 
 }
 
+@media only screen and (max-width:936px){
+    body{
+        grid-template-columns: 0px 1fr;
+    }
+    .side-bar{
+        display: none;
+    }
+} 
+
 .side-bar h1{
     text-align: left;
     font-size: 16px;
@@ -280,15 +289,21 @@ border-radius: 5px;
     white-space: nowrap;
 }
 
-.listed-jobs .job-container .required-skills span.tag{
+.listed-jobs .job-container p.yearsOfExperience{
     background-color: var(--primary-style-color);
-    color: var(--primary-text-color-light);
-    font-size: 10px;
-    padding: 2px;
     border-radius: 5px;
+    padding: 3px;
+    color: white;
+    font-weight: 600;
+    font-size: 10px;
+}
+.listed-jobs .job-container .required-skills{
+    display: flex;
+    gap: 5px;
 }
 .listed-jobs .job-container .required-skills span:not(.tag){
     font-size: 12px;
+    align-self: center;
 }
 
 .listed-jobs  hr{

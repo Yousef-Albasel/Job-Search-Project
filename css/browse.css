@@ -116,7 +116,7 @@
    border-radius: 5px;
 }
 .block:hover {
-   transition: 250ms ease-in-out;
+   transition: 250ms ease-in-out;   
 }
 
 .block .comp-name {
