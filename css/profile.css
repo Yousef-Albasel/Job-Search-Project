@@ -11,26 +11,91 @@
 }
 
 
-.container {
+.main-profile{
     display: flex;
-    flex-direction: row;
-    gap: 100px;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary-style-shade);
+    justify-content: center;
+
+}
+
+
+.container-profile {
+    align-items: row;
+    flex-direction: column;
+    border-radius: 10px;
+    display: flex;
+    width: 90%;
+    background-color: var(--primary-background);
+    margin: 20px;
+    position: relative;
+}
+
+.container-profile  h1{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+
+.container-profile-info {
+    width: 90%;
+    align-items: center;
+    border-radius: 10px;
+    height: 50vh;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .profile {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    border-radius: 10px;
     align-items: center;
 }
 
-
-
-.profile>div {
+.profile div {
     display: flex;
-    gap: 150px;
-    justify-content: end;
-    /* Each div takes the full width */
-    margin-bottom: 20px;
-    /* Add some gap between the blocks */
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.jobs-application{
+    align-items: row;
+    flex-direction: column;
+    border-radius: 10px;
+    display: flex;
+    width: 90%;
+    background-color: var(--primary-background);
+    margin: 20px;
+    position: relative;
+}
+
+.jobs-application-container{
+    width: 90%;
+    border-radius: 10px;
+    height: 50vh;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jobs-application h1{
+    margin: 20px 25px;
+}
+
+
+.job-applications .skills{
+    display: flex;
+    gap: 15px;
+}
+
+.job-applications .jobs .skills span{
+    padding: 2px;
+    color: var(--primary-text-color-light);
+    background-color: var(--primary-style-color);
 }
