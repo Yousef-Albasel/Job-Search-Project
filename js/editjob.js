@@ -1,13 +1,34 @@
- /* get the data from the local storage */ 
- var data={};
-  data=localStorage.getItem('dataform');
+document.addEventListener('DOMContentLoaded', function() {
+  /* get the data from the local storage */ 
+
+  let jobs = JSON.parse(localStorage.getItem('jobs')) || [];
+
+ let data=jobs[1];
+  // data=localStorage.getItem('editedJob');
+  console.log(data)
 if (data){
-    document.getElementById('jobTitle').value=data.jobTitle.value;
-    document.getElementById('CompanyName').value=data.CompanyName.value;
-    document.getElementById('jobDescription').value=data.jobDescription.value;
-    document.getElementById('jobRequirements').value=data.jobRequirements.value;
-    document.getElementById('jobSalary').value=data.jobSalary.value;
-    document.getElementsByName('JobStatus').value=data.JobStatus.value;
+    document.getElementById('jobTitle').value=data.jobTitle;
+    console.log(data.jobTitle);
+    document.getElementById('CompanyName').value=data.CompanyName;
+    document.getElementById('jobDescription').value=data.jobDescription;
+    document.getElementById('jobRequirements').value=data.jobRequirements;
+    document.getElementById('jobSalary').value=data.jobSalary;
+    let yearsOfExperienceSelect = document.getElementById('yearsOfExperience');
+        for (let i = 0; i < yearsOfExperienceSelect.options.length; i++) {
+            if (yearsOfExperienceSelect.options[i].value === data.yearsOfExperience) {
+                yearsOfExperienceSelect.selectedIndex = i;
+                break; // Exit loop once the correct option is found
+            }
+        }
+    let radioButtons = document.getElementsByName('JobStatus');
+        for (let i = 0; i < radioButtons.length; i++) {
+          console.log(radioButtons[i].value);
+          console.log(data.jobStatus);
+            if (radioButtons[i].value == data.jobStatus) {
+                radioButtons[i].checked = true;
+                break; // Exit loop once the correct radio button is found
+            }
+        }
 }
 
 let form=document.getElementById('editJob');
@@ -22,12 +43,7 @@ let exp=document.getElementById('yearsOfExperiance').value;
         event.preventDefault();
         jobSalary=0;
      }
-     /* validate the years of experiance */
-     if(exp<0 ||exp>40){
-      event.preventDefault();
-      jobSalary=0;
-
-   }
+     
    localStorage.setItem('dataform',data);
 
   console.log(localStorage);
@@ -35,3 +51,4 @@ let exp=document.getElementById('yearsOfExperiance').value;
 })
 
 
+})
