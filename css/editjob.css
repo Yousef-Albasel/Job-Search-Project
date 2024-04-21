@@ -133,7 +133,7 @@
     display: flex;
     align-items: center;
     background-color: var(--primary-style-color);
-    height:calc(100vh - 6rem );
+    height:calc(100vh - 7rem );
     width: 100%;
   
   }
@@ -181,9 +181,9 @@
     width: clamp(150px , 100% , 300px);
     background: transparent;
     border: 0.5px solid var(--secondary-text-color);
-    border-radius: 4px;
+    border-radius: 3px;
     outline: 0;
-    /* padding: 15px 15px; */
+   padding: 0px 15px; 
   }
   #jopDescription 
   {
