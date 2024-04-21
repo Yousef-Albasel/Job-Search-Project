@@ -12,7 +12,7 @@ function displayJobDetails() {
             document.querySelector('.job-header h1').textContent = job.jobTitle;
             document.querySelector('.comp-name').textContent = job.CompanyName;
             document.querySelector('.comp-address').textContent = job.CompanyAddress;
-            document.querySelector('.job-details .y-exp').textContent = "Experience Needed: " + job.yearsOfExperience;
+            document.querySelector('.job-details .y-exp').textContent = "Experience Needed: " + job.yearsOfExperience + "Years of Experience.";
             document.querySelector('.job-details .salary').textContent = "Salary: E£" + job.jobSalary;
             document.querySelector('.job-details .job-status').textContent = "Status: " + job.jobStatus;
             document.querySelector('.job-description p').textContent = job.jobDescription;
