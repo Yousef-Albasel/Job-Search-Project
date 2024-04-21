@@ -194,7 +194,9 @@ function saveCredentials(username, email, password,isAdmin=false,companyName="")
         }
         users.push(userCredentials);
         localStorage.setItem("userCredentials", JSON.stringify(users));
-        console.log("User credentials saved successfully.");
+        setTimeout(function() {
+            window.location.href = "index.html";
+        }, 3000);
     } else {
         console.log("Sorry, your browser does not support localStorage.");
     }

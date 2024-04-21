@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //create an id for a job
     const jobId = generateJobId(jobs);
-    data[jobId] = jobId;
+    data.jobId = jobId;
 
     //check over data
     if(data.jobSalary<0){

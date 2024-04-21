@@ -91,7 +91,7 @@ function displayJobs(){
         applyButton.textContent = 'Apply'
 
         let detailsButton = document.createElement('button');
-        detailsButton.setAttribute('onclick', "location.href='jobDescription.html'");
+        detailsButton.setAttribute('onclick', "getJobId(this)");
         detailsButton.textContent = 'Details'
 
         Buttons.appendChild(applyButton);
@@ -106,4 +106,10 @@ function displayJobs(){
         listedJobs.appendChild(jobBlock);
 
     });
+}
+
+function getJobId(button) {
+    let selectedJobId = button.parentElement.parentElement.getAttribute('data-job-id');
+    sessionStorage.setItem('selectedJobId', selectedJobId);
+    window.location.href = 'jobDescription.html';
 }
