@@ -46,93 +46,21 @@
     <div class="content">
         <div class="search-panel">
             <div class="search-bar">
-                <input type="search" id="search-bar" name="search-bar" placeholder="Search by job title">
+                <input class="search-input" type="text" id="search-bar" name="search-bar" placeholder="Search by job title" onkeyup="Search()">
                 <i class="fas fa-search"></i> 
             </div> 
-            <select class="exp">
-                <option>Years of Experience</option>
-                <option id="zero" value="zero">Zero</option>
-                <option id="one" value="one">1:3</option>
-                <option id="four" value="four">4-5</option>
-                <option id="five" value="five">6:10</option>
-                <option id="ten" value="ten">10+</option>
+            <select onchange="Search()" id="exp">
+                <option value="">Years of Experience</option>
+                <option id="exp-zero" value="Zero">Zero</option>
+                <option id="exp-one" value="1:3">1:3</option>
+                <option id="exp-four" value="4:5">4:5</option>
+                <option id="exp-six" value="6:10">6:10</option>
+                <option id="exp-ten" value="10+">10+</option>
             </select>
-            <button class="search-button">Search</button>
+            <!-- <button class="search-button">Search</button> -->
         </div>
+        <!-- ===========Blocks============-->
 
-
-        <div class="block">
-            <div class="comp-name">
-                <img src="../images/company_logo.png" alt="Company Logo" />
-                <a href="jobDescription.html"> Hotel Reservations Supervisor (Online Systems) </a>
-                <p><span>Nugget Tours</span> - Downtown, Cairo, Egypt</p>
-            </div>
-                <p class="discription">
-                    We are Looking for a Hotel Reservations Supervisor with Experience working on online Systems like (Rezlive, Nirvana, TBo, GTE, etc.)
-                </p>
-            <p class="y-exp">4-5 Years of Exp.</p>
-            <div class="tags"><mark>Full Time</mark> <mark>On-site</mark></div>
-            <p class="salary"><span>E£10,000</span> / month</p>
-            <div class="job-buttons">
-                <button>Apply</button>
-                <button>Details</button>
-            </div>
-        </div>
-
-        <div class="block">
-            <div class="comp-name">
-                <img src="../images/company_logo.png" alt="Company Logo" />
-                <a href="jobDescription.html"> Hotel Reservations Supervisor (Online Systems) </a>
-                <p><span>Nugget Tours</span> - Downtown, Cairo, Egypt</p>
-            </div>
-                <p class="discription">
-                    We are Looking for a Hotel Reservations Supervisor with Experience working on online Systems like (Rezlive, Nirvana, TBo, GTE, etc.)
-                </p>
-            <p class="y-exp">4-5 Years of Exp.</p>
-            <div class="tags"><mark>Full Time</mark> <mark>On-site</mark></div>
-            <p class="salary"><span>E£10,000</span> / month</p>
-            <div class="job-buttons">
-                <button>Apply</button>
-                <button>Details</button>
-            </div>
-        </div>
-
-
-        <div class="block">
-            <div class="comp-name">
-                <img src="../images/company_logo.png" alt="Company Logo" />
-                <a href="jobDescription.html"> Hotel Reservations Supervisor (Online Systems) </a>
-                <p><span>Nugget Tours</span> - Downtown, Cairo, Egypt</p>
-            </div>
-                <p class="discription">
-                    We are Looking for a Hotel Reservations Supervisor with Experience working on online Systems like (Rezlive, Nirvana, TBo, GTE, etc.)
-                </p>
-            <p class="y-exp">4-5 Years of Exp.</p>
-            <div class="tags"><mark>Full Time</mark> <mark>On-site</mark></div>
-            <p class="salary"><span>E£10,000</span> / month</p>
-            <div class="job-buttons">
-                <button>Apply</button>
-                <button>Details</button>
-            </div>
-        </div>
-
-        <div class="block">
-            <div class="comp-name">
-                <img src="../images/company_logo.png" alt="Company Logo" />
-                <a href="jobDescription.html"> Hotel Reservations Supervisor (Online Systems) </a>
-                <p><span>Nugget Tours</span> - Downtown, Cairo, Egypt</p>
-            </div>
-                <p class="discription">
-                    We are Looking for a Hotel Reservations Supervisor with Experience working on online Systems like (Rezlive, Nirvana, TBo, GTE, etc.)
-                </p>
-            <p class="y-exp">4-5 Years of Exp.</p>
-            <div class="tags"><mark>Full Time</mark> <mark>On-site</mark></div>
-            <p class="salary"><span>E£10,000</span> / month</p>
-            <div class="job-buttons">
-                <button>Apply</button>
-                <button>Details</button>
-            </div>
-        </div>
 
     </div>
     <!-- ===========Footer============-->
@@ -142,6 +70,7 @@
         <a href="#">Help</a>
     </footer>
 
-    <script src="../js/script.js"/>
+    <script src="../js/browse.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>
