@@ -46,15 +46,16 @@
 /* End General rules */
 
 /* set header */
-header{
+.header{
   height: 4rem;
 }
+
 /* end header */
 
 
 /* style content */
 .form-box{
-  height: calc(100vh - 7rem);
+  height: calc(100vh - 8rem);
   background-color: var(--primary-style-color);
   display: flex;
   justify-content: center;
@@ -126,6 +127,10 @@ legend{
  
 }
 
+.input-field input{
+    max-height: 2rem;
+}
+
 
 .input-field input , .input-field select{
   padding: 10px 20px;
@@ -147,6 +152,7 @@ legend{
 }
 
 textarea{
+  height: 8rem;
   width: 100%;
   padding: 10px;
   font-size: 14px;
