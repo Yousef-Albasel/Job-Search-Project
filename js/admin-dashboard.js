@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     displayJobs();
     const checkBoxes = document.querySelectorAll(".job-container input[type='checkbox']");
     const deleteButton = document.querySelector(".listed-jobs .control-panel .buttons button[name='delete-button']");
+    const editButton = document.getElementById("editJobButton");
 
     checkBoxes.forEach(checkBox => {
         checkBox.addEventListener('change', function() {
@@ -13,6 +14,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    editButton.addEventListener('click',function(){
+        checkBoxes.forEach(checkBox => {
+            if (checkBox.checked) {
+                const jobContainer = checkBox.closest('.job-container');
+                const jobId = jobContainer.dataset.jobId;
+                let editedJob={
+                    id:jobId
+                };
+                localStorage.setItem("editedJob",JSON.stringify(editedJob));
+            }
+        });
+        
+    })
 
     deleteButton.addEventListener('click', function() {
         checkBoxes.forEach(checkBox => {
