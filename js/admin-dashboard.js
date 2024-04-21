@@ -20,10 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (checkBox.checked) {
                 const jobContainer = checkBox.closest('.job-container');
                 const jobId = jobContainer.dataset.jobId;
-                let editedJob={
-                    id:jobId
-                };
-                localStorage.setItem("editedJob",JSON.stringify(editedJob));
+                sessionStorage.setItem('EditedJobId', jobId);
             }
         });
         
