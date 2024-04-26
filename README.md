@@ -1,4 +1,4 @@
-# Job-Search-Project
+# Job-Search-Website-Project
 
 ## About
 
