@@ -87,7 +87,7 @@ function displayJobs(){
         Buttons.classList.add('job-buttons');
 
         let applyButton = document.createElement('button');
-        applyButton.setAttribute('onclick', "location.href='jobApplication.html'");
+        applyButton.setAttribute('onclick', "location.href='#'");
         applyButton.textContent = 'Apply'
 
         let detailsButton = document.createElement('button');
