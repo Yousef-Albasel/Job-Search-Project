@@ -66,4 +66,4 @@ Team project for **IS231 Web Technology Course**, the project is a simple Job se
 - Seif Gamal
 - Ahmed Asran
 - Yousef Albasel
-- Samuel
+- Samuel Moamen
