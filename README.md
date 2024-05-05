@@ -52,13 +52,17 @@ Team project for **IS231 Web Technology Course**, the project is a simple Job se
 use the virtual environment ``.venv`` before starting to work on the django project
 ```
 # Windows
+$ python -m venv .venv
 $ .venv\Scripts\Activate
-(.venv) $ if you see $ prefixed to your command prompt then you are activated
+(.venv) $ pip install -r requirements.txt
 
 # macOS/Linux
+$ python3 -m venv .venv
 $ source .venv/bin/activate
-(.venv) $ if you see $ prefixed to your command prompt then you are activated
+(.venv) $ pip install -r requirements.txt
 ```
+if you see $ prefixed to your command prompt then you are activated
+**Don't push the .venv folder to the repo**
 
 ## Phase one
 ----------
