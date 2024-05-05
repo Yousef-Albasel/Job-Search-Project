@@ -46,6 +46,19 @@ Team project for **IS231 Web Technology Course**, the project is a simple Job se
 		/pfp.png
 		/profile.png
 ```
+## Instructions
+----------
+
+use the virtual environment ``.venv`` before starting to work on the django project
+```
+# Windows
+$ .venv\Scripts\Activate
+(.venv) $ if you see $ prefixed to your command prompt then you are activated
+
+# macOS/Linux
+$ source .venv/bin/activate
+(.venv) $ if you see $ prefixed to your command prompt then you are activated
+```
 
 ## Phase one
 ----------
