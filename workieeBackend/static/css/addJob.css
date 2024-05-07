@@ -1,0 +1,190 @@
+/* Set General rules */
+:root {
+  --primary-background: #ffffff;
+  --primary-text-color-dark: #000000;
+  --primary-text-color-light: #ffffff;
+  --secondary-text-color: #4D4D4D;
+  --primary-style-color: #7F7FD5;
+  --secondary-style-color-hover:#9292de;
+  --primary-syle-color-hover:#5b5b94;
+  --primary-style-shade:#EAEBED;
+  --secondary-style-shade:#c3c5ca;
+  --primary-style-link:#0172B1;
+  
+}
+* {
+  margin: 0px;
+  padding:0px;
+  box-sizing: border-box;
+  transition: 0.2s;
+}
+
+@media (min-width: 576px){
+  .container{
+    width: 400px;
+  }
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End General rules */
+
+/* set header */
+.header{
+  height: 4rem;
+}
+
+/* end header */
+
+
+/* style content */
+.form-box{
+  height: calc(100vh - 8rem);
+  background-color: var(--primary-style-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+@media (max-width: 768px){
+  .form-box{
+    height: auto;
+  }
+  fieldset{
+    border: none;
+  }
+}
+.container{
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+}
+
+
+form.addJob{
+  width: 80%;
+  max-width: 1050px;
+  margin: 0px auto;
+  background-color: var(--primary-background);
+  padding: 1.5rem ;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px var(--secondary-style-shade);
+}
+fieldset{
+  max-width: 1050px;
+  border-color: var(--primary-style-color);
+}
+legend{
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--primary-text-color-dark);
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  /* text-align: center; */
+}
+.input-group{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.input-field{
+  flex: 1 1 calc(50% - 2rem);
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.5rem 1rem;
+}
+.input-button{
+  flex: 1 1 50%;
+  max-width: 30%;
+  margin: 10px auto ;
+}
+@media (max-width: 768px){
+  .job-description 
+  , .job-requirements{
+   flex: 1 1 100%;
+  }
+  .input-button{
+  max-width: 50%;
+
+  }
+ 
+}
+
+.input-field input{
+    max-height: 2rem;
+}
+
+
+.input-field input , .input-field select{
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid var(--secondary-text-color);
+  transition: 0.2s;
+}
+
+.input-field select:focus , .input-field input:focus{
+  outline: none;
+  border: 1px solid var(--primary-style-color);
+}
+
+.input-field label{
+  color: var(--secondary-text-color);
+  margin-right: 15px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+textarea{
+  height: 8rem;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  background-color: #f9f9f9;
+  border: 1px solid var(--secondary-text-color);
+}
+
+.input-button input{
+  background-color: var(--primary-style-color);
+  padding: 15px 20px;
+  font-size: 16px;
+  border: none;
+  font-weight:600;
+  color: var(--primary-text-color-light);
+  margin: 10px 0;
+  width: 100%;
+}
+
+.input-button .message{
+  font-size: 12px;
+  font-weight: bold;
+  display: none;
+}
+
+/* end style content */
+
+
+/* set footer */
+footer{
+  height: 3rem;
+}
+/* end footer */
