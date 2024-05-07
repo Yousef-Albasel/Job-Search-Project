@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Jobs</h1>
+  <table border="1">
+      <thead>
+        <td>Job Title</td>
+        <td>job Salary</td>
+        <td>jobstatus</td>
+        <td>yearsofexperiance</td>
+        <td>companyname</td>
+        <td>companyaddress</td>
+        <td>jobdescription</td>
+        <td>jobrequirements</td>
+      </thead>
+      {% for x in jobs %}
+      <tr>
+        <td>{{x.jobtitle}}</td>
+        <td>{{x.jobsalary}}</td>
+        <td>{{x.jobstatus}}</td>
+        <td>{{x.yearsofexperience}}</td>
+        <td>{{x.companyname}}</td>
+        <td>{{x.companyaddress}}</td>
+        <td>{{x.jobdescription}}</td>
+        <td>{{x.jobrequirements}}</td>
+        <td><a href="delete/{{x.id}}">Delete</a></td>
+      </tr>
+      {% endfor %}
+  </table>
+  <a href="add/">Add</a>
+</body>
+</html>

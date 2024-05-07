@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'addJob.css' %}" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <title>Workiee | Add Job</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ===========Navbar============-->
+    <div class="header">
+      <nav class="container">
+        <h1 class="logo"><a href="index.html">Workiee</a></h1>
+        <div class="search-bar">
+          <!-- Canceled -->
+          <input
+            type="text"
+            id="search-bar"
+            name="search-bar"
+            placeholder="Search for job"
+          />
+          <i class="fas fa-search"></i>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li name="dashboard"><a href="admin-dashboard.html">Dashboard</a></li>
+          <li name="login" role="authentication">
+            <a href="Login.html">Login</a>
+          </li>
+          <li name="register" role="authentication">
+            <a href="signup.html">Register</a>
+          </li>
+          <div class="nav-profile">
+            <a href="Profile.html"
+              ><img src="https://i.pravatar.cc/50" alt=""
+            /></a>
+            <div>
+              <p>Welcome,</p>
+              <span></span>
+            </div>
+          </div>
+        </ul>
+
+        <div class="drop-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Content -->
+    <div class="form-box">
+      <div class="container">
+        <form action="{% url 'addrecord' %}" method="POST" class="addJob">
+          <fieldset>
+            <legend>
+              <h2>Add Job</h2>
+            </legend>
+
+            <div class="input-group">
+              <div class="input-field">
+                <label for="jobTitle">Job Title </label>
+                <input
+                  type="text"
+                  name="jobTitle"
+                  id="jobTitle"
+                  placeholder="Job Title"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label for="jobSalary">Job Salary</label>
+                <input
+                  type="number"
+                  name="jobSalary"
+                  id="jobSalary"
+                  placeholder="Salary"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label for="jop-status">Job Status</label>
+                <div class="Jop-status-options" id="jop-status">
+                  <div class="opt">
+                    <input
+                      type="radio"
+                      name="jobStatus"
+                      id="open-option"
+                      value="open"
+                      required
+                    />
+                    <label for="open-option">Open</label>
+                  </div>
+
+                  <div class="opt">
+                    <input
+                      type="radio"
+                      name="jobStatus"
+                      id="close-option"
+                      value="close"
+                    />
+                    <label for="close-option">Close</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-field">
+                <label for="yearsOfExperience">Years of experience</label>
+                <select name="yearsOfExperience" id="yearsOfExperience">
+                  <option id="zero-opt" value="Zero">Zero</option>
+                  <option id="one-opt" value="1:3">1:3</option>
+                  <option id="four-opt" value="4:5">4:5</option>
+                  <option id="five-opt" value="6:10">6:10</option>
+                  <option id="ten-opt" value="10+">10+</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label for="CompanyName">Company Name</label>
+                <input
+                  type="text"
+                  name="CompanyName"
+                  id="companyName"
+                  placeholder="Company Name"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label for="CompanyAddress">Company Address</label>
+                <input
+                  type="text"
+                  name="CompanyAddress"
+                  id="companyAddress"
+                  placeholder="Company Address"
+                  required
+                />
+              </div>
+
+              <div class="input-field job-description">
+                <label for="jobDescription">Job Description</label>
+                <textarea
+                  name="jobDescription"
+                  id="jobDescription"
+                  placeholder="job Description"
+                ></textarea>
+              </div>
+
+              <div class="input-field job-requirements">
+                <label for="jobRequirements">Job Requirements</label>
+                <textarea
+                  name="jobRequirements"
+                  id="jobRequirements"
+                  placeholder="jobRequirements"
+                ></textarea>
+              </div>
+
+              <div class="input-button">
+                <input type="submit" value="Save" />
+                <div class="message" id="message">Job has been added</div>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <a href="contact.html">Get in touch</a>
+      <a href="about.html">About us</a>
+      <a href="help.html">Help</a>
+    </footer>
+    <!-- <script src="../js/script.js"></script>
+    <script src="../js/addJob.js"></script> -->
+  </body>
+</html>
