@@ -42,3 +42,8 @@ def addrecord(request):
 
   job.save()
   return HttpResponseRedirect(reverse('index'))
+
+def delete(request, id):
+  job = Jobs.objects.get(id=id)
+  job.delete()
+  return HttpResponseRedirect(reverse('index'))
