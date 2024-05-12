@@ -1,0 +1,138 @@
+:root {
+    --primary-background: #ffffff;
+    --primary-text-color-dark: #000000;
+    --primary-text-color-light: #ffffff;
+    --secondary-text-color: #4D4D4D;
+    --primary-style-color: #7F7FD5;
+    --primary-syle-color-hover:#5b5b94;
+    --primary-style-shade:#EAEBED;
+    --primary-style-link:#0172B1;
+    --color-input-success: #09c372;
+    --color-input-error: #ff3860;
+
+}
+body{
+    font-family: "Montserrat", sans-serif;
+}
+.register-form{
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-style-color);
+    height: 120vh;
+    align-items: center;
+}
+
+.register-form .container .form-box{
+    display: flex;
+    justify-content: center;
+}
+
+.register-form .container .form-box form{
+    background-color: var(--primary-text-color-light);
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 30px 50px;
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.register-form .container .form-box form .input-group{
+    display: flex;
+    flex-direction:column;
+    transition: all 0.2s ease;
+    gap: 15px;
+}
+
+.register-form .container .form-box h1{
+    font-size: 30px;
+    color: var(--primary-text-color-dark);
+    text-align: center;
+    position: relative;
+}
+
+.register-form .container .form-box h1::after{
+    content: '';
+    width: 60px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: var(--primary-text-color-dark);
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.register-form .container .form-box form .input-field{
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+}
+.register-form .container .form-box form .input-field label{
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    margin-bottom: 5px;
+}
+.register-form .container .form-box form .input-field input{
+    width: 90%;
+    background: transparent;
+    border: 0.5px solid var(--secondary-text-color);
+    border-radius: 4px;
+    outline: 0;
+    transition: 0.4s;
+    padding: 15px 15px;
+}
+
+
+.register-form .container .form-box form .input-field input[type="text"]:focus,
+.register-form .container .form-box form .input-field input[type="password"]:focus{
+    outline: none;
+    border: 0.5px solid var(--primary-style-color);
+    box-shadow: 0 0 0 1px var(--primary-style-color);
+}
+
+.register-form .container .form-box form .input-field input.success{
+    border: 0.5px solid var(--color-input-success);
+}
+.register-form .container .form-box form .input-field input.error{
+    border: 0.5px solid var(--color-input-error);
+    
+}
+
+.register-form .container .form-box form .input-field[name="radio-field"]{
+    display: flex;
+    flex-direction: row;
+    border-radius: 3px;
+}
+.register-form .container .form-box form .input-field[name="radio-field"] label{
+    margin: 0;
+}
+.register-form .container .form-box form .input-field[name="radio-field"] input{
+    width: 10%;
+}
+
+.register-form .container .form-box form .input-field[name="company-field"]{
+    display: none;
+}
+
+
+.register-form .container .form-box form .input-button input{
+    width: 100%;
+    padding: 15px 30px;
+    background-color: var(--primary-style-color);
+    border: none;
+    color:var(--primary-text-color-light);
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+.register-form .container .form-box form .input-button input:hover{
+    background-color: var(--primary-syle-color-hover);
+}
+
+.error-message{
+    color: var(--color-input-error);
+    font-weight: bold;
+    font-size: 12px;
+}
