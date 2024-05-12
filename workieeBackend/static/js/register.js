@@ -37,13 +37,7 @@ const setError = (element,message) => {
     inputControl.classList.add('error');
 };
 
-const setSuccess = (element) => {
-    const inputControl = element;
-    const errorDisplay = inputControl.parentElement.querySelector('.error-message');
-    errorDisplay.innerText = ''; 
-    inputControl.classList.add('success');
-    inputControl.classList.remove('error');
-}
+
 
 const isValidEmail = email => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -136,33 +130,6 @@ passwordInput.addEventListener('blur', ValidateInputs);
 confirmPasswordInput.addEventListener('blur', ValidateInputs);
 companyNameInput.addEventListener('blur', ValidateInputs);
 
-function isEmailExists(email) {
-    let storedData = localStorage.getItem("userCredentials");
-    if (!storedData) {
-        return false;
-    }
-    let users = JSON.parse(storedData);
-    for (var i = 0; i < users.length; i++) {
-        if (users[i].email === email) {
-            return true; // Email exists
-        }
-    }
-    return false; // Email doesn't exist
-}
-
-function isUsernameExists(username) {
-    let storedData = localStorage.getItem("userCredentials");
-    if (!storedData) {
-        return false;
-    }
-    let users = JSON.parse(storedData);
-    for (var i = 0; i < users.length; i++) {
-        if (users[i].username === username) {
-            return true; // user exists
-        }
-    }
-    return false; // user doesn't exist
-}
 
 const allInputsValid = () => {
     const inputElements = [usernameInput, emailInput, passwordInput, confirmPasswordInput, companyNameInput];
@@ -176,28 +143,3 @@ const allInputsValid = () => {
     return true; 
 };
 // ============================= Local Storage Handling
-
-function saveCredentials(username, email, password,isAdmin=false,companyName="") {
-
-    if (typeof(Storage) !== "undefined") {
-        var userCredentials = {
-            username: username,
-            email: email,
-            password: password,
-            isAdmin: isAdmin,
-            companyName:companyName
-        };
-        var storedData = localStorage.getItem("userCredentials");
-        var users = [];
-        if (storedData) {
-            users = JSON.parse(storedData);
-        }
-        users.push(userCredentials);
-        localStorage.setItem("userCredentials", JSON.stringify(users));
-        setTimeout(function() {
-            window.location.href = "index.html";
-        }, 3000);
-    } else {
-        console.log("Sorry, your browser does not support localStorage.");
-    }
-}

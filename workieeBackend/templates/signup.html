@@ -39,7 +39,7 @@
     <div class="register-form">
         <div class="container">
             <div class="form-box">
-                <form action="{% url 'register' %}" id="form" method="post">
+                <form action="{% url 'addrecord' %}" id="form" method="post">
                     {% csrf_token %}
                     <h1>Create Your Account</h1>    
                     <div class="input-group">
@@ -98,7 +98,7 @@
         </center>
     </footer>
 
-    <script src="{% static 'js/register.js' %}"></script>
+    <!-- <script src="{% static 'js/register.js' %}"></script> -->
 </body>
 
 </html>
