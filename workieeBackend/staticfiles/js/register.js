@@ -21,14 +21,23 @@ const confirmPasswordInput = document.getElementById("c-password");
 const companyNameInput = document.getElementById("company-name");
 
 console.log(form);
-form.addEventListener('submit', e=>{
+
+const handleSubmit = async e => {
     e.preventDefault();
-    ValidateInputs();
-    if(allInputsValid()){
-        saveCredentials(usernameInput.value,emailInput.value,passwordInput.value,isChecked,companyNameInput.value);
-    }
-});
     
+    await ValidateInputs();
+    
+    if (!allInputsValid()) {
+        e.preventDefault();
+        
+    } else {
+        form.removeEventListener('submit', handleSubmit);
+        
+        form.submit();
+    }
+};
+
+form.addEventListener('submit', handleSubmit);
 
 const setError = (element,message) => {
     const inputControl = element;
@@ -49,33 +58,70 @@ const isValidEmail = email => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
+// function isEmailExists(email) {
+//     let storedData = localStorage.getItem("userCredentials");
+//     if (!storedData) {
+//         return false;
+//     }
+//     let users = JSON.parse(storedData);
+//     for (var i = 0; i < users.length; i++) {
+//         if (users[i].email === email) {
+//             return true; // Email exists
+//         }
+//     }
+//     return false; // Email doesn't exist
+// }
 
-const ValidateInputs = () => {
+// function isUsernameExists(username) {
+//     let storedData = localStorage.getItem("userCredentials");
+//     if (!storedData) {
+//         return false;
+//     }
+//     let users = JSON.parse(storedData);
+//     for (var i = 0; i < users.length; i++) {
+//         if (users[i].username === username) {
+//             return true; // user exists
+//         }
+//     }
+//     return false; // user doesn't exist
+// }
+
+const isUsernameExists = async (username) => {
+    const response = await fetch(`/check_user_exists/?username=${username}`);
+    const data = await response.json();
+    return data.exists;
+};
+const isEmailExists = async (email) => {
+    const response = await fetch(`/check_email_exists/?email=${email}`);
+    const data = await response.json();
+    return data.exists;
+};
+const ValidateInputs = async () => {
     const usernameValue = usernameInput.value.trim();
     const emailValue = emailInput.value.trim();
     const passwordValue = passwordInput.value.trim();
     const confirmPasswordValue = confirmPasswordInput.value.trim();
     const companyNameValue = companyNameInput.value.trim();
 
+    const userExists = await isUsernameExists(usernameValue);
     // Validating Username
     if (usernameValue === '') {
         setError(usernameInput, 'Username is required');
-    } else if (isUsernameExists(usernameValue)) {
-        setError(usernameInput, 'Username Already Exists');
     }
-    else {
+    else if (userExists) {
+        setError(usernameInput, 'Username Already Exists');
+    } else {
         setSuccess(usernameInput);
     }
-
     // Validating Email Address
     if (emailValue === '') {
         setError(emailInput, 'Email is required');
     } else if (!isValidEmail(emailValue)) {
         setError(emailInput, 'Provide a valid email address');
-    } else if (isEmailExists(emailValue)) {
+    } else if (await isEmailExists(emailValue)) { 
         setError(emailInput, 'Email Already Exists');
     } else {
-        setSuccess(emailInput); 
+        setSuccess(emailInput);
     }
     // Validating Password
     const strength = { 
@@ -136,33 +182,6 @@ passwordInput.addEventListener('blur', ValidateInputs);
 confirmPasswordInput.addEventListener('blur', ValidateInputs);
 companyNameInput.addEventListener('blur', ValidateInputs);
 
-function isEmailExists(email) {
-    let storedData = localStorage.getItem("userCredentials");
-    if (!storedData) {
-        return false;
-    }
-    let users = JSON.parse(storedData);
-    for (var i = 0; i < users.length; i++) {
-        if (users[i].email === email) {
-            return true; // Email exists
-        }
-    }
-    return false; // Email doesn't exist
-}
-
-function isUsernameExists(username) {
-    let storedData = localStorage.getItem("userCredentials");
-    if (!storedData) {
-        return false;
-    }
-    let users = JSON.parse(storedData);
-    for (var i = 0; i < users.length; i++) {
-        if (users[i].username === username) {
-            return true; // user exists
-        }
-    }
-    return false; // user doesn't exist
-}
 
 const allInputsValid = () => {
     const inputElements = [usernameInput, emailInput, passwordInput, confirmPasswordInput, companyNameInput];
@@ -177,27 +196,28 @@ const allInputsValid = () => {
 };
 // ============================= Local Storage Handling
 
-function saveCredentials(username, email, password,isAdmin=false,companyName="") {
 
-    if (typeof(Storage) !== "undefined") {
-        var userCredentials = {
-            username: username,
-            email: email,
-            password: password,
-            isAdmin: isAdmin,
-            companyName:companyName
-        };
-        var storedData = localStorage.getItem("userCredentials");
-        var users = [];
-        if (storedData) {
-            users = JSON.parse(storedData);
-        }
-        users.push(userCredentials);
-        localStorage.setItem("userCredentials", JSON.stringify(users));
-        setTimeout(function() {
-            window.location.href = "index.html";
-        }, 3000);
-    } else {
-        console.log("Sorry, your browser does not support localStorage.");
-    }
-}
+// function saveCredentials(username, email, password,isAdmin=false,companyName="") {
+
+//     if (typeof(Storage) !== "undefined") {
+//         var userCredentials = {
+//             username: username,
+//             email: email,
+//             password: password,
+//             isAdmin: isAdmin,
+//             companyName:companyName
+//         };
+//         var storedData = localStorage.getItem("userCredentials");
+//         var users = [];
+//         if (storedData) {
+//             users = JSON.parse(storedData);
+//         }
+//         users.push(userCredentials);
+//         localStorage.setItem("userCredentials", JSON.stringify(users));
+//         setTimeout(function() {
+//             window.location.href = "index.html";
+//         }, 3000);
+//     } else {
+//         console.log("Sorry, your browser does not support localStorage.");
+//     }
+// }

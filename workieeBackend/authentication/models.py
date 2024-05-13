@@ -5,7 +5,7 @@ class User(models.Model):
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=255)
     is_company_admin = models.BooleanField(default=False)
-    company_name = models.CharField(max_length=255, blank=True, null=True)
+    company_name = models.CharField(max_length=255, null=True, default="N/A")
 
     def __str__(self):
         return self.username

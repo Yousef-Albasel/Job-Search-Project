@@ -4,15 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workiee | Register</title>
+    <title>Workiee | Login</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-
 </head>
 
 
@@ -26,12 +25,15 @@
                 <i class="fas fa-search"></i>
             </div>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="browseJob.html">Browse</a></li>
+                <li><a href="index.html" class="selected">Home</a></li>
+                <li name="dashboard"><a href="admin-dashboard.html">Dashboard</a></li>
                 <li name="login"><a href="Login.html">Login</a></li>
                 <li name="register"><a href="signup.html">Register</a></li>
             </ul>
         </nav>
+        <div class="drop-menu">
+            <i class="fas fa-bars"></i>
+        </div>
     </div>
 
     <!-- =========== Registeration form ============-->
@@ -39,50 +41,30 @@
     <div class="register-form">
         <div class="container">
             <div class="form-box">
-                <form action="{% url 'addUser' %}" id="form" method="post">
-                    {% csrf_token %}
-                    <h1>Create Your Account</h1>    
+                <form action="/">
+                    <h1>Login</h1>    
                     <div class="input-group">
-
                         <div class="input-field">
-                            <label for="username">Username: </label>
-                            <input type="text" id="username" name="username" placeholder="Enter username">
-                            <div class="error-message"></div>
-                        </div>
-            
-                        <div class="input-field">
-                            <label for="email">Email: </label>
-                            <input type="text" id="email" name="email" placeholder="eg. abc@examble.com" >
-                            <div class="error-message"></div>
-                        </div>
-                        <div class="input-field">
-                            <label for="password">Password: </label>
-                            <input type="password" id="password" name="password" placeholder="Enter password">
-                            <div class="error-message"></div>
+                            <label for="email-login">Email: </label>
+                            <input type="text" id="email-login" placeholder="eg. abc@examble.com" >
                         </div>
 
                         <div class="input-field">
-                            <label for="c-password">Confirm Password: </label>
-                            <input type="password" id="c-password" placeholder="Write your password again" >
-                            <div class="error-message"></div>
+                            <label for="password-login">Password: </label>
+                            <input type="password" id="password-login" placeholder="Enter password">
                         </div>
 
                         <div class="input-field" name="radio-field">
-                            <input type="checkbox" name="registration-type" value="company-admin" id="company-admin">
-                            <label>Are you a company owner?</label>
-                        </div>
-
-                        <div class="input-field" name="company-field">
-                            <label for="company-name">Company Name: </label>
-                            <input type="text" name="company-name"  id="company-name" placeholder="eg. Google">
-                            <div class="error-message"></div>
+                            <input type="checkbox" name="remember-me" id="remember-me">
+                            <label>Remember me</label>
                         </div>
 
                         <div class="input-button">
-                            <input type="submit" name="sign-up" id="sign-up"  value="Sign Up"/></input>
+                            <input type="submit" value="Login"/>
+                            <div class="error-message" style="text-align: center; display: none;">Invalid email or password.</div>
                         </div>
                         <div class="input-field" style="text-align: center;">
-                            <p>Already have an account? <a href="{% url 'login' %}" style="text-decoration: none; color: #0172B1;">Login</a></p>
+                            <p>Don't have an account? <a href="{% url 'register' %}" style="text-decoration: none; color: #0172B1;">Register</a></p>
                         </div>
                     </div>
                 </form>
@@ -100,6 +82,7 @@
 
     <script src="{% static 'js/script.js' %}"></script>
     <script src="{% static 'js/register.js' %}"></script>
+
 </body>
 
 </html>

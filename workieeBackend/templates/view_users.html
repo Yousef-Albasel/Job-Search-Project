@@ -1,6 +1,22 @@
-
 {% block content %}
 <h2>Users</h2>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+</style>
 <table>
     <tr>
         <th>Username</th>
@@ -8,14 +24,16 @@
         <th>Password</th>
         <th>Is Admin</th>
         <th>Company Name</th>
+        <th>Delete</th>
     </tr>
     {% for user in User %}
     <tr>
         <td>{{ user.username }}</td>
         <td>{{ user.email }}</td>
         <td>{{ user.password }}</td>
-        <td>{{ user.isAdmin }}</td>
-        <td>{{ user.companyname }}</td>
+        <td>{{ user.is_company_admin }}</td>
+        <td>{{ user.company_name }}</td>
+        <td><a href="{% url 'delete_user' user.id %}">Delete</a></td>
     </tr>
     {% endfor %}
 </table>

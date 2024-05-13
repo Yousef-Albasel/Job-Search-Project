@@ -1,15 +1,16 @@
-from django.shortcuts import render
-from django.http import HttpResponse , HttpResponseRedirect
+from django.shortcuts import render,get_object_or_404, redirect
+from django.http import HttpResponse , HttpResponseRedirect,JsonResponse
 from django.template import loader
 from django.urls import reverse
 from .models import User
 import hashlib
 
+
 def register(request):
     template = loader.get_template('signup.html')
     return HttpResponse(template.render())
     
-def addrecord(request):
+def addUser(request):
     if request.method == 'POST':
         username = request.POST['username']
         email = request.POST['email']
@@ -17,7 +18,7 @@ def addrecord(request):
         is_company_admin = 'company-admin' in request.POST.getlist('registration-type')
         company_name = request.POST['company-name']
 
-        # hashed_password = hashlib.sha256(password.encode()).hexdigest()
+        hashed_password = hashlib.sha256(password.encode()).hexdigest()
         usr = User(
             username = username,
             email=email,
@@ -27,7 +28,7 @@ def addrecord(request):
         )
 
         usr.save()
-    return HttpResponseRedirect(reverse('view_users'))
+    return HttpResponseRedirect(reverse('login'))
 
 def view_users(request):
     template =loader.get_template('view_users.html')
@@ -36,3 +37,24 @@ def view_users(request):
         'User':allUsrs
     }
     return HttpResponse(template.render(context,request))
+
+def delete_user(request, user_id):
+    user = get_object_or_404(User, id=user_id)
+    user.delete()
+    return redirect('view_users')
+
+def check_user_exists(request):
+    username = request.GET.get('username')
+    user_exists = User.objects.filter(username=username).exists()
+    return JsonResponse({'exists': user_exists})
+
+def check_email_exists(request):
+    email = request.GET.get('email')
+    email_exists = User.objects.filter(email=email).exists()
+    return JsonResponse({'exists': email_exists})
+
+
+def login(request):
+    template = loader.get_template('Login.html')
+    return HttpResponse(template.render())
+    
