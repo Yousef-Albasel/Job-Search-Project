@@ -28,7 +28,7 @@
             </div>
             <ul>
                 <li><a href="index.html" class="selected">Home</a></li>
-                <li name="dashboard"><a href="admin-dashboard.html">Dashboard</a></li>
+                <li name="dashboard"><a href="{% url 'admin-dashboard' %}">Dashboard</a></li>
                 <li><a href="browseJob.html">Browse</a></li>
                 <li name="login" role="authentication"><a href="{% url 'login' %}">Login</a></li>
                 <li name="register" role="authentication"><a href="{% url 'register' %}">Register</a></li>

@@ -89,7 +89,7 @@ const isValidEmail = email => {
 const isUsernameExists = async (username) => {
     const response = await fetch(`/check_user_exists/?username=${username}`);
     const data = await response.json();
-    return data.exists;
+    return data.exists; 
 };
 const isEmailExists = async (email) => {
     const response = await fetch(`/check_email_exists/?email=${email}`);
@@ -104,6 +104,7 @@ const ValidateInputs = async () => {
     const companyNameValue = companyNameInput.value.trim();
 
     const userExists = await isUsernameExists(usernameValue);
+    const emailExists = await isEmailExists(emailValue);
     // Validating Username
     if (usernameValue === '') {
         setError(usernameInput, 'Username is required');
@@ -118,7 +119,7 @@ const ValidateInputs = async () => {
         setError(emailInput, 'Email is required');
     } else if (!isValidEmail(emailValue)) {
         setError(emailInput, 'Provide a valid email address');
-    } else if (await isEmailExists(emailValue)) { 
+    } else if (emailExists) { 
         setError(emailInput, 'Email Already Exists');
     } else {
         setSuccess(emailInput);
