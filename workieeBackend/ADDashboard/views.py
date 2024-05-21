@@ -12,12 +12,11 @@ def loadDashboard(request):
     
     if is_ajax:
         if request.method == 'GET':
-            jobs = list(Jobs.objects.values())  # Convert QuerySet to list of dictionaries
+            jobs = list(Jobs.objects.values()) 
             return JsonResponse({'jobs': jobs})
         else:
             return JsonResponse({'status': 'Invalid request'}, status=400)
     else:
-        # Render the template for the initial page load
         listOfJobs = Jobs.objects.all()
         html_content = render_to_string('admin-dashboard.html', {'jobs': listOfJobs}, request=request)
         return HttpResponse(html_content)
