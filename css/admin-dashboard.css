@@ -71,7 +71,7 @@ body{
 }
 
 .dashboard{
-    background-color: var(--secondary-style-shade);
+    background-color: var(--primary-style-shade);
     grid-column: 2/3;
     grid-row: 2/3;
     display: grid;
