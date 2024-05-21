@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workiee | Home Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <nav class="container">
+            <h1 class="logo"><a href="index.html">Workiee</a></h1>
+            <div class="search-bar"> <!-- Canceled -->
+                <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
+                <i class="fas fa-search"></i>
+            </div>
+            <ul>
+                <li><a href="index.html" class="selected">Home</a></li>
+                <li name="dashboard"><a href="{% url 'admin-dashboard' %}">Dashboard</a></li>
+                <li><a href="browseJob.html">Browse</a></li>
+                <li name="login" role="authentication"><a href="{% url 'login' %}">Login</a></li>
+                <li name="register" role="authentication"><a href="{% url 'register' %}">Register</a></li>
+                <div class="nav-profile">
+                    <a href="Profile.html"><img src="https://i.pravatar.cc/50" alt=""></a>
+                    <div>
+                    <p>Welcome,</p><span>Yousef Albasel</span>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+        <div class="drop-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <!-- landing Page Body -->
+
+    <div class="landing">
+        <img src="{% static '/images/index-background.png' %}" alt="index-background">
+        <div class="landing-content">
+            <div class="landing-content-text">
+                <div>
+                    <h1 style="max-width: 50%;">Navigate Your Career Journey Today</h1>
+                    <p>
+                        Workiie assists job recruiters in identifying top candidates for their positions, and helps job seekers to find a suitable job for their skills.
+                    </p>
+                </div>
+            </div>
+                <button class="get-started-button" id="Get started" name="Get started" value="Get started">
+                    Get Started
+                </button>
+        </div>
+    </div>
+
+    <!--============= categories ===============-->
+    <div class="categories">
+        <div class="container">
+            <h1>Categories</h1>
+            <div class="card-grid">
+                <div class="row">
+                <div class="card">
+                    <i class="fas fa-database"></i>
+                    <h3>Database Adminstartion</h3>
+                    <p>Hire database specialists from workiee.</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-code" style="background-color: rgba(145,234,228,1);"></i>
+                    <h3>Software Engineer</h3>
+                    <p>Hire Software Engineer specialists from workiee.</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-dice-d6"></i>
+                    <h3>Data Analyst</h3>
+                    <p>Hire database specialists from workiee.</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                </div>
+                <!-- Second Row -->
+                <div class="row">
+                <div class="card">
+                    <i class="fas fa-robot" style="background-color: rgba(145,234,228,1);"></i>
+                    <h3>Machine Learning Engineering</h3>
+                    <p>Hire database specialists from workiee.</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-quidditch"></i>
+                    <h3>UI UX Specialist</h3>
+                    <p>Hire database specialists from workiee.</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+
+                <div class="card">
+                    <i class="fas fa-file-video" style="background-color: rgba(145,234,228,1);"></i>
+                    <h3>Video Editor</h3>
+                    <p>Hire database specialists from workiee.</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--============= footer ===============-->
+
+    <footer>
+            <a href="#">Get in touch</a>
+            <a href="#">About us</a>
+            <a href="#">Help</a>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
