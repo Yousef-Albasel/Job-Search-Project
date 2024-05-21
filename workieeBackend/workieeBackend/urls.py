@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('jobs/',include('jobs.urls') ),
     path('',include('authentication.urls') ),
+    path('',include('ADDashboard.urls') ),
     path('', TemplateView.as_view(template_name='indexPage.html'), name='index'),
 
 ]
