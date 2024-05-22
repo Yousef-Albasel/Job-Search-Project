@@ -1,14 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Jobs</h1>
-  <table border="1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Jobs</h1>
+    <table border="1">
       <thead>
         <td>Job Title</td>
         <td>job Salary</td>
@@ -30,9 +30,10 @@
         <td>{{x.jobdescription}}</td>
         <td>{{x.jobrequirements}}</td>
         <td><a href="delete/{{x.id}}">Delete</a></td>
+        <td><a href="edit/{{x.id}}">Edit</a></td>
       </tr>
       {% endfor %}
-  </table>
-  <a href="add/">Add</a>
-</body>
+    </table>
+    <a href="add/">Add</a>
+  </body>
 </html>

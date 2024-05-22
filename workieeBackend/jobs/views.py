@@ -47,3 +47,11 @@ def delete(request, id):
   job = Jobs.objects.get(id=id)
   job.delete()
   return HttpResponseRedirect(reverse('index'))
+
+def loadDashboard(request):
+  tmp= loader.get_template('admin-dashboard.html')
+  listOfJobs = Jobs.objects.all()
+  context = {
+        'jobs' : listOfJobs,
+    }
+  return HttpResponse(tmp.render(context,request))
