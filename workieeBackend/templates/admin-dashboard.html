@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workiee | Admin Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin-dashboard.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+     <!-- ===========Navbar============-->
+     <div class="header">
+        <nav class="container">
+            <h1 class="logo"><a href="#">Workiee</a></h1>
+            <div class="search-bar"> <!-- Canceled -->
+                <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
+                <i class="fas fa-search"></i>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li name="dashboard" ><a href="{% url 'admin-dashboard' %}" class="selected">Dashboard</a></li>
+                <li name="login" role="authentication"><a href="{% url 'login' %}">Login</a></li>
+                <li name="register" role="authentication"><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="#">Browse</a></li>
+                <div class="nav-profile">
+                    <a href="#"><img src="https://i.pravatar.cc/50" alt=""></a>
+                    <div>
+                    <p>Welcome,</p><span>Yousef Albasel</span>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+        <div class="drop-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+
+    <div class="side-bar">
+        <h1>Dashboard</h1>
+        <p>You can find below options to manage your job applications, accept applicants, view more details about your active jobs.</p>
+        <div class="side-panel" name="active">
+            <i class="fas fa-columns"></i>
+            <a href="#">Dashboard</a>
+        </div>
+        <div class="side-panel">
+            <i class="fas fa-users"></i>
+            <a href="#">Applicants</a>
+        </div>
+        <div class="side-panel">
+            <i class="fas fa-cog"></i>
+            <a href="#">Settings</a>
+        </div>
+    </div>
+    <div class="dashboard">
+        <div class="card">
+            <div><h1>Jobs</h1>
+            <p>You have listed <span id="NoOfJobs">0</span> jobs!</p></div>
+            <i class="fas fa-briefcase"></i>
+        </div>
+        <div class="card">
+            <div>
+            <h1>Applicants</h1>
+            <p> You have <span>0</span> applicants!</p></div>
+            <i class="fas fa-users"></i>
+            </div>
+        <div class="card">
+            <div>
+            <h1>Engagement</h1>
+            <p>Your jobs got <span>0</span> clicks!</p></div>
+            <i class="fas fa-hand-sparkles"></i>
+            </div>
+        <div class="card">
+            <div class="listed-jobs">
+                <div class="control-panel">     
+                <h1>Listed Jobs</h1>
+                    <div class="buttons">
+                        <button onclick="location.href=`{% url 'add' %}`;">Add Job</button>
+                        <button id = "editJobButton" onclick="location.href='editJob.html'">Edit Job</button>
+                        <button name="delete-button">Delete Job</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="applicants"> 
+                <div class="applicants-head">             
+                <h1>Applicants</h1>
+                <a>See All</a>
+                </div>
+                <div class="application">
+                    <img src="https://i.pravatar.cc/50">
+                    <div>
+                    <h1>Yousef Amgad</h1>
+                    <p>Applied for <span>IOS Developer</span></p>
+                </div>
+                <a href="#">View Profile</a>
+                </div>
+                <div class="application">
+                    <img src="https://i.pravatar.cc/50">
+                    <div>
+                    <h1>Yousef Amgad</h1>
+                    <p>Applied for <span>IOS Developer</span></p>
+                </div>
+                <a href="#">View Profile</a>
+                </div>
+                <div class="application">
+                    <img src="https://i.pravatar.cc/50">
+                    <div>
+                    <h1>Yousef Amgad</h1>
+                    <p>Applied for <span>IOS Developer</span></p>
+                </div>
+                <a href="#">View Profile</a>
+                </div>
+                <div class="application">
+                    <img src="https://i.pravatar.cc/50">
+                    <div>
+                    <h1>Yousef Amgad</h1>
+                    <p>Applied for <span>IOS Developer</span></p>
+                </div>
+                <a href="#">View Profile</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/admin-dashboard.js' %}"></script>    
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

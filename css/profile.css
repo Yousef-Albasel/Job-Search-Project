@@ -11,91 +11,86 @@
 }
 
 
-.main-profile{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.main{
+    padding: 20px;
     background-color: var(--primary-style-shade);
-    justify-content: center;
-
+    display: grid;
 }
-
-
-.container-profile {
-    align-items: row;
+.profile-container {  
+    padding-top: 1vh;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "profile-description basic-information basic-information"
+      "profile-description job-applications job-applications"
+      "profile-description job-applications job-applications";
+  }
+  
+.profile-description {
+    border-radius: 10px;
+    background-color: var(--primary-text-color-light);
+    grid-area: profile-description;
+}
+.profile-elements{
+    display: flex;
     flex-direction: column;
-    border-radius: 10px;
-    display: flex;
-    width: 90%;
-    background-color: var(--primary-background);
-    margin: 20px;
-    position: relative;
-}
-
-.container-profile  h1{
-    position: absolute;
-    top: 5%;
-    left: 5%;
-}
-
-
-.container-profile-info {
-    width: 90%;
-    align-items: center;
-    border-radius: 10px;
-    height: 50vh;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.profile {
-    display: flex;
+    height: 60vh;
+    padding: 15px;
     justify-content: space-around;
-    width: 100%;
-    border-radius: 10px;
     align-items: center;
+    
+    }
+
+
+.profile-image {
+    size: 60px;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    transition: transform 0.2s;
 }
 
-.profile div {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.profile-image:hover {
+    transform: scale(1.1);
 }
 
-
-.jobs-application{
-    align-items: row;
-    flex-direction: column;
+.basic-information {
     border-radius: 10px;
-    display: flex;
-    width: 90%;
-    background-color: var(--primary-background);
-    margin: 20px;
-    position: relative;
-}
-
-.jobs-application-container{
-    width: 90%;
+    grid-area: basic-information;
+    background-color: var(--primary-text-color-light);
+    }
+  
+.job-applications {
     border-radius: 10px;
-    height: 50vh;
-    padding: 20px;
+    grid-area: job-applications;
+    background-color: var(--primary-text-color-light);
+    }
+  
+.skills {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.jobs-application h1{
-    margin: 20px 25px;
-}
-
-
-.job-applications .skills{
-    display: flex;
-    gap: 15px;
-}
-
-.job-applications .jobs .skills span{
-    padding: 2px;
-    color: var(--primary-text-color-light);
+.tag {
     background-color: var(--primary-style-color);
+    /* Change to your preferred color */
+    color: var(--primary-text-color-light);
+    padding: 10px 15px;
+    border-radius: 25px;
+    display: inline-block;
+    margin: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.tag:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }

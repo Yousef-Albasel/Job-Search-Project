@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workiee | Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <!-- ===========Navbar============-->
+    <div class="header">
+        <nav class="container">
+            <h1 class="logo"><a href="index.html">Workiee</a></h1>
+            <div class="search-bar"> <!-- Canceled -->
+                <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
+                <i class="fas fa-search"></i>
+            </div>
+            <ul>
+                <li><a href="index.html" class="selected">Home</a></li>
+                <li name="dashboard"><a href="admin-dashboard.html">Dashboard</a></li>
+                <li name="login"><a href="Login.html">Login</a></li>
+                <li name="register"><a href="signup.html">Register</a></li>
+            </ul>
+        </nav>
+        <div class="drop-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+
+    <!-- =========== Registeration form ============-->
+
+    <div class="register-form">
+        <div class="container">
+            <div class="form-box">
+                <form action="/">
+                    <h1>Login</h1>    
+                    <div class="input-group">
+                        <div class="input-field">
+                            <label for="email-login">Email: </label>
+                            <input type="text" id="email-login" placeholder="eg. abc@examble.com" >
+                        </div>
+
+                        <div class="input-field">
+                            <label for="password-login">Password: </label>
+                            <input type="password" id="password-login" placeholder="Enter password">
+                        </div>
+
+                        <div class="input-field" name="radio-field">
+                            <input type="checkbox" name="remember-me" id="remember-me">
+                            <label>Remember me</label>
+                        </div>
+
+                        <div class="input-button">
+                            <input type="submit" value="Login"/>
+                            <div class="error-message" style="text-align: center; display: none;">Invalid email or password.</div>
+                        </div>
+                        <div class="input-field" style="text-align: center;">
+                            <p>Don't have an account? <a href="{% url 'register' %}" style="text-decoration: none; color: #0172B1;">Register</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<footer>
+        <center>
+            <a href="#">Get in touch</a>
+            <a href="#">About us</a>
+            <a href="#">Help</a>
+        </center>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+    <!-- <script src="{% static 'js/register.js' %}"></script> -->
+
+</body>
+
+</html>
