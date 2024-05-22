@@ -65,6 +65,7 @@
     <div class="form-box">
       <div class="container">
         <form action="{% url 'addrecord' %}" method="POST" class="addJob">
+          {% csrf_token %}
           <fieldset>
             <legend>
               <h2>Add Job</h2>
