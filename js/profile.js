@@ -7,3 +7,12 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('#company-name').textContent = userAccount.companyName ? userAccount.companyName : "N/A";
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const profileImage = document.getElementById('profile-image');
+
+    profileImage.addEventListener('click', () => {
+        const timestamp = new Date().getTime();
+        profileImage.src = `https://i.pravatar.cc/150?timestamp=${timestamp}`;
+    });
+});
