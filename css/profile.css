@@ -39,23 +39,34 @@
     display: flex;
     flex-direction: column;
     height: 60vh;
-    padding: 15px;
+    padding: 35px;
     justify-content: space-around;
     align-items: center;
     
     }
 
 
-.profile-image {
-    size: 60px;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    transition: transform 0.2s;
+
+.profile-elements p {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 12px;
 }
 
-.profile-image:hover {
-    transform: scale(1.1);
+.profile-elements span {
+    font-weight: bold;
+    color: var(--secondary-text-color);
+    font-size: 12px;
+}
+.profile-elements .profile-image {
+    border-radius: 50%;
+    transition: transform 0.2s;
+    padding-bottom: 10px;
+}
+
+.profile-elements .profile-image:hover {
+    cursor: pointer;
+    transform: scale(1.08);
 }
 
 .basic-information {
@@ -70,27 +81,75 @@
     background-color: var(--primary-text-color-light);
     }
   
-.skills {
+.profile-elements .skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
 }
 
-.tag {
+.profile-elements .skills .tag {
     background-color: var(--primary-style-color);
-    /* Change to your preferred color */
     color: var(--primary-text-color-light);
     padding: 10px 15px;
     border-radius: 25px;
     display: inline-block;
     margin: 5px;
+    position: relative;
     font-family: Arial, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
 }
 
-.tag:hover {
+
+.profile-elements .skills > i{
+    display: inline-block;
+    transition: transform 0.2s;
+    font-size: 20px;
+    margin-left: 10px;
+    align-self: center;
+    color: var(--primary-style-color);
+    opacity: 90%;
+
+}
+.profile-elements .skills > i:hover{
+    cursor: pointer;
     transform: scale(1.1);
+
+}
+
+.profile-elements .skills .tag > i {
+    right: 8%;
+    position: absolute;
+    top: 12px;
+    font-size: 10px;
+    display: none;
+    transition: 0.2s;
+    color: white;
+}
+.profile-elements .skills .tag:hover {
+    
+    transform: scale(1.1);
+    padding-right: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.profile-elements .skills .tag:hover > i{
+    display: block;
+}
+.profile-elements .skills .tag > i:hover {
+    cursor: pointer;
+}
+.profile-elements input{
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid black;
+    outline: none;
+    margin-top: 20px;
+    display: none;
+    transition: all 0.2s;
+}
+.profile-elements input:focus{
+    outline:none;
+    border:1px solid var(--primary-style-color);
 }
