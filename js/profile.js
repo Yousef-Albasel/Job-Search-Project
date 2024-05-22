@@ -45,3 +45,40 @@ newSkillInput.addEventListener('keypress', function (e) {
     }
 });
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const editButton = document.getElementById("edit-button");
+    const userNameInput = document.getElementById("new-name");
+    const emailInput = document.getElementById("new-email");
+    const currentJobInput = document.getElementById("new-job");
+    const companyNameInput = document.getElementById("new-company");
+    const userNameSpan = document.getElementById("user-name");
+    const emailSpan = document.getElementById("email");
+    const currentJobSpan = document.getElementById("current-job");
+    const companyNameSpan = document.getElementById("company-name");
+
+    editButton.addEventListener('click', () => {
+        userNameInput.style.display = "flex";
+        emailInput.style.display = "flex";
+        currentJobInput.style.display = "flex";
+        companyNameInput.style.display = "flex";
+    });
+
+    function updateSpanOnEnter(inputElement, spanElement) {
+        inputElement.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                spanElement.innerHTML = inputElement.value;
+                inputElement.value = '';
+                userNameInput.style.display = "none";
+                emailInput.style.display = "none";
+                currentJobInput.style.display = "none";
+                companyNameInput.style.display = "none";
+            }
+        });
+    }
+
+    updateSpanOnEnter(userNameInput, userNameSpan);
+    updateSpanOnEnter(emailInput, emailSpan);
+    updateSpanOnEnter(currentJobInput, currentJobSpan);
+    updateSpanOnEnter(companyNameInput, companyNameSpan);
+});
