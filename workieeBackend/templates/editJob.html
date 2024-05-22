@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/editjob.css">
+    <title>Workiee | Edit Job</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+      
+</head>
+
+<body>
+  <div class="header">
+    <nav class="container">
+        <h1 class="logo"><a href="index.html">Workiee</a></h1>
+        <div class="search-bar"> <!-- Canceled -->
+            <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
+            <i class="fas fa-search"></i>
+        </div>
+        <ul>
+            <li><a href="index.html" >Home</a></li>
+            <li name="dashboard"><a href="admin-dashboard.html">Dashboard</a></li>
+            <li name="login" role="authentication"><a href="Login.html">Login</a></li>
+            <li name="register" role="authentication"><a href="signup.html">Register</a></li>
+            <div class="nav-profile">
+                <a href="Profile.html"><img src="https://i.pravatar.cc/50" alt=""></a>
+                <div>
+                <p>Welcome,</p><span></span>
+                </div>
+            </div>
+        </ul>
+        <div class="drop-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+    </nav>  
+  </div>
+
+
+  <div class="editJob-form" >
+    <div class="container">
+      <div class="form-box">
+
+        <form action="" method = "post" id = "editJob" class="editJob">
+
+          <h2>Edit job</h2>
+          <div class="input-group">
+
+            <div class="input-field">
+              <label for="jobTitle"> Job Title: </label>
+
+               
+              <input type="text" name="jobTitle" id="jobTitle" placeholder="Job Title" required>
+            </div>
+
+            <div class="input-field">
+              <label for="CompanyName">Company Name :</label>
+               
+              <input type="text" name="CompanyName" id="CompanyName" placeholder="Company Name" required>
+            </div>
+
+            <div class="input-field">
+              <label for = "yearsOfExperience">Years of experience</label>
+              <select name="yearsOfExperience" id = "yearsOfExperience">
+                  <option  id="zero-opt" value="zero">Zero</option>
+                  <option id="one-opt" value="1:3">1:3</option>
+                  <option id="four-opt" value="4:5">4-5</option>
+                  <option id="five-opt" value="6:10">6:10</option>
+                  <option id="ten-opt" value="10+">10+</option>
+              </select>
+            </div>
+
+            <div class="input-field">
+              <label for="jobDescription">Job Description</label>
+              <textarea name="jobDescription" id="jobDescription" placeholder="job Description"></textarea>
+            </div>
+
+            <div class="input-field">
+              <label for="jobRequirements">Job Requirements</label>
+              <textarea name="jobRequirements" id="jobRequirements" placeholder="jobRequirements"></textarea>
+            </div>
+
+            <div class="input-field">
+              <label for="jobSalary">job Salary:</label>
+               
+              <input type="number" name="jobSalary" id="jobSalary" placeholder="Salary" required>
+
+            </div>
+
+            <div class="input-field">
+              <label for="jobStatus">Job status : </label>
+               
+              <div class="jobStatus">
+                <input type="radio" name="JobStatus" value="open" required>
+                <label for="open">Open</label>
+
+                <input type="radio" name="JobStatus" value="close" required>
+                <label for="close">Close</label>
+              </div>
+              
+            </div>
+
+            
+          </div>
+
+          <div class="input-button">
+            <input type="submit" value="Save"/>
+            <div class="message" id="message" style="text-align: center;">Job has been saved</div>
+          </div>
+
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+    <hr>
+    
+    <footer>
+        <center>
+            <a href="#">Get in touch</a>
+            <a href="#">About us</a>
+            <a href="#">Help</a>
+        </center>
+    </footer>
+    <script src="../js/script.js"></script>
+    <script src="../js/editjob.js"></script>
+</body>
+
+</html>
