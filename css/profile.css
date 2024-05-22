@@ -80,7 +80,6 @@
   
 .info-row {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin: 20px;
 }
@@ -90,15 +89,27 @@
 }
 
 
-.info-row button {
-    flex: 0;
-    padding: 10px 20px;
-    margin-right: 0;
+.info-row button#edit-button {
+    padding: 10px 25px;
+    /* margin-right: 0; */
     background-color: var(--primary-style-color);
     color: var(--primary-text-color-light);
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right : 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.info-row button#resume-button {
+    padding: 10px 25px;
+    /* margin-right: 0; */
+    background-color: transparent;
+    color: var(--primary-style-color);
+    border: 1px solid var(--primary-style-color);
+    border-radius: 5px;
+    font-size: 12px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -202,4 +213,9 @@
 .basic-information input:focus {
     outline: none;
     border: 1px solid var(--primary-style-color);
+}
+
+.basic-information h1 {
+    font-size: 20px;
+    padding: 10px;
 }

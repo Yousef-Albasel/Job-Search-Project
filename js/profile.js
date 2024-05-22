@@ -67,8 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateSpanOnEnter(inputElement, spanElement) {
         inputElement.addEventListener('keydown', (event) => {
             if (event.key === 'Enter') {
+                if (inputElement.value != ""){
                 spanElement.innerHTML = inputElement.value;
-                inputElement.value = '';
+                inputElement.value = '';}
                 userNameInput.style.display = "none";
                 emailInput.style.display = "none";
                 currentJobInput.style.display = "none";
