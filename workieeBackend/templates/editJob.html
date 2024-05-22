@@ -1,10 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/editjob.css">
+    <link rel="stylesheet" href="{% static 'css/editjob.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <title>Workiee | Edit Job</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -44,49 +46,59 @@
     <div class="container">
       <div class="form-box">
 
-        <form action="" method = "post" id = "editJob" class="editJob">
-
+        <form action="{% url 'update' %}" method = "post" id = "editJob" class="editJob">
+          {% csrf_token %}
+          <input type="hidden" name="id" value="{{x.id}}">
           <h2>Edit job</h2>
           <div class="input-group">
-
+            
             <div class="input-field">
               <label for="jobTitle"> Job Title: </label>
 
                
-              <input type="text" name="jobTitle" id="jobTitle" placeholder="Job Title" required>
+              <input type="text" name="jobTitle" id="jobTitle" placeholder="Job Title" required value = "{{x.jobtitle}}"> 
             </div>
 
             <div class="input-field">
               <label for="CompanyName">Company Name :</label>
                
-              <input type="text" name="CompanyName" id="CompanyName" placeholder="Company Name" required>
+              <input type="text" name="CompanyName" id="CompanyName" placeholder="Company Name" required value = "{{x.companyname}}">
+            </div>
+            <div class="input-field">
+              <label for="CompanyAddress">Company Name :</label>
+               
+              <input type="text" name="CompanyAddress" id="CompanyAddress" placeholder="Company Address" required value = "{{x.companyaddress}}">
             </div>
 
             <div class="input-field">
-              <label for = "yearsOfExperience">Years of experience</label>
-              <select name="yearsOfExperience" id = "yearsOfExperience">
-                  <option  id="zero-opt" value="zero">Zero</option>
-                  <option id="one-opt" value="1:3">1:3</option>
-                  <option id="four-opt" value="4:5">4-5</option>
-                  <option id="five-opt" value="6:10">6:10</option>
-                  <option id="ten-opt" value="10+">10+</option>
+              <label for="yearsOfExperience">Years of experience</label>
+              <select name="yearsOfExperience" id="yearsOfExperience">
+                  <option value="zero" {% if x.yearsofexperience == 'zero' %}selected{% endif %}>Zero</option>
+                  <option value="1:3" {% if x.yearsofexperience == '1:3' %}selected{% endif %}>1-3</option>
+                  <option value="4:5" {% if x.yearsofexperience == '4:5' %}selected{% endif %}>4-5</option>
+                  <option value="6:10" {% if x.yearsofexperience == '6:10' %}selected{% endif %}>6-10</option>
+                  <option value="10+" {% if x.yearsofexperience == '10+' %}selected{% endif %}>10+</option>
               </select>
             </div>
 
             <div class="input-field">
               <label for="jobDescription">Job Description</label>
-              <textarea name="jobDescription" id="jobDescription" placeholder="job Description"></textarea>
+              <textarea name="jobDescription" id="jobDescription" placeholder="job Description">
+                {{x.jobdescription}}
+              </textarea>
             </div>
 
             <div class="input-field">
               <label for="jobRequirements">Job Requirements</label>
-              <textarea name="jobRequirements" id="jobRequirements" placeholder="jobRequirements"></textarea>
+              <textarea name="jobRequirements" id="jobRequirements" placeholder="jobRequirements">
+                {{x.jobrequirements}}
+              </textarea>
             </div>
 
             <div class="input-field">
               <label for="jobSalary">job Salary:</label>
                
-              <input type="number" name="jobSalary" id="jobSalary" placeholder="Salary" required>
+              <input type="number" name="jobSalary" id="jobSalary" placeholder="Salary" required value = "{{x.jobsalary}}">
 
             </div>
 
@@ -94,10 +106,10 @@
               <label for="jobStatus">Job status : </label>
                
               <div class="jobStatus">
-                <input type="radio" name="JobStatus" value="open" required>
+                <input type="radio" name="JobStatus" value="open" required {% if x.jobstatus == 'open' %}checked{% endif %}>
                 <label for="open">Open</label>
 
-                <input type="radio" name="JobStatus" value="close" required>
+                <input type="radio" name="JobStatus" value="close" required {% if x.jobstatus == 'close' %}checked{% endif %}>
                 <label for="close">Close</label>
               </div>
               
