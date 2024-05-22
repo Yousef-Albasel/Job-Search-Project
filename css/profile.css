@@ -73,12 +73,47 @@
     border-radius: 10px;
     grid-area: basic-information;
     background-color: var(--primary-text-color-light);
+    
+
     }
+
   
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.info-field {
+    flex: 1;
+}
+
+
+.info-row button {
+    flex: 0;
+    padding: 10px 20px;
+    margin-right: 0;
+    background-color: var(--primary-style-color);
+    color: var(--primary-text-color-light);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.info-row button:hover {
+    background-color: var(--secondary-style-color-hover);
+    transform: scale(1.08);
+}
+
 .job-applications {
     border-radius: 10px;
     grid-area: job-applications;
     background-color: var(--primary-text-color-light);
+    display: flex;
+    flex-direction: column;
     }
   
 .profile-elements .skills {
@@ -152,4 +187,19 @@
 .profile-elements input:focus{
     outline:none;
     border:1px solid var(--primary-style-color);
+}
+
+.basic-information input {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid black;
+    outline: none;
+    margin-top: 20px;
+    display: none;
+    transition: all 0.2s;
+}
+
+.basic-information input:focus {
+    outline: none;
+    border: 1px solid var(--primary-style-color);
 }
