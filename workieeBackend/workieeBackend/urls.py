@@ -24,5 +24,6 @@ urlpatterns = [
     path('',include('authentication.urls') ),
     path('',include('ADDashboard.urls') ),
     path('', TemplateView.as_view(template_name='indexPage.html'), name='index'),
+    path('browse/', include('browse.urls')),
 
 ]

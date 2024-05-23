@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'jobs',
     'ADDashboard',
     'authentication.apps.AuthenticationConfig',
+    'browse.apps.BrowseConfig',
 ]
 
 MIDDLEWARE = [
