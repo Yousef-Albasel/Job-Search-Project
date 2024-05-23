@@ -13,38 +13,38 @@ dropMenuButton.addEventListener("click", () => {
 
 // User Authentication Handling
 
-// function checkUserCredentials() {
-//     const userCredentials = sessionStorage.getItem("UserAccount");
-//     if (userCredentials) {
-//         userAuthorized = true;
-//         const user = JSON.parse(userCredentials);
-//         const authroizationButtons = document.querySelectorAll(`li[role="authentication"]`);
+function checkUserCredentials() {
+    const userCredentials = sessionStorage.getItem("UserAccount");
+    if (userCredentials) {
+        userAuthorized = true;
+        const user = JSON.parse(userCredentials);
+        const authroizationButtons = document.querySelectorAll(`li[role="authentication"]`);
         
-//         profileDiv.style.display = "flex"; // Show profile info
-//         profileDiv.querySelector("div span").innerHTML = user.username;
-//         authroizationButtons.forEach(button => {
-//         button.style.display = "none";
-//             const link = button.querySelector("a");
-//             link.href = "#"; 
-//             link.onclick = function(event) {
-//                 event.preventDefault(); 
-//             };
-//         });
+        profileDiv.style.display = "flex"; // Show profile info
+        profileDiv.querySelector("div span").innerHTML = user.username;
+        authroizationButtons.forEach(button => {
+        button.style.display = "none";
+            const link = button.querySelector("a");
+            link.href = "#"; 
+            link.onclick = function(event) {
+                event.preventDefault(); 
+            };
+        });
 
-//         if (user.isAdmin === true && userAuthorized){
-//             adminDashboardLink.style.display = "block";
-//         }else{
-//             adminDashboardLink.style.display = "none";
-//         }
-//         console.log("Welcome back, " + user.username + "!");
-//     }else{
-//         profileDiv.style.display = "none"
-//         console.log("User not authorized");
-//     }
-// }
+        if (user.isAdmin === true && userAuthorized){
+            adminDashboardLink.style.display = "block";
+        }else{
+            adminDashboardLink.style.display = "none";
+        }
+        console.log("Welcome back, " + user.username + "!");
+    }else{
+        profileDiv.style.display = "none"
+        console.log("User not authorized");
+    }
+}
 
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    // checkUserCredentials();
+    checkUserCredentials();
 });
