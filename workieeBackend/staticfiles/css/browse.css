@@ -1,0 +1,214 @@
+:root {
+   --primary-background: #fcfcfc;
+   --secondary-background: #f6f7f9;
+   --primary-text-color-dark: #000000;
+   --primary-text-color-light: #ffffff;
+   --secondary-text-color: #4D4D4D;
+   --primary-style-color: #7F7FD5;
+   --secondary-style-color-hover:#9292de;
+   --primary-syle-color-hover:#5b5b94;
+   --primary-style-shade:#EAEBED;
+   --secondary-style-shade:#c3c5ca;
+   --primary-style-link:#0172B1;
+}
+ 
+/*=============== Modify navbar style =============*/
+.header {
+   position: sticky;
+   top: 0;
+   background-color: var(--primary-text-color-light);
+}
+
+/*=============== Grid Style =============*/
+
+.content {
+   display: grid;
+   justify-content: center;
+   grid-template-columns: repeat(3, auto);
+   grid-template-rows: repeat(3, auto);
+   gap: 10px;  
+   background-color: var(--primary-style-shade);
+}
+
+/*=============== Search Panel Style =============*/
+.search-panel {
+   margin-top: 15px;
+   background-color: var(--primary-text-color-light);
+   grid-column: 1 / 4;
+   display: flex;
+   justify-self: center;
+   justify-content: space-evenly;
+   align-items: center;
+   height: 10vh;
+   width: 100%;
+   padding: 15px;
+   border-radius: 10px;
+}
+.search-panel .search-bar{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   background-color: var(--primary-style-shade);
+   min-width: 25vw;
+   /* box-shadow: 1px 1px 10px #aaaaaa88; */
+   border-radius: 1px;
+   position: relative;
+   font-size: 12px;
+}
+.search-panel .search-bar .search-input {
+   padding: 10px 10px;
+   width: 100%;
+   transition: 0.2s;
+   border: none;
+   background-color: var(--primary-style-shade);
+   border-radius: 5px;
+}
+.search-panel .search-bar input:focus {
+   border: 2px solid var(--primary-style-color);
+   outline: none;
+}
+
+.search-bar input:focus + i {
+   opacity: 0%;
+}
+
+.search-panel .search-bar i {
+   transition: 0.1s;
+   position: absolute;
+   right: 5%;
+   color: var(--secondary-text-color);
+}  
+.search-panel #exp {
+   border: none;
+   margin-left: 10px;
+   background-color: var(--primary-style-shade);
+   padding: 10px 20px;
+   min-width: 20vw;
+   border-radius: 5px;
+   color: var(--secondary-text-color);
+   outline: 0;
+}
+
+/* .search-panel button {
+   margin-left: 60px;
+   padding: 10px 30px;
+   font-weight: 700;
+   color: var(--primary-text-color-light);
+   background-color: var(--primary-style-color);
+   border-radius: 5px;
+   border: none;
+   cursor: pointer;
+}
+.search-panel button:hover {
+   background-color: var(--primary-syle-color-hover);
+} */  
+
+/*=============== Card Style =============*/
+
+.block {
+   margin: auto;  
+   background-color: var(--primary-background);
+   display: flex;
+   flex-direction: column;
+   width: 300px;
+   height: 300px;
+   padding: 15px;  
+   border-radius: 5px;
+}
+.block:hover {
+   transition: 250ms ease-in-out;   
+}
+
+.block .comp-name {
+   display: grid;
+   grid-template-columns: auto 1fr;
+   align-content: flex-start;
+   grid-template-areas: "image text1" "image text2";
+   height: 70px;
+}
+.block .comp-name img {
+   grid-area: image;
+   grid-row: span 2;
+   margin-right: 10px;
+   width: 60px;
+   height: 60px;
+}
+.block .comp-name .job-title {
+   grid-area: text1;
+   font-weight: bold;
+   overflow: hidden;
+   color: var(--primary-style-color);
+   font-size: 14px;
+}
+.block .comp-name a:hover {
+   color: var(--primary-syle-color-hover);
+}
+.block .comp-name p {
+   grid-area: text2;
+   font-size: 12px;
+   color: var(--secondary-text-color);
+}
+.block .comp-name .bolded {
+   font-weight: bold;
+}
+
+.block .discription {
+   margin-top: 10px;
+   overflow: hidden;
+   color: var(--secondary-text-color);
+   font-size: 10px;
+   height: 75px;
+}
+.block .discription p {
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+.block .experiences .y-exp {
+   font-weight: bold;
+}
+.block .experiences {
+   font-size: 12px;
+   margin: 10px 0;
+   color: #2C9266;
+}
+/* .block .tags mark {
+   background-color: var(--primary-style-color);
+   color: var(--primary-text-color-light);
+   margin: 10px 0px;
+   padding: 5px;
+   border-radius: 5px;
+   font-size: 10px;
+} */
+.block .salary {
+   margin: 20px 0;
+}
+.block .salary .bolded {
+   font-weight: bold;
+}
+
+.block .job-buttons{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+}
+.block .job-buttons button {
+   align-self: center;
+   margin: 15px 0;
+   padding: 10px 30px;
+   color: #00000099;
+   background-color: var(--secondary-background);
+   border: 1px solid #4d4d4d4f;
+   cursor: pointer;
+   font-size: 12px;
+   border-radius: 2px;
+   font-weight: 600;
+   transition: 0.2s;
+}
+.block .job-buttons button:hover {
+
+   background-color: var(--primary-style-color);
+   color: var(--primary-text-color-light);
+}
+
+

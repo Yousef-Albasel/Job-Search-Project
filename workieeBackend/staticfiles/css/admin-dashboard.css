@@ -61,7 +61,6 @@ body{
     display: grid;
     grid-template-columns: 250px 1fr;
     grid-template-rows: 60px 1fr;
-    transition: 0.2s;
 }
 
 
@@ -71,9 +70,6 @@ body{
     grid-row: 1/2;
 }
 
-.header i.fa-bars{
-    color: var(--primary-style-color);
-}
 .dashboard{
     background-color: var(--primary-style-shade);
     grid-column: 2/3;
@@ -88,48 +84,16 @@ body{
     "c4 c4 c5"
     "c4 c4 c5";
 }
-@media only screen and (max-width: 768px) {
-    .header .container i#barsIconH{
-        visibility: hidden;
-    }
-    .dashboard {
-         grid-template-columns: 1fr; 
-         grid-template-areas: 
-         "c1"
-         "c2"
-         "c3"
-         "c4"
-         "c5";
-     }
- 
-    .header nav.container ul {
-         flex-wrap: wrap;
-         display: inline-block;
-     }
- 
-    .header nav.container ul li {
-        margin: 0 !important;
-        padding: 10px 15px !important;
-    }
- }
+
 .side-bar{
     background-color: 
     var(--primary-style-color);
     grid-column: 1/2;
     grid-row: 1/3;
     padding: 20px 1px 20px 0px;
-    transition: 0.2s;
-}
-.hidden {
-display: none;
-}
-.sidebar-hidden{
 
-    grid-template-columns: 0 1fr;
 }
-i.fa-bars{
-cursor: pointer;
-}
+
 @media only screen and (max-width:936px){
     body{
         grid-template-columns: 0px 1fr;
