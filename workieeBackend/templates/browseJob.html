@@ -1,33 +1,32 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/browse.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Workiee | Browse Job</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/browse.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>Workiee | Browse Job</title>
-</head>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
 
 <body>
     <!-- ===========Navbar============-->
     <div class="header">
         <nav class="container">
-            <h1 class="logo"><a href="index.html">Workiee</a></h1>
+            <h1 class="logo"><a href="{% url 'index' %}">Workiee</a></h1>
             <div class="search-bar"> <!-- Canceled -->
                 <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
                 <i class="fas fa-search"></i>
             </div>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
                 <li name="dashboard"><a href="{% url 'admin-dashboard' %}">Dashboard</a></li>
                 <li><a href="{% url 'browse' %}" class="selected">Browse</a></li>
                 <li name="login" role="authentication"><a href="{% url 'login' %}">Login</a></li>
@@ -72,7 +71,7 @@
         <a href="#">Help</a>
     </footer>
 
-    <!-- <script src="{% static 'js/browse.js' %}"></script> -->
+    <script src="{% static 'js/browseJob.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
