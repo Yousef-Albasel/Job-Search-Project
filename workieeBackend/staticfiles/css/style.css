@@ -171,7 +171,7 @@
 
 
 
-    @media only screen and (max-width: 768px){
+    @media only screen and (max-width: 548px){
         .header nav.container h1{
             z-index: 3;
         }
