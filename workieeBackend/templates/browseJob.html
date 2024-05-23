@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/browse.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Workiee | Browse Job</title>
+</head>
+
+<body>
+    <!-- ===========Navbar============-->
+    <div class="header">
+        <nav class="container">
+            <h1 class="logo"><a href="index.html">Workiee</a></h1>
+            <div class="search-bar"> <!-- Canceled -->
+                <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
+                <i class="fas fa-search"></i>
+            </div>
+            <ul>
+                <li><a href="index.html" class="selected">Home</a></li>
+                <li name="dashboard"><a href="{% url 'admin-dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'browse' %}">Browse</a></li>
+                <li name="login" role="authentication"><a href="{% url 'login' %}">Login</a></li>
+                <li name="register" role="authentication"><a href="{% url 'register' %}">Register</a></li>
+                <div class="nav-profile">
+                    <a href="Profile.html"><img src="https://i.pravatar.cc/50" alt=""></a>
+                    <div>
+                    <p>Welcome,</p><span>Yousef Albasel</span>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+        <div class="drop-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <!-- ===========Content============-->
+    <div class="content">
+        <div class="search-panel">
+            <div class="search-bar">
+                <input class="search-input" type="text" id="search-bar" name="search-bar" placeholder="Search by job title" onkeyup="Search()">
+                <i class="fas fa-search"></i> 
+            </div> 
+            <select onchange="Search()" id="exp">
+                <option value="">Years of Experience</option>
+                <option id="exp-zero" value="Zero">Zero</option>
+                <option id="exp-one" value="1:3">1:3</option>
+                <option id="exp-four" value="4:5">4:5</option>
+                <option id="exp-six" value="6:10">6:10</option>
+                <option id="exp-ten" value="10+">10+</option>
+            </select>
+            <!-- <button class="search-button">Search</button> -->
+        </div>
+        <!-- ===========Blocks============-->
+
+
+    </div>
+    <!-- ===========Footer============-->
+    <footer>
+        <a href="#">Get in touch</a>
+        <a href="#">About us</a>
+        <a href="#">Help</a>
+    </footer>
+
+    <!-- <script src="{% static 'js/browse.js' %}"></script> -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
