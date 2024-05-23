@@ -21,23 +21,23 @@
 
 /*=============== Content style =============*/
 .content{
-    background-color: var(--primary-background);
+    background-color: var(--primary-style-shade);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 30px;
     padding: 3% 10%;
-    
 }
 
-.job-header {
-    background: #ffffff;
+.job-header {   
+    position: relative;
+    background: var(--primary-text-color-light);
     width: 75%;
     padding: 16px;
-    border: 1px solid #D9DDE4;
+    border: 2px solid #5b5b94;
     border-radius: 4px;
-    
+    box-shadow: 15px 30px 20px rgba(56, 4, 101, 0.1);
     
 }
 .job-header .comp {
@@ -67,11 +67,13 @@
 
 .job-details {
     position: relative;
-    background: #ffffff;
+    background: var(--primary-text-color-light);
     width: 75%;
     padding: 16px;
-    border: 1px solid #D9DDE4;
+    border: 2px solid #5b5b94;
     border-radius: 4px;
+    box-shadow: 15px 30px 20px rgba(56, 4, 101, 0.1);
+    
 }
 .job-details p {
     padding: 16px;
@@ -79,11 +81,13 @@
 
 .job-description {
     position: relative;
-    background: #ffffff;
+    background: var(--primary-text-color-light);
     width: 75%;
     padding: 16px;
-    border: 1px solid #D9DDE4;
+    border: 2px solid #5b5b94;
     border-radius: 4px;
+    box-shadow: 15px 30px 20px rgba(56, 4, 101, 0.1);
+    
 }
 .job-description p {
     padding: 16px;
@@ -91,11 +95,13 @@
 
 .job-requirements {
     position: relative;
-    background: #ffffff;
+    background: var(--primary-text-color-light);
     width: 75%;
     padding: 16px;
-    border: 1px solid #D9DDE4;
+    border: 2px solid #5b5b94;
     border-radius: 4px;
+    box-shadow: 15px 30px 20px rgba(56, 4, 101, 0.1);
+    
 }
 .job-requirements p{
     padding: 16px;
