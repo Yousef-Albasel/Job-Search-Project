@@ -86,6 +86,8 @@ async function getJobData() {
 
 
 async function displayJobs() {
+    const userCredentials = sessionStorage.getItem("UserAccount");
+    const user = JSON.parse(userCredentials);
     let jobs = await getJobData();
     // let jobs = JSON.parse(localStorage.getItem('jobs')) || [];
     let listedJobs = document.querySelector('.listed-jobs');
