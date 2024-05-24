@@ -161,13 +161,31 @@
     }
 
     .header .drop-menu{
-        display: none;
+        display: none;  
     }
     .header .drop-menu i{
         font-size: 20px;
         color: var(--primary-style-color);
         cursor: pointer;
     }
+    
+    .dropdown {
+        display: none;
+        background-color: var(--primary-background);
+        position: absolute;
+        top: 50px;
+    }
+
+    .dropdown li:hover {
+        background-color: var(--primary-style-shade);
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .nav-profile:hover .dropdown{
+        display: block;
+    }
+    
 
 
 
