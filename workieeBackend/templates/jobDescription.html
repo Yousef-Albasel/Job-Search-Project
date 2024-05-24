@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}"> 
+    <link rel="stylesheet" href="{% static 'css/jobDescription.css'%}"> 
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Workiee | Job Details</title>
+</head>
+
+<div>
+    <!-- ===========Navbar============-->
+    <div class="header">
+        <nav class="container">
+            <h1 class="logo"><a href="index.html">Workiee</a></h1>
+            <div class="search-bar"> <!-- Canceled -->
+                <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
+                <i class="fas fa-search"></i>
+            </div>
+            <ul>
+                <li><a href="index.html" class="selected">Home</a></li>
+                <li name="dashboard"><a href="{% url 'admin-dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'browse' %}">Browse</a></li>
+                <li name="login" role="authentication"><a href="{% url 'login' %}">Login</a></li>
+                <li name="register" role="authentication"><a href="{% url 'register' %}">Register</a></li>
+                <div class="nav-profile">
+                    <a href="Profile.html"><img src="https://i.pravatar.cc/50" alt=""></a>
+                    <div>
+                    <p>Welcome,</p><span>Yousef Albasel</span>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+        
+        <div class="drop-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <!-- ===========Content============-->
+    <div class="content">
+        <div class="job-header">
+            <h1>Job Title</h1>
+            <p class="comp"><span class="comp-name">Company Name</span> - <span class="comp-address">Company Address</span></p>
+            <button onclick="location.href='applyJob.html'">Apply</button>
+        </div>
+        <div class="job-details">
+            <h3>Job Details</h3>
+            <p class="y-exp">Experience Needed: </p>
+            <p class="salary">Salary: </p>
+            <p class="job-status">Status: </p>
+        </div>
+        <div class="job-description">
+            <h3>Job Description</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam consequuntur asperiores voluptatum inventore saepe, error atque mollitia eos soluta labore excepturi maiores, ratione porro tempora dolores repellat. Assumenda, iste dolore.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis voluptate unde sequi blanditiis fugiat facilis repellat incidunt eveniet quidem pariatur inventore earum nihil itaque quos, mollitia vitae amet tempora. Obcaecati.
+            </p>
+        </div>
+        <div class="job-requirements">
+            <h3>Job Requirements</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam consequuntur asperiores voluptatum inventore saepe, error atque mollitia eos soluta labore excepturi maiores, ratione porro tempora dolores repellat. Assumenda, iste dolore.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis voluptate unde sequi blanditiis fugiat facilis repellat incidunt eveniet quidem pariatur inventore earum nihil itaque quos, mollitia vitae amet tempora. Obcaecati.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam blanditiis tempora neque aliquam? Quaerat soluta id fugiat nisi a natus error nostrum fugit? Facere, culpa! Saepe, corporis? Dicta, possimus commodi.
+            </p>
+
+        </div>
+    </div>
+    <!-- ===========Footer============-->
+    <footer>
+        <a href="#">Get in touch</a>
+        <a href="#">About us</a>
+        <a href="#">Help</a>
+    </footer>
+    <script src="{% static 'js/script.js'%}"></script>
+    <script src="{% static 'js/jobDetails.js'%}"></script>
+</body>
+
+</html>

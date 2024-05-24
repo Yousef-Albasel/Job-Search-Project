@@ -20,4 +20,7 @@ def browse(request):
         # Render the template for the initial page load
         listOfJobs = Jobs.objects.all()
         html_content = render_to_string('browseJob.html', {'jobs': listOfJobs}, request=request)
-        return HttpResponse(html_content)
+        return HttpResponse(html_content) 
+    
+def details (request):
+    return render (request,'jobDescription.html')#clean code
