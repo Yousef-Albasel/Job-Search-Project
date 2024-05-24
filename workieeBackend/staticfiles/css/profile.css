@@ -1,0 +1,96 @@
+:root {
+    --primary-background: #ffffff;
+    --primary-text-color-dark: #000000;
+    --primary-text-color-light: #ffffff;
+    --secondary-text-color: #4D4D4D;
+    --primary-style-color: #7F7FD5;
+    --primary-syle-color-hover: #5b5b94;
+    --secondary-style-color-hover: #9292de;
+    --primary-style-shade: #EAEBED;
+    --primary-style-link: #0172B1;
+}
+
+
+.main{
+    padding: 20px;
+    background-color: var(--primary-style-shade);
+    display: grid;
+}
+.profile-container {  
+    padding-top: 1vh;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "profile-description basic-information basic-information"
+      "profile-description job-applications job-applications"
+      "profile-description job-applications job-applications";
+  }
+  
+.profile-description {
+    border-radius: 10px;
+    background-color: var(--primary-text-color-light);
+    grid-area: profile-description;
+}
+.profile-elements{
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    padding: 15px;
+    justify-content: space-around;
+    align-items: center;
+    
+    }
+
+
+.profile-image {
+    size: 60px;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    transition: transform 0.2s;
+}
+
+.profile-image:hover {
+    transform: scale(1.1);
+}
+
+.basic-information {
+    border-radius: 10px;
+    grid-area: basic-information;
+    background-color: var(--primary-text-color-light);
+    }
+  
+.job-applications {
+    border-radius: 10px;
+    grid-area: job-applications;
+    background-color: var(--primary-text-color-light);
+    }
+  
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background-color: var(--primary-style-color);
+    /* Change to your preferred color */
+    color: var(--primary-text-color-light);
+    padding: 10px 15px;
+    border-radius: 25px;
+    display: inline-block;
+    margin: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.tag:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}

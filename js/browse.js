@@ -113,3 +113,4 @@ function getJobId(button) {
     sessionStorage.setItem('selectedJobId', selectedJobId);
     window.location.href = 'jobDescription.html';
 }
+

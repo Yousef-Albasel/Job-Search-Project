@@ -15,12 +15,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    editButton.addEventListener('click',function(){
-        checkBoxes.forEach(checkBox => {
+    editButton.addEventListener('click', async function(){
+        const checkBoxes = document.querySelectorAll(".job-container input[type='checkbox']");
+        checkBoxes.forEach( async checkBox => {
             if (checkBox.checked) {
                 const jobContainer = checkBox.closest('.job-container');
                 const jobId = jobContainer.dataset.jobId;
-                sessionStorage.setItem('EditedJobId', jobId);
+                const baseUrl = window.location.origin + '/jobs/edit/';
+                const redirectUrl = `${baseUrl}${jobId}`;        
+                window.location.href = redirectUrl;                
             }
         });
         
@@ -83,6 +86,8 @@ async function getJobData() {
 
 
 async function displayJobs() {
+    const userCredentials = sessionStorage.getItem("UserAccount");
+    const user = JSON.parse(userCredentials);
     let jobs = await getJobData();
     // let jobs = JSON.parse(localStorage.getItem('jobs')) || [];
     let listedJobs = document.querySelector('.listed-jobs');
@@ -139,3 +144,27 @@ async function displayJobs() {
     nJobs.innerText = cnt;
 
 }
+
+
+// Styling and improvments
+
+const sidebarButtons = document.querySelectorAll("i.fa-bars"); 
+console.log(sidebarButtons);
+let isSidebarHidden = true; 
+const sideBar = document.querySelector('#side-barID');
+const body = document.querySelector('body');
+console.log(sideBar);
+console.log(body);
+sidebarIcon = document.querySelector("#barsIconH");
+sidebarIcon.style.display = "none";
+sidebarButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        console.log("clicked");
+        body.classList.toggle('sidebar-hidden');
+        sideBar.classList.toggle('hidden');
+        isSidebarHidden =!isSidebarHidden;
+        sidebarIcon.style.display = isSidebarHidden? "none" : "block";
+    });
+});
+
+    

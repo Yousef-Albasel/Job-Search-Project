@@ -19,17 +19,18 @@
      <!-- ===========Navbar============-->
      <div class="header">
         <nav class="container">
+            <i class="fas fa-bars" id="barsIconH"></i>
             <h1 class="logo"><a href="#">Workiee</a></h1>
             <div class="search-bar"> <!-- Canceled -->
                 <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
                 <i class="fas fa-search"></i>
             </div>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
                 <li name="dashboard" ><a href="{% url 'admin-dashboard' %}" class="selected">Dashboard</a></li>
                 <li name="login" role="authentication"><a href="{% url 'login' %}">Login</a></li>
                 <li name="register" role="authentication"><a href="{% url 'register' %}">Register</a></li>
-                <li><a href="#">Browse</a></li>
+                <li><a href="{% url 'browse' %}">Browse</a></li>
                 <div class="nav-profile">
                     <a href="#"><img src="https://i.pravatar.cc/50" alt=""></a>
                     <div>
@@ -43,8 +44,9 @@
         </div>
     </div>
 
-    <div class="side-bar">
-        <h1>Dashboard</h1>
+    <div class="side-bar" id="side-barID">
+        <h1>Dashboard <i class="fas fa-bars" style="float: right;"></i> </h1>
+        
         <p>You can find below options to manage your job applications, accept applicants, view more details about your active jobs.</p>
         <div class="side-panel" name="active">
             <i class="fas fa-columns"></i>
@@ -59,7 +61,7 @@
             <a href="#">Settings</a>
         </div>
     </div>
-    <div class="dashboard">
+    <div class="dashboard" id="dashboardID">
         <div class="card">
             <div><h1>Jobs</h1>
             <p>You have listed <span id="NoOfJobs">0</span> jobs!</p></div>
@@ -83,7 +85,7 @@
                 <h1>Listed Jobs</h1>
                     <div class="buttons">
                         <button onclick="location.href=`{% url 'add' %}`;">Add Job</button>
-                        <button id = "editJobButton" onclick="location.href='editJob.html'">Edit Job</button>
+                        <button id = "editJobButton" >Edit Job</button>
                         <button name="delete-button">Delete Job</button>
                     </div>
                 </div>
