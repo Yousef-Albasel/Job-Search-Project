@@ -23,6 +23,9 @@ def browse(request):
         html_content = render_to_string('browseJob.html', {'jobs': listOfJobs}, request=request)
         return HttpResponse(html_content)
     
+def details(request):
+    return render(request, "jobDescription.html")
+    
 
 def apply(request):
     if request.method == 'POST':
