@@ -4,6 +4,7 @@ from django.http import HttpResponse , HttpResponseRedirect,JsonResponse
 from django.template import loader
 from django.urls import reverse
 from .models import User
+from .models import jobApplication
 from django.template.loader import render_to_string
 import json
 def profile(request):
@@ -39,3 +40,13 @@ def update_user_profile(request):
     else:
         return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
     
+def delete_application(request, id):
+    if request.method == 'GET':
+        try:
+            application = get_object_or_404(jobApplication, id=id)
+            application.delete()
+            return JsonResponse({'status': 'success'})
+        except jobApplication.DoesNotExist:
+            return JsonResponse({'status': 'error', 'message': 'Application does not exist'})
+    else:
+        return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
