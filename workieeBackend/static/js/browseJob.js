@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function(){
-    console.log("hello from browse js");
     displayJobs();
     Search();
 });
@@ -35,7 +34,6 @@ async function getJobData() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        console.log(await data.job);
         return(data.jobs);
     } catch (error) {
         console.error('Error fetching jobs:', error);
@@ -128,8 +126,8 @@ async function displayJobs(){
         });
         let detailsButton = document.createElement('button');
         detailsButton.setAttribute('onclick', "getJobId(this)");
-        detailsButton.textContent = 'Details'
-
+        detailsButton.textContent = 'Details';
+        
         Buttons.appendChild(applyButton);
         Buttons.appendChild(detailsButton);
 
@@ -147,7 +145,7 @@ async function displayJobs(){
 function getJobId(button) {
     let selectedJobId = button.parentElement.parentElement.getAttribute('data-job-id');
     sessionStorage.setItem('selectedJobId', selectedJobId);
-    window.location.href = 'jobDescription.html';
+    window.location.href = "details";
 }
 
 async function applyForJob(jobId) {
