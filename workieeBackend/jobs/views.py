@@ -43,12 +43,12 @@ def addrecord(request):
     ) 
 
   job.save()
-  return HttpResponseRedirect(reverse('Index'))
+  return HttpResponseRedirect(reverse('admin-dashboard'))
 
 def delete(request, id):
   job = Jobs.objects.get(id=id)
   job.delete()
-  return HttpResponseRedirect(reverse('Index'))
+  return HttpResponseRedirect(reverse('admin-dashboard'))
 
 
 def loadDashboard(request):
@@ -84,4 +84,4 @@ def update (request):
   editedjob.jobrequirements=request.POST.get('jobRequirements')
 
   editedjob.save()
-  return HttpResponseRedirect(reverse('Index'))
+  return HttpResponseRedirect(reverse('admin-dashboard'))
