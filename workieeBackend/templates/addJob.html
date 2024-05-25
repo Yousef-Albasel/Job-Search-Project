@@ -24,7 +24,7 @@
     <!-- ===========Navbar============-->
     <div class="header">
       <nav class="container">
-        <h1 class="logo"><a href="index.html">Workiee</a></h1>
+        <h1 class="logo"><a href="index">Workiee</a></h1>
         <div class="search-bar">
           <!-- Canceled -->
           <input
@@ -36,14 +36,18 @@
           <i class="fas fa-search"></i>
         </div>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li name="dashboard"><a href="admin-dashboard.html">Dashboard</a></li>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'browse' %}">Browse</a></li>
+          <li name="dashboard">
+            <a href="{% url 'admin-dashboard' %}" class="selected">Dashboard</a>
+          </li>
           <li name="login" role="authentication">
-            <a href="Login.html">Login</a>
+            <a href="{% url 'login' %}">Login</a>
           </li>
           <li name="register" role="authentication">
-            <a href="signup.html">Register</a>
+            <a href="{% url 'register' %}">Register</a>
           </li>
+
           <div class="nav-profile">
             <a href="Profile.html"
               ><img src="https://i.pravatar.cc/50" alt=""
@@ -64,7 +68,7 @@
     <!-- Content -->
     <div class="form-box">
       <div class="container">
-        <form action="{% url 'addrecord' %}" method="POST" class="addJob">
+        <form action="{% url 'addrecord' %}" method="POST" class="addJob" data-redirect-url="{% url 'admin-dashboard' %}">
           {% csrf_token %}
           <fieldset>
             <legend>
@@ -188,7 +192,7 @@
       <a href="about.html">About us</a>
       <a href="help.html">Help</a>
     </footer>
-    <!-- <script src="../js/script.js"></script>
-    <script src="../js/addJob.js"></script> -->
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/addJob.js' %}"></script>
   </body>
 </html>
