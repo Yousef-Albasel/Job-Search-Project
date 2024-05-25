@@ -86,12 +86,15 @@ async function getJobData() {
 
 
 async function displayJobs() {
+    const userCredentials = sessionStorage.getItem("UserAccount");
+    const user = JSON.parse(userCredentials);
     let jobs = await getJobData();
     // let jobs = JSON.parse(localStorage.getItem('jobs')) || [];
     let listedJobs = document.querySelector('.listed-jobs');
     let nJobs = document.getElementById('NoOfJobs');
     let cnt = 0;
     jobs.forEach(function(job) {
+    if(user.id === job.user_id_id){
         cnt++;
         let jobContainer = document.createElement('div');
         jobContainer.classList.add('job-container');
@@ -138,7 +141,7 @@ async function displayJobs() {
 
         jobContainer.appendChild(document.createElement('hr'))
         listedJobs.appendChild(jobContainer);
-    });
+    }});
     nJobs.innerText = cnt;
 
 }

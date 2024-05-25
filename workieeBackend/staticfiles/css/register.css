@@ -37,6 +37,15 @@ body{
     gap: 20px;
 }
 
+@media only screen and (max-width: 768px){
+    .register-form .container .form-box form {
+        width: 100%;
+    }
+    .register-form .container .form-box {
+        width: 100%;
+    }
+}
+
 .register-form .container .form-box form .input-group{
     display: flex;
     flex-direction:column;

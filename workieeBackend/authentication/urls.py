@@ -10,4 +10,5 @@ urlpatterns = [
     path('delete_user/<int:user_id>/', views.delete_user, name='delete_user'),
     path('check_user_exists/', views.check_user_exists, name='check_user_exists'),
     path('check_email_exists/', views.check_email_exists, name='check_email_exists'),
+    path('logout/', views.logout, name='logout'),
 ]

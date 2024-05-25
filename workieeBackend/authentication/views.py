@@ -6,6 +6,7 @@ from .models import User
 import hashlib
 from django.template.loader import render_to_string
 
+from jobs.models import Jobs
 
 def register(request):
     template = loader.get_template('signup.html')
@@ -66,3 +67,6 @@ def ajax_get_users(request):
         return JsonResponse({'users': users})  
     else:
         return JsonResponse({'error': 'Not an AJAX request'}, status=400)
+    
+def logout(request):
+    return redirect('login')

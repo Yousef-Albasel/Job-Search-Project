@@ -212,3 +212,14 @@
 }
 
 
+.applied{
+   border: 1px solid var(--secondary-text-color);
+   color: var(--secondary-text-color);
+   opacity: 40%;
+}
+
+.applied:hover{
+   background-color: var(--primary-style-color);
+   color: var(--primary-text-color-light);
+   cursor: none;   
+}

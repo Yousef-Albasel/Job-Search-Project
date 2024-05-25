@@ -20,22 +20,32 @@
 <body>
     <!-- Header Section -->
     <div class="header">
+        <script>
+        function logout() {
+            sessionStorage.removeItem('UserAccount');
+            window.location.href = "{% url 'login' %}";
+        }
+        </script>
         <nav class="container">
-            <h1 class="logo"><a href="index.html">Workiee</a></h1>
+            <h1 class="logo"><a href="{%url 'index'%}">Workiee</a></h1>
             <div class="search-bar"> <!-- Canceled -->
                 <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
                 <i class="fas fa-search"></i>
             </div>
             <ul>
-                <li><a href="index.html" class="selected">Home</a></li>
-                <li name="dashboard"><a href="{% url 'admin-dashboard' %}">Dashboard</a></li>
-                <li><a href="{% url 'browse' %}">Browse</a></li>
-                <li name="login" role="authentication"><a href="{% url 'login' %}">Login</a></li>
-                <li name="register" role="authentication"><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{%url 'index'%}" class="selected">Home</a></li>
+                <li name="dashboard"><a href="{%url 'admin-dashboard'%}">Dashboard</a></li>
+                <li><a href="{%url 'browse'%}" >Browse</a></li>
+                <li name="login" role="authentication"><a href="{%url 'login'%}">Login</a></li>
+                <li name="register" role="authentication"><a href="{%url 'register'%}">Register</a></li>
                 <div class="nav-profile">
-                    <a href="Profile.html"><img src="https://i.pravatar.cc/50" alt=""></a>
+                    <a href="{%url 'profile'%}"><img src="https://avatar.iran.liara.run/public/37" alt=""></a>
+                    <div class="dropdown">
+                        <li><a href="{%url 'profile'%}">View Profile</a></li>
+                        <li><a href="#" onclick="logout()">Log Out</a></li>
+                    </div>   
                     <div>
-                    <p>Welcome,</p><span>Yousef Albasel</span>
+                        <p>Welcome,</p><span></span>
                     </div>
                 </div>
             </ul>
