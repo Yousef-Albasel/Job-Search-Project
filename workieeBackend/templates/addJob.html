@@ -35,29 +35,6 @@
           />
           <i class="fas fa-search"></i>
         </div>
-        <ul>
-          <li><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="{% url 'browse' %}">Browse</a></li>
-          <li name="dashboard">
-            <a href="{% url 'admin-dashboard' %}" class="selected">Dashboard</a>
-          </li>
-          <li name="login" role="authentication">
-            <a href="{% url 'login' %}">Login</a>
-          </li>
-          <li name="register" role="authentication">
-            <a href="{% url 'register' %}">Register</a>
-          </li>
-
-          <div class="nav-profile">
-            <a href="Profile.html"
-              ><img src="https://i.pravatar.cc/50" alt=""
-            /></a>
-            <div>
-              <p>Welcome,</p>
-              <span></span>
-            </div>
-          </div>
-        </ul>
 
         <div class="drop-menu">
           <i class="fas fa-bars"></i>
@@ -68,7 +45,7 @@
     <!-- Content -->
     <div class="form-box">
       <div class="container">
-        <form action="{% url 'addrecord' %}" method="POST" class="addJob" data-redirect-url="{% url 'admin-dashboard' %}">
+        <form action="{% url 'addrecord' %}" method="POST" class="addJob">
           {% csrf_token %}
           <fieldset>
             <legend>
