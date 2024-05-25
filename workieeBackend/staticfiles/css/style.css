@@ -1,0 +1,233 @@
+    :root {
+        --primary-background: #ffffff;
+        --primary-text-color-dark: #000000;
+        --primary-text-color-light: #ffffff;
+        --secondary-text-color: #4D4D4D;
+        --primary-style-color: #7F7FD5;
+        --primary-syle-color-hover:#5b5b94;
+        --secondary-style-color-hover:#9292de;
+        --primary-style-shade:#EAEBED;
+        --primary-style-link:#0172B1;
+        --color-input-success: #09c372;
+    }
+
+
+    * {
+        margin:0;
+        padding: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+
+    }
+
+    .container{
+        min-width: 90%;
+    }
+
+    a, li, button{
+        transition: 0.25s ease;
+    }
+
+    /*=============== Header Style =============*/
+    .header nav.container{
+        display: flex;
+        height: 60px;
+        justify-content: space-between;
+        align-items: center;
+        align-self: center;
+    }
+    /*=============== Header - Logo Style =============*/
+
+
+    .header nav.container h1 a{
+        font-size: 28px;
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+        color: var(--primary-style-color);
+        text-decoration: none;
+    }
+            /*=============== Header - Search Bar =============*/
+    /*This part has been canceled for now since it's kinda useless*/
+
+    .header .container .search-bar input{
+        padding: 10px 20px;
+        background-color: var(--primary-style-shade);
+        min-width: 25vw;
+        border-radius: 1px;
+        border: transparent 0.25px solid;
+        font-size: 12px;
+        position: relative;
+        margin-right: 2vw;
+        display: none;
+    }
+    .header .container .search-bar input:focus {
+        outline: none;
+        display: none;
+    }
+    .header .container .search-bar i {
+        cursor: pointer;
+        display: none;
+    }
+    
+    /*=============== Header - UL Style =============*/
+
+    .header nav.container ul{
+        list-style: none;
+        display: flex;
+    }
+
+    .header nav.container ul li{
+        padding: 10px 15px;
+        align-self: center;
+        margin-left: 10px;
+    }
+
+    .header nav.container ul li a{
+        text-decoration: none;
+        color: var(--primary-text-color-dark);
+        font-size: 12px;
+        position: relative;
+    }
+
+    .header nav.container ul li a.selected{
+        font-weight: 700;
+    }
+    .header nav.container ul li a.selected::after{
+        content: '';
+        width: 100%;
+        height: 2px;
+        border-radius: 10px;
+        background-color: var(--primary-style-color);
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .header nav.container ul li[name="login"] a:hover,
+        .header nav.container ul li a:hover{
+        color: var(--primary-style-color);
+    }
+    .header nav.container ul li[name="dashboard"]{
+        display: none;
+    }
+
+    .header nav.container ul li[name="register"]{
+        font-weight: 700;
+        color: var(--primary-text-color-light);
+        background-color: var(--primary-style-color);
+        border-radius: 5px;
+    }
+
+    .header nav.container ul li[name="register"] a{
+        color: var(--primary-text-color-light);
+    }
+
+    .header nav.container ul li[name="register"]:hover{
+        background-color: var(--primary-syle-color-hover);
+    }
+
+    .header .nav-profile{
+        display: flex;
+        align-items: center;
+    }
+    .header .nav-profile div{
+        font-size: 10px;
+        align-self: center;
+        margin: 0 10px;
+    }
+
+    .header .nav-profile div span{
+        font-weight: 700;
+    }
+    .header .nav-profile img{
+        width: 30px;
+        height: auto;
+        position: relative;
+        align-self: center;
+        border-radius: 50%;
+        margin-left: 20px;
+    }
+
+    .header .drop-menu{
+        display: none;
+    }
+    .header .drop-menu i{
+        font-size: 20px;
+        color: var(--primary-style-color);
+        cursor: pointer;
+    }
+
+
+
+    @media only screen and (max-width: 768px){
+        .header nav.container h1{
+            z-index: 3;
+        }
+        .header nav.container ul{
+            display: block;
+            position: absolute;
+            top: 60px;
+            height: 1fr;
+            width: 100%;
+            left: 0%;
+            background-color: var(--primary-text-color-light);
+            z-index: 2;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            transition: transform 0.3s ease; 
+            transform: translateY(-160%); 
+        }
+        
+        .header nav.container ul.show-menu {
+            transform: translateY(0); 
+        }
+
+        .header nav.container ul li{
+            text-align: center;
+            margin: 0;
+        }
+
+        .header nav.container ul li:hover{
+            background-color: var(--primary-style-shade);
+        }
+        .header nav.container ul li[name="register"] {
+            background: none;
+        }
+        .header nav.container ul li[name="register"]:hover {
+            background-color: var(--primary-style-shade);
+        }
+        .header nav.container ul li[name="register"] a {
+            color: var(--primary-text-color-dark);
+            font-weight: normal;
+        }
+        .header .drop-menu{
+            display: flex;
+        }
+    }
+
+    /*==============Footer================*/
+
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+    }
+
+    footer a {
+        color: var(--primary-text-color-dark);
+        text-decoration: none;
+        padding: 20px;
+    }

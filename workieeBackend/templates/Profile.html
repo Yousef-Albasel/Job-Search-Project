@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Workiee | Profile </title>
+</head>
+
+<body>
+    <div class="header">
+        <script>
+        function logout() {
+            sessionStorage.removeItem('UserAccount');
+            window.location.href = "{% url 'login' %}";
+        }
+        </script>
+        <nav class="container">
+            <h1 class="logo"><a href="{%url 'index'%}">Workiee</a></h1>
+            <div class="search-bar"> <!-- Canceled -->
+                <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
+                <i class="fas fa-search"></i>
+            </div>
+            <ul>
+                <li><a href="{%url 'index'%}">Home</a></li>
+                <li name="dashboard"><a href="{%url 'admin-dashboard'%}">Dashboard</a></li>
+                <li><a href="{%url 'browse'%}" class="selected">Browse</a></li>
+                <li name="login" role="authentication"><a href="{%url 'login'%}">Login</a></li>
+                <li name="register" role="authentication"><a href="{%url 'register'%}">Register</a></li>
+                <div class="nav-profile">
+                    <a href="{%url 'profile'%}"><img src="https://avatar.iran.liara.run/public/37" alt=""></a>
+                    <div class="dropdown">
+                        <li><a href="{%url 'profile'%}">View Profile</a></li>
+                        <li><a href="#" onclick="logout()">Log Out</a></li>
+                    </div>   
+                    <div>
+                        <p>Welcome,</p><span></span>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+        <div class="drop-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <div class="main">
+        <div class="profile-container">
+            <div class="profile-description">
+                <div class="profile-elements">
+                    <img src="https://avatar.iran.liara.run/public/37" alt="Profile Image" id="profile-image" class="profile-image" width="150px" height="150px">
+                    <h3 id="user-account-name">N/A</h3>
+                    <span id="user-account-job">N/A</span>
+                    <p id="user-accout-description">N/A</p>
+                    <div class="skills">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <input type="text" placeholder="Enter Skill" name="new-skill" id="new-skill">
+                </div>
+            </div>
+            <div class="basic-information">
+                <h1>Basic Information</h1>
+
+                <div class="info-row">
+                    <div class="info-field">
+                        <h6>Username</h6>
+                        <span id="user-name"></span>
+                        <input type="text" placeholder="Enter name" name="new-name" id="new-name">
+                    </div>
+                    <div class="info-field">
+                        <h6>Email</h6>
+                        <span id="email"></span>
+                        <input type="text" placeholder="Enter email" name="new-email" id="new-email">
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <div class="info-field">
+                        <h6>Current Job</h6>
+                        <span id="current-job"></span>
+                        <input type="text" placeholder="Enter current job" name="new-job" id="new-job">
+                    </div>
+                    <div class="info-field">
+                        <h6>Company Name</h6>
+                        <span id="company-name"></span>
+                        <input type="text" placeholder="Enter company name" name="new-company" id="new-company">
+                    </div>
+                </div>
+                <div class="info-row">
+                    <button id="save-button">Save Details</button>
+                    <button id="edit-button">Edit Details</button>
+                    <button id="resume-button" name="dialouge">Resume Link</button>
+                    <button id="picture-button" name="dialouge">Change Profile Picture</button>
+                    <input type="text" placeholder="Enter URL" name="new-url" id="new-url">
+
+                </div>
+            </div>
+            <div class="job-applications">
+                <div class="application-field">
+                    <h6>Web Designer</h6>
+                    <span>Meta</span>
+                    <p class="job-requirements">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis error
+                        expedita illo </p>
+                    <span class="yearsofexp">10+</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr>
+    <footer>
+        <center>
+            <a href="contact.html">Get in touch</a>
+            <a href="about.html">About us</a>
+            <a href="help.html">Help</a>
+        </center>
+    </footer>
+    <script src="{% static 'js/Profile.js' %}"></script>    
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

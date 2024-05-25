@@ -170,8 +170,22 @@
     }
 
 
+    .nav-profile .dropdown {
+        display: none;
+        background-color: var(--primary-background);
+        position: absolute;
+        top: 50px;
+    }
 
-    @media only screen and (max-width: 548px){
+    .nav-profile .dropdown li:hover {
+        background-color: var(--primary-style-shade);
+    }
+
+    .nav-profile:hover .dropdown{
+        display: block;
+    }
+
+    @media only screen and (max-width: 768px){
         .header nav.container h1{
             z-index: 3;
         }

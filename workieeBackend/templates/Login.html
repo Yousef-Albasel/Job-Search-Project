@@ -18,17 +18,33 @@
 <body>
     <!-- ===========Navbar============-->
     <div class="header">
+        <script>
+        function logout() {
+            sessionStorage.removeItem('UserAccount');
+            window.location.href = "{% url 'login' %}";
+        }
+        </script>
         <nav class="container">
-            <h1 class="logo"><a href="index.html">Workiee</a></h1>
+            <h1 class="logo"><a href="{%url 'index'%}">Workiee</a></h1>
             <div class="search-bar"> <!-- Canceled -->
                 <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
                 <i class="fas fa-search"></i>
             </div>
             <ul>
-                <li><a href="index.html" class="selected">Home</a></li>
-                <li name="dashboard"><a href="admin-dashboard.html">Dashboard</a></li>
-                <li name="login"><a href="Login.html">Login</a></li>
-                <li name="register"><a href="signup.html">Register</a></li>
+                <li><a href="{%url 'index'%}">Home</a></li>
+                <li name="dashboard"><a href="{%url 'admin-dashboard'%}">Dashboard</a></li>
+                <li name="login" role="authentication"><a href="{%url 'login'%}" class="selected">Login</a></li>
+                <li name="register" role="authentication"><a href="{%url 'register'%}">Register</a></li>
+                <div class="nav-profile">
+                    <a href="{%url 'profile'%}"><img src="https://avatar.iran.liara.run/public/37" alt=""></a>
+                    <div class="dropdown">
+                        <li><a href="{%url 'profile'%}">View Profile</a></li>
+                        <li><a href="#" onclick="logout()">Log Out</a></li>
+                    </div>   
+                    <div>
+                        <p>Welcome,</p><span></span>
+                    </div>
+                </div>
             </ul>
         </nav>
         <div class="drop-menu">
@@ -81,7 +97,7 @@
     </footer>
 
     <script src="{% static 'js/script.js' %}"></script>
-    <!-- <script src="{% static 'js/register.js' %}"></script> -->
+    <script src="{% static 'js/Login.js' %}"></script>
 
 </body>
 

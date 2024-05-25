@@ -1,0 +1,200 @@
+/* start global rules*/
+:root {
+  --primary-background: #ffffff;
+  --primary-text-color-dark: #000000;
+    --primary-text-color-light: #ffffff;
+    --secondary-text-color: #4D4D4D;
+    --primary-style-color: #7F7FD5;
+    --primary-syle-color-hover:#5b5b94;
+    --primary-style-shade:#EAEBED;
+    --color-input-success: #09c372;
+    --primary-style-link:#0172B1;
+  }
+  
+  
+  * {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.2s;
+  }
+  
+  @media (min-width: 576px){
+    .container{
+      width: 400px;
+    }
+  }
+  
+  /* Small */
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  /* Medium */
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  /* Large */
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+
+  
+  
+  /* end global rules */
+  
+  /* start Header */
+  .header{
+    height: 4rem;
+  }
+  
+  /* end Header */
+  
+ 
+  
+  /* start  editJob form*/
+  .editJob-form{
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-style-color);
+    height:calc(100vh - 7rem );
+    width: 100%;
+  
+  }
+
+  .container{
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  .editJob-form .container .form-box {
+    display: flex;
+    align-items: center;
+    margin: 0px auto;
+    width: clamp(400px, 50%, 1050px);
+  
+  
+  }
+  .editJob-form .container .form-box form{
+    background-color: var(--primary-text-color-light);
+    /* display: flex;
+    flex-direction: column; */
+    width: 100%;
+    /* margin: 20px 0px; */
+    padding: 1rem 2rem;
+    border-radius: 10px;
+  }
+  .editJob-form .container .form-box form .input-group{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+  }
+
+  .input-field{
+    flex: 1 1 calc(50% - 2rem);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5rem 1rem;
+  }
+
+  
+
+.input-field label{
+  color: var(--secondary-text-color);
+  margin-right: 15px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+  .editJob-form .container .form-box form h2{
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--primary-text-color-dark);
+    text-align: center;
+    position: relative;
+  }
+  
+  
+  
+   .input-field input[type="text" ] 
+   ,.input-field input[type="number" ] 
+   {
+  
+    width: clamp(150px , 100% , 300px);
+    background: transparent;
+    border: 0.5px solid var(--secondary-text-color);
+    border-radius: 3px;
+    outline: 0;
+   padding: 0px 15px; 
+  }
+  
+  .editJob-form .container .form-box form .input-button{
+    display: flex;
+    padding: 15px;
+  }
+  .editJob-form .container .form-box form .input-button input{
+    margin: 0px auto;
+    width: 50%;
+    padding: 15px 30px;
+    background-color: var(--primary-style-color);
+    border: none;
+    color:var(--primary-text-color-light);
+    transition: 0.2s;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .input-button{
+    display: flex;
+    flex-direction: column;
+  }
+  .input-button .message{
+    font-size: 12px;
+    font-weight: bold;
+    display: none;
+    color: var(--color-input-success);
+  }
+  
+  textarea{
+    /* width: 100%; */
+    /* padding: 10px; */
+    transition: 0.2s;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    background-color: #f9f9f9;
+    border: 1px solid var(--secondary-text-color);
+  }
+
+  textarea:focus{
+    border: 1px solid var(--primary-style-color);
+    outline: 0;
+  }
+  
+  /* end  editJob form*/
+  
+  /* start footer */
+  footer{
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer a{
+    text-decoration: none;
+    color: var(--primary-text-color-dark);
+    margin-right: 3rem;
+  }
+  footer a:last-child{
+    margin-right: 0px;
+  
+  }
+  /* end footer */

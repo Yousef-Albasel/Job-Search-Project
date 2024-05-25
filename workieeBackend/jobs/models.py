@@ -1,4 +1,5 @@
 from django.db import models
+from authentication.models import User
 
 class Jobs(models.Model):
     jobtitle = models.CharField(max_length=255)
@@ -9,3 +10,4 @@ class Jobs(models.Model):
     companyaddress = models.CharField(max_length=255)
     jobdescription = models.TextField(default='')
     jobrequirements = models.TextField(default='')
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE,null=True)

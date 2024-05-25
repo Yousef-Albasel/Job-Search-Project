@@ -4,7 +4,9 @@ from django.template import loader
 from django.urls import reverse
 from .models import User
 import hashlib
+from django.template.loader import render_to_string
 
+from jobs.models import Jobs
 
 def register(request):
     template = loader.get_template('signup.html')
@@ -55,6 +57,16 @@ def check_email_exists(request):
 
 
 def login(request):
-    template = loader.get_template('Login.html')
-    return HttpResponse(template.render())
+    return render(request, 'Login.html')
+
     
+def ajax_get_users(request):
+    is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
+    if is_ajax:  
+        users = list(User.objects.values())  
+        return JsonResponse({'users': users})  
+    else:
+        return JsonResponse({'error': 'Not an AJAX request'}, status=400)
+    
+def logout(request):
+    return redirect('login')
