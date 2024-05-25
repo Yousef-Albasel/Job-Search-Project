@@ -18,23 +18,33 @@
 <body>
      <!-- ===========Navbar============-->
      <div class="header">
+        <script>
+        function logout() {
+            sessionStorage.removeItem('UserAccount');
+            window.location.href = "{% url 'login' %}";
+        }
+        </script>
         <nav class="container">
             <i class="fas fa-bars" id="barsIconH"></i>
-            <h1 class="logo"><a href="#">Workiee</a></h1>
+            <h1 class="logo"><a href="{%url 'index'%}">Workiee</a></h1>
             <div class="search-bar"> <!-- Canceled -->
                 <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
                 <i class="fas fa-search"></i>
             </div>
             <ul>
-                <li><a href="{% url 'index' %}">Home</a></li>
-                <li name="dashboard" ><a href="{% url 'admin-dashboard' %}" class="selected">Dashboard</a></li>
-                <li name="login" role="authentication"><a href="{% url 'login' %}">Login</a></li>
-                <li name="register" role="authentication"><a href="{% url 'register' %}">Register</a></li>
-                <li><a href="{% url 'browse' %}">Browse</a></li>
+                <li><a href="{%url 'index'%}">Home</a></li>
+                <li name="dashboard"><a href="{%url 'admin-dashboard'%} "class="selected">Dashboard</a></li>
+                <li><a href="{%url 'browse'%}" >Browse</a></li>
+                <li name="login" role="authentication"><a href="{%url 'login'%}">Login</a></li>
+                <li name="register" role="authentication"><a href="{%url 'register'%}">Register</a></li>
                 <div class="nav-profile">
-                    <a href="#"><img src="https://i.pravatar.cc/50" alt=""></a>
+                    <a href="{%url 'profile'%}"><img src="https://avatar.iran.liara.run/public/37" alt=""></a>
+                    <div class="dropdown">
+                        <li><a href="{%url 'profile'%}">View Profile</a></li>
+                        <li><a href="#" onclick="logout()">Log Out</a></li>
+                    </div>   
                     <div>
-                    <p>Welcome,</p><span>Yousef Albasel</span>
+                        <p>Welcome,</p><span></span>
                     </div>
                 </div>
             </ul>
@@ -98,38 +108,7 @@
                 <h1>Applicants</h1>
                 <a>See All</a>
                 </div>
-                <div class="application">
-                    <img src="https://i.pravatar.cc/50">
-                    <div>
-                    <h1>Yousef Amgad</h1>
-                    <p>Applied for <span>IOS Developer</span></p>
-                </div>
-                <a href="#">View Profile</a>
-                </div>
-                <div class="application">
-                    <img src="https://i.pravatar.cc/50">
-                    <div>
-                    <h1>Yousef Amgad</h1>
-                    <p>Applied for <span>IOS Developer</span></p>
-                </div>
-                <a href="#">View Profile</a>
-                </div>
-                <div class="application">
-                    <img src="https://i.pravatar.cc/50">
-                    <div>
-                    <h1>Yousef Amgad</h1>
-                    <p>Applied for <span>IOS Developer</span></p>
-                </div>
-                <a href="#">View Profile</a>
-                </div>
-                <div class="application">
-                    <img src="https://i.pravatar.cc/50">
-                    <div>
-                    <h1>Yousef Amgad</h1>
-                    <p>Applied for <span>IOS Developer</span></p>
-                </div>
-                <a href="#">View Profile</a>
-                </div>
+
                 
             </div>
         </div>

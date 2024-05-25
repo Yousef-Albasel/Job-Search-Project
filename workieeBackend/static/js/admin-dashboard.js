@@ -94,6 +94,7 @@ async function displayJobs() {
     let nJobs = document.getElementById('NoOfJobs');
     let cnt = 0;
     jobs.forEach(function(job) {
+    if(user.id === job.user_id_id){
         cnt++;
         let jobContainer = document.createElement('div');
         jobContainer.classList.add('job-container');
@@ -140,7 +141,7 @@ async function displayJobs() {
 
         jobContainer.appendChild(document.createElement('hr'))
         listedJobs.appendChild(jobContainer);
-    });
+    }});
     nJobs.innerText = cnt;
 
 }
@@ -167,4 +168,105 @@ sidebarButtons.forEach(button => {
     });
 });
 
-    
+
+async function getApplications() {
+    try {
+        const response = await fetch('browse/getApplications/', {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data.apps; 
+    } catch (error) {
+        console.error('Error fetching apps:', error);
+        return null;
+    }
+}
+
+async function getJobUsingAppID(appId){
+    jobs = await getJobData();
+    const userCredentials = sessionStorage.getItem("UserAccount");
+    const user = JSON.parse(userCredentials);
+    job = jobs.find(j => j.id === appId && j.user_id_id === user.id);    
+    return job;
+}
+
+async function getUserUsingAppID(appId){
+    users = await getUsers();
+    user = users.find(u => u.id === appId);    
+    return user;
+}
+function createApplicantElement(applicantUsername,JobTitle) {
+    const divApplicant = document.createElement('div');
+    divApplicant.classList.add('application');
+
+    const img = document.createElement('img');
+    img.setAttribute('src', 'https://avatar.iran.liara.run/public/37');
+    img.style.width = "50px";
+    img.style.height = "50px";
+
+    const divInfo = document.createElement('div');
+
+    const h1Name = document.createElement('h1');
+    h1Name.setAttribute('id', 'applicant-name');
+    h1Name.textContent = applicantUsername;
+
+    const pAppliedFor = document.createElement('p');
+    pAppliedFor.textContent = 'Applied for ';
+
+    const spanJobTitle = document.createElement('span');
+    spanJobTitle.setAttribute('id', 'application-job-title');
+    spanJobTitle.textContent = JobTitle;
+
+    pAppliedFor.appendChild(spanJobTitle);
+    divInfo.appendChild(h1Name);
+    divInfo.appendChild(pAppliedFor);
+
+    const aViewProfile = document.createElement('a');
+    aViewProfile.setAttribute('href', '#');
+    aViewProfile.textContent = 'View Profile';
+
+    divApplicant.appendChild(img);
+    divApplicant.appendChild(divInfo);
+    divApplicant.appendChild(aViewProfile);
+
+    return divApplicant;
+}
+
+async function displayApplicants() {
+    const container = document.querySelector('.applicants');
+    const applicants = await getApplications();
+
+    if (!applicants) return;
+    applicants.forEach(async applicant => {
+        const job = await getJobUsingAppID(applicant.job_id);
+        const user = await getUserUsingAppID(applicant.user_id); 
+        const applicantElement = createApplicantElement(user.username, job.jobtitle);
+        container.appendChild(applicantElement);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', displayApplicants);
+
+
+async function getUsers() {
+    try {
+        const response = await fetch('/login/get_users', {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data.users; 
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        return null;
+    }
+}

@@ -31,7 +31,7 @@ function checkUserCredentials() {
             };
         });
 
-        if (user.isAdmin === true && userAuthorized){
+        if (user.is_company_admin === true && userAuthorized){
             adminDashboardLink.style.display = "block";
         }else{
             adminDashboardLink.style.display = "none";

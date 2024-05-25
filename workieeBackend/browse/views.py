@@ -4,7 +4,8 @@ from django.template import loader
 from django.urls import reverse
 from jobs.models import Jobs
 from django.template.loader import render_to_string
-
+from applications.models import jobApplication
+import json
 # Create your views here.
 
 def browse(request):
@@ -21,3 +22,32 @@ def browse(request):
         listOfJobs = Jobs.objects.all()
         html_content = render_to_string('browseJob.html', {'jobs': listOfJobs}, request=request)
         return HttpResponse(html_content)
+    
+
+def apply(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        user_id = data.get('user_id')
+        job_id = data.get('job_id')
+
+        application = jobApplication.objects.create(
+            user_id=user_id,
+            job_id=job_id
+        )
+        application.save()
+        return JsonResponse({'status': 'success'})
+    else:
+        return JsonResponse({'status': 'error', 'message': 'Only POST requests are allowed'}, status=405)
+    
+def getApplications(request):
+    is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
+    if is_ajax:  
+        apps = list(jobApplication.objects.values())  
+        return JsonResponse({'apps': apps})  
+    else:
+        return JsonResponse({'error': 'Not an AJAX request'}, status=400)
+    
+def delete_application(request, id):
+  application = jobApplication.objects.get(id=id)
+  application.delete()
+  return HttpResponseRedirect(reverse('admin-dashboard'))

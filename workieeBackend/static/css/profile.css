@@ -10,6 +10,9 @@
     --primary-style-link: #0172B1;
 }
 
+body{
+    position: relative;
+}
 
 .main{
     padding: 20px;
@@ -39,58 +42,264 @@
     display: flex;
     flex-direction: column;
     height: 60vh;
-    padding: 15px;
+    padding: 35px;
     justify-content: space-around;
     align-items: center;
     
     }
 
 
-.profile-image {
-    size: 60px;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    transition: transform 0.2s;
+
+.profile-elements p {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 12px;
 }
 
-.profile-image:hover {
-    transform: scale(1.1);
+.profile-elements span {
+    font-weight: bold;
+    color: var(--secondary-text-color);
+    font-size: 12px;
+}
+.profile-elements .profile-image {
+    border-radius: 50%;
+    transition: transform 0.2s;
+    padding-bottom: 10px;
+}
+
+.profile-elements .profile-image:hover {
+    cursor: pointer;
+    transform: scale(1.08);
 }
 
 .basic-information {
     border-radius: 10px;
     grid-area: basic-information;
     background-color: var(--primary-text-color-light);
+    
+
     }
+
   
-.job-applications {
-    border-radius: 10px;
-    grid-area: job-applications;
-    background-color: var(--primary-text-color-light);
-    }
-  
-.skills {
+.info-row {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    align-items: center;
+    margin: 20px;
 }
 
-.tag {
+.info-field {
+    flex: 1;
+}
+
+.info-row button#save-button {
+    padding: 10px 25px;
+    /* margin-right: 0; */
     background-color: var(--primary-style-color);
-    /* Change to your preferred color */
+    color: var(--primary-text-color-light);
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right : 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.info-row button#edit-button {
+    padding: 10px 25px;
+    /* margin-right: 0; */
+    background-color: var(--primary-style-color);
+    color: var(--primary-text-color-light);
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right : 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.info-row button#resume-button {
+    padding: 10px 25px;
+    /* margin-right: 0; */
+    background-color: transparent;
+    color: var(--primary-style-color);
+    border: 1px solid var(--primary-style-color);
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.info-row button#picture-button {
+    padding: 10px 25px;
+    /* margin-right: 0; */
+    background-color: transparent;
+    color: var(--primary-style-color);
+    border: 1px solid var(--primary-style-color);
+    border-radius: 5px;
+    font-size: 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.info-row button:hover {
+    background-color: var(--secondary-style-color-hover);
+    transform: scale(1.08);
+}
+
+
+.profile-elements .skills {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.profile-elements .skills .tag {
+    background-color: var(--primary-style-color);
     color: var(--primary-text-color-light);
     padding: 10px 15px;
     border-radius: 25px;
     display: inline-block;
     margin: 5px;
+    position: relative;
     font-family: Arial, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
 }
 
-.tag:hover {
+
+.profile-elements .skills > i{
+    display: inline-block;
+    transition: transform 0.2s;
+    font-size: 20px;
+    margin-left: 10px;
+    align-self: center;
+    color: var(--primary-style-color);
+    opacity: 90%;
+    
+}
+.profile-elements .skills > i:hover{
+    cursor: pointer;
     transform: scale(1.1);
+    
+}
+
+.profile-elements .skills .tag > i {
+    right: 8%;
+    position: absolute;
+    top: 12px;
+    font-size: 10px;
+    display: none;
+    transition: 0.2s;
+    color: white;
+}
+.profile-elements .skills .tag:hover {
+    
+    transform: scale(1.1);
+    padding-right: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.profile-elements .skills .tag:hover > i{
+    display: block;
+}
+.profile-elements .skills .tag > i:hover {
+    cursor: pointer;
+}
+.profile-elements input{
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid black;
+    outline: none;
+    margin-top: 20px;
+    display: none;
+    transition: all 0.2s;
+}
+.profile-elements input:focus{
+    outline:none;
+    border:1px solid var(--primary-style-color);
+}
+
+.basic-information input {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid black;
+    outline: none;
+    margin-top: 20px;
+    display: none;
+    transition: all 0.2s;
+}
+
+.basic-information input:focus {
+    outline: none;
+    border: 1px solid var(--primary-style-color);
+}
+
+.basic-information h1 {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.job-applications {
+    border-radius: 10px;
+    grid-area: job-applications;
+    background-color: var(--primary-text-color-light);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.application-field {
+    background-color: var(--primary-background);
+    border-radius: 5px;
+    padding: 15px 20px;
+    margin: 10px;
+    box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+}
+
+.application-field:hover {
+    box-shadow: 6px 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--primary-style-shade);
+}
+
+.application-field h6 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.job-requirements {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.application-field span {
+    font-size: 14px;
+    color: var(--primary-style-color);
+    margin-right: 10px;
+}
+
+.application-field .yearsofexp {
+    font-size: 12px;
+    color: var(--primary-background);
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: var(--secondary-text-color);
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .profile-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        grid-template-areas:
+        "profile-description"
+        "basic-information"
+        "job-applications";
+    }
 }

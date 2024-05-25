@@ -3,6 +3,7 @@ from django.http import HttpResponse , HttpResponseRedirect
 from django.template import loader
 from .models import Jobs
 from django.urls import reverse
+import json
 
 def Index(request):
   tmp= loader.get_template('index.html')
@@ -26,7 +27,8 @@ def addrecord(request):
   companyAddress=request.POST.get('CompanyAddress')
   jobDesc=request.POST.get('jobDescription')
   jobReq=request.POST.get('jobRequirements')
-  
+  user_id = request.POST.get('user_id')
+
 
   job =Jobs(
     jobtitle =jobTitle , 
@@ -36,8 +38,9 @@ def addrecord(request):
     companyname = companyName,
     companyaddress = companyAddress,
     jobdescription = jobDesc , 
-    jobrequirements = jobReq
-        ) 
+    jobrequirements = jobReq,
+    user_id_id = user_id
+    ) 
 
   job.save()
   return HttpResponseRedirect(reverse('Index'))
@@ -46,6 +49,7 @@ def delete(request, id):
   job = Jobs.objects.get(id=id)
   job.delete()
   return HttpResponseRedirect(reverse('Index'))
+
 
 def loadDashboard(request):
   tmp= loader.get_template('admin-dashboard.html')
