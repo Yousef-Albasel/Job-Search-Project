@@ -21,7 +21,7 @@ body{
 }
 .profile-container {  
     padding-top: 1vh;
-    height: 100vh;
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -103,6 +103,7 @@ body{
     margin-right : 10px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
 
 .info-row button#edit-button {
     padding: 10px 25px;
@@ -246,8 +247,7 @@ body{
     background-color: var(--primary-text-color-light);
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
+    flex-wrap: nowrap;
 }
 
 .application-field {
@@ -289,6 +289,20 @@ body{
     border-radius: 3px;
     background-color: var(--secondary-text-color);
 }
+
+ .job-applications .application-field button {
+    padding: 10px 15px;
+    background-color: rgb(146, 0, 0);
+    color: var(--primary-text-color-light);
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    float: right;
+    cursor: pointer;
+    /* margin-right: 10px; */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
 
 
 
