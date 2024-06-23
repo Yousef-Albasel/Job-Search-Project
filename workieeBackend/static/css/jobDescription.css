@@ -1,5 +1,5 @@
 :root {
-    --primary-background: #ffffff;
+    --primary-background: #f8f9fa;
     --primary-text-color-dark: #000000;
     --primary-text-color-light: #ffffff;
     --secondary-text-color: #4D4D4D;
@@ -8,6 +8,17 @@
     --secondary-style-color-hover:#9292de;
     --primary-style-shade:#EAEBED;
     --primary-style-link:#0172B1;
+    --button-hover-color: #5a5a99;
+}
+
+/*=============== General Styles =============*/
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--primary-background);
+    color: var(--primary-text-color-dark);
 }
 
 /*=============== Modify navbar style =============*/
@@ -18,85 +29,62 @@
     z-index: 99;
     box-shadow: 1px 1px 10px #aaaaaa88;
 }
-
 /*=============== Content style =============*/
-.content{
-    background-color: var(--primary-background);
+.content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 30px;
-    padding: 3% 10%;
-    
+    padding: 5% 10%;
+    min-height: calc(100vh - 130px);
+    max-height: fit-content;
+    background-color: var(--primary-style-shade);
 }
 
-.job-header {
-    background: #ffffff;
-    width: 75%;
-    padding: 16px;
+.content > div {
+    background: var(--primary-text-color-light);
+    width: 80%;
+    padding: 24px;
     border: 1px solid #D9DDE4;
-    border-radius: 4px;
-    
-    
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.content h1, .content h3 {
+    margin: 0;
+}
+
 .job-header .comp {
-    padding: 16px;
+    padding-left: 15px;
+    margin: 16px 0;
+    color: var(--secondary-text-color);
 }
-.job-header .comp-name{
-    font-weight:600;
+
+.job-header .comp-name {
+    font-weight: 600;
 }
-.job-header .pos {
-    padding: 32px 16px;
-}
+
 .job-header button {
-    justify-self: center;
-    margin: auto;
-    width: 150px;
-    height: 40px;
+    display: block;
+    margin: 20px auto 0;
+    width: 160px;
+    padding: 12px;
     font-weight: 700;
     color: var(--primary-text-color-light);
     background-color: var(--primary-style-color);
-    border-radius: 5px;
+    border-radius: 4px;
     border: none;
     cursor: pointer;
- }
- .job-header button:hover {
-    background-color: var(--primary-syle-color-hover);
- }
-
-.job-details {
-    position: relative;
-    background: #ffffff;
-    width: 75%;
-    padding: 16px;
-    border: 1px solid #D9DDE4;
-    border-radius: 4px;
-}
-.job-details p {
-    padding: 16px;
+    transition: background-color 0.3s ease;
 }
 
-.job-description {
-    position: relative;
-    background: #ffffff;
-    width: 75%;
-    padding: 16px;
-    border: 1px solid #D9DDE4;
-    border-radius: 4px;
-}
-.job-description p {
-    padding: 16px;
+.job-header button:hover {
+    background-color: var(--button-hover-color);
 }
 
-.job-requirements {
-    position: relative;
-    background: #ffffff;
-    width: 75%;
-    padding: 16px;
-    border: 1px solid #D9DDE4;
-    border-radius: 4px;
-}
-.job-requirements p{
-    padding: 16px;
+.job-details p, .job-description p, .job-requirements p {
+    margin: 16px 0;
+    line-height: 1.6;
+    padding-left: 15px;
 }

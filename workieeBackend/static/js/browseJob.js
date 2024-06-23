@@ -53,6 +53,14 @@ async function displayJobs(){
     //let jobs = JSON.parse(localStorage.getItem('jobs')) || [];
     let listedJobs = document.querySelector('.content');
 
+    let noJobsMessage = document.createElement('p');
+    noJobsMessage.classList.add('no-jobs-message');
+    noJobsMessage.textContent = "No Jobs Found";
+
+    if(jobs.length == 0){
+        listedJobs.appendChild(noJobsMessage)
+    }
+
     jobs.forEach(function(job) {
         let jobBlock = document.createElement('div');
         jobBlock.classList.add('block');

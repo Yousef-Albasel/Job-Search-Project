@@ -169,12 +169,19 @@
         cursor: pointer;
     }
 
-
     .nav-profile .dropdown {
-        display: none;
+        display: block;
+        z-index: 999;
         background-color: var(--primary-background);
         position: absolute;
         top: 50px;
+        transition: transform 0.3s ease; 
+        transform: translateY(-200%)
+    }
+
+    .nav-profile .dropdown li {
+        padding: 10px 15px;
+        align-self: center;
     }
 
     .nav-profile .dropdown li:hover {
@@ -183,6 +190,7 @@
 
     .nav-profile:hover .dropdown{
         display: block;
+        transform: translateY(0); 
     }
 
     @media only screen and (max-width: 768px){
