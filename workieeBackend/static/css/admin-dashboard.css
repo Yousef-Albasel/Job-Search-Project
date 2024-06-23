@@ -35,11 +35,11 @@
     color: var(--primary-style-color);
 
 }
-.header nav.container ul li:first-child {
+/* .header nav.container ul li:first-child {
     margin-right: 20px;
     padding: 0;
     align-self: center;
-}
+} */
 
 .header nav.container ul a[name="logout"] {
     font-weight: 700;

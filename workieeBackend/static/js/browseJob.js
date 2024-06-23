@@ -92,7 +92,8 @@ async function displayJobs(){
         jobBlockHeader.appendChild(compNameAddress);
 
         let jobDescription = document.createElement('p');
-        jobDescription.classList.add('discription')
+        jobDescription.classList.add('discription');
+        jobDescription.setAttribute('title', 'More in details page');
         jobDescription.textContent = job.jobdescription;
 
         let yearsOfExperience = document.createElement('p');

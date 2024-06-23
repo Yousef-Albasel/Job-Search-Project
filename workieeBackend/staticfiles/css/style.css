@@ -87,7 +87,7 @@
         display: flex;
     }
 
-    .header nav.container ul li{
+    .header nav.container ul > li{
         padding: 10px 15px;
         align-self: center;
         margin-left: 10px;
@@ -176,7 +176,7 @@
         position: absolute;
         top: 50px;
         transition: transform 0.3s ease; 
-        transform: translateY(-200%)
+        transform: translateY(-1000%)
     }
 
     .nav-profile .dropdown li {
