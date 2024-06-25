@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get in touch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <script>
+            function logout() {
+                sessionStorage.removeItem('UserAccount');
+                window.location.href = "login.html";
+            }
+            </script>
+        <nav class="container">
+            <h1 class="logo"><a href="index.html">Workiee</a></h1>
+            <div class="search-bar"> <!-- Canceled -->
+                <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
+                <i class="fas fa-search"></i>
+            </div>
+            <ul>
+                <li><a href="index.html" class="selected">Home</a></li>
+                <li name="dashboard"><a href="admin-dashboard.html">Dashboard</a></li>
+                <li><a href="browseJob.html">Browse</a></li>
+                <li name="login" role="authentication"><a href="Login.html">Login</a></li>
+                <li name="register" role="authentication"><a href="signup.html">Register</a></li>
+                <div class="nav-profile">
+                    <a href="Profile.html"><img src="https://i.pravatar.cc/50" alt=""></a>
+                    <div class="dropdown">
+                        <li><a href="profile.html">View Profile</a></li>
+                        <li><a href="#" onclick="logout()">Log Out</a></li>
+                    </div>   
+                    <div>
+                    <p>Welcome,</p><span>Yousef Albasel</span>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+        <div class="drop-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <!-- Content-->
+    <div class="content">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you! Whether you have a question about our services, need assistance, or just want to give feedback, we're here to help.<br>Here are the ways you can reach us:</p>
+        <h3>Email Us:</h3>
+        <ul>
+            <li>For general inquiries: <a href="mailto:info@workiee.com">info@workiee.com</a></li>
+            <li>For support: <a href="mailto:support@workiee.com">support@workiee.com</a></li>
+            <li>For partnership opportunities: <a href="mailto:partnerships@workiee.com">partnerships@workiee.com</a></li>
+        </ul>
+        <h3>Call Us:</h3>
+        <ul>
+            <li>Customer Service: +20 1XX XXX XXXX</li>
+            <li>Business Inquiries: +20 1XX XXX XXXX</li>
+        </ul>
+        <h3>Visit Us:</h3>
+        <p>Workiee HQ<br>
+        123 Innovation Drive<br>
+        Tech City, TC 12345</p>
+        <h3>Follow Us:</h3>
+        <p>Stay connected through our social media channels for the latest updates and news:</p>
+        <p>
+            <a href="#">Facebook</a> | 
+            <a href="#">Twitter</a> | 
+            <a href="#">LinkedIn</a> | 
+            <a href="#">Instagram</a>
+        </p>
+        <p>We're committed to providing the best service and support, so don't hesitate to reach out with any questions or concerns.</p>
+
+    </div>
+    
+    <!-- footer --->
+    <footer>
+        <a href="about.html">About us</a>
+        <a href="help.html">Help</a>
+    </footer>
+    
+    <script src="../js/script.js"></script>
+</body>
+</html>

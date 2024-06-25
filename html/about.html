@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <script>
+            function logout() {
+                sessionStorage.removeItem('UserAccount');
+                window.location.href = "login.html";
+            }
+            </script>
+        <nav class="container">
+            <h1 class="logo"><a href="index.html">Workiee</a></h1>
+            <div class="search-bar"> <!-- Canceled -->
+                <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
+                <i class="fas fa-search"></i>
+            </div>
+            <ul>
+                <li><a href="index.html" class="selected">Home</a></li>
+                <li name="dashboard"><a href="admin-dashboard.html">Dashboard</a></li>
+                <li><a href="browseJob.html">Browse</a></li>
+                <li name="login" role="authentication"><a href="Login.html">Login</a></li>
+                <li name="register" role="authentication"><a href="signup.html">Register</a></li>
+                <div class="nav-profile">
+                    <a href="Profile.html"><img src="https://i.pravatar.cc/50" alt=""></a>
+                    <div class="dropdown">
+                        <li><a href="profile.html">View Profile</a></li>
+                        <li><a href="#" onclick="logout()">Log Out</a></li>
+                    </div>   
+                    <div>
+                    <p>Welcome,</p><span>Yousef Albasel</span>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+        <div class="drop-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <!-- Content-->
+    <div class="content">
+        <h2>About Us</h2>
+        <h3>Our Story</h3>
+        <p>Founded in 2024<br>Workiee was born out of a passion for innovation and a desire to make work easier and more efficient for everyone.<br>Our mission is to provide cutting-edge tools and resources that empower individuals and businesses to achieve their goals.</p>
+        <h3>Our Mission</h3>
+        <p>At Workiee, our mission is to revolutionize the way people work by offering a platform that is intuitive, powerful, and accessible to all.<br>We believe in fostering a culture of collaboration, creativity, and continuous improvement.</p>
+        <h3>Our Values</h3>
+        <ul>
+            <li><strong>Innovation:</strong> We are committed to pushing the boundaries of technology to bring you the best solutions.</li>
+            <li><strong>Customer-Centricity:</strong> Our users are at the heart of everything we do. We listen, we learn, and we strive to exceed your expectations.</li>
+            <li><strong>Integrity:</strong> We uphold the highest standards of integrity in all our actions and decisions.</li>
+            <li><strong>Community:</strong> We believe in the power of community and work to create a supportive and inclusive environment for all.</li>
+        </ul>
+        <h3>Meet the Team</h3>
+        <p>Our team is composed of passionate professionals with diverse backgrounds in technology, design, and business.<br>We are united by a shared vision to transform the workplace and make a positive impact on the world.</p>
+    </div>
+    
+    <!-- footer --->
+    <footer>
+        <a href="contact.html">Get in touch</a>
+        <a href="help.html">Help</a>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

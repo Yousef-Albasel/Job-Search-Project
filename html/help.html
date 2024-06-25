@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <script>
+            function logout() {
+                sessionStorage.removeItem('UserAccount');
+                window.location.href = "login.html";
+            }
+            </script>
+        <nav class="container">
+            <h1 class="logo"><a href="index.html">Workiee</a></h1>
+            <div class="search-bar"> <!-- Canceled -->
+                <input type="text" id="search-bar" name="search-bar" placeholder="Search for job">
+                <i class="fas fa-search"></i>
+            </div>
+            <ul>
+                <li><a href="index.html" class="selected">Home</a></li>
+                <li name="dashboard"><a href="admin-dashboard.html">Dashboard</a></li>
+                <li><a href="browseJob.html">Browse</a></li>
+                <li name="login" role="authentication"><a href="Login.html">Login</a></li>
+                <li name="register" role="authentication"><a href="signup.html">Register</a></li>
+                <div class="nav-profile">
+                    <a href="Profile.html"><img src="https://i.pravatar.cc/50" alt=""></a>
+                    <div class="dropdown">
+                        <li><a href="profile.html">View Profile</a></li>
+                        <li><a href="#" onclick="logout()">Log Out</a></li>
+                    </div>   
+                    <div>
+                    <p>Welcome,</p><span>Yousef Albasel</span>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+        <div class="drop-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <!-- Content-->
+    <div class="content">
+        <h2>Help</h2>
+        <p>Welcome to the Workiee Help Center!</p>
+        <p>Here you'll find answers to common questions, guides on how to use our services, and resources to help you get the most out of Workiee.</p>
+        <h3>Frequently Asked Questions (FAQs)</h3>
+        <p><strong>Q1: How do I create an account?</strong></p>
+        <p>A1: Creating an account is simple. Just click on the "Register" button at the top right corner of our homepage, fill in your details, and you're all set!</p>
+        <p><strong>Q2: How can I contact customer support?</strong></p>
+        <p>A2: You can reach our customer support team via email at <a href="mailto:support@workiee.com">support@workiee.com</a> or by calling +20 1XX XXX XXXX.</p>
+        <h3>Technical Support</h3>
+        <p>If you're experiencing technical issues, please check our <a href="#">System Status</a> page for any known issues or maintenance updates.<br>For further assistance, contact our technical support team at <a href="mailto:techsupport@workiee.com">techsupport@workiee.com</a>.</p>
+        <h3>Community Support</h3>
+        <p>Join our community forum to connect with other Workiee users, share tips and tricks, and get help from our community members.</p>
+        <h3>Still Need Help?</h3>
+        <p>If you can't find the answer you're looking for, don't hesitate to contact us directly through our <a href="contact.html">Contact Us</a> page. We're here to help!</p>
+
+    </div>
+    
+    <!-- footer --->
+    <footer>
+        <a href="contact.html">Get in touch</a>
+        <a href="about.html">About us</a>
+    </footer>
+    
+    <script src="../js/script.js"></script>
+</body>
+</html>

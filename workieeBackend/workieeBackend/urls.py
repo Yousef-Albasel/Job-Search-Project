@@ -25,6 +25,9 @@ urlpatterns = [
     path('',include('ADDashboard.urls') ),
     path('',include('applications.urls') ),
     path('', TemplateView.as_view(template_name='indexPage.html'), name='index'),
+    path('about/', TemplateView.as_view(template_name='about.html'), name='about'),
+    path('contact/', TemplateView.as_view(template_name='contact.html'), name='contact'),
+    path('help/', TemplateView.as_view(template_name='help.html'), name='help'),
     path('browse/', include('browse.urls')),
 
 ]
