@@ -213,16 +213,13 @@
       }
     </script>
 
-    <footer>
-      <a href="contact.html">Get in touch</a>
-      <a href="about.html">About us</a>
-      <a href="help.html">Help</a>
-    </footer>
+  <footer>
+    <a href="{% url 'contact'%}">Get in touch</a>
+    <a href="{% url 'about'%}">About us</a>
+    <a href="{% url 'help'%}">Help</a>
+  </footer>
     <script src="{% static 'js/script.js' %}"></script>
-    <<<<<<< HEAD
     <script src="{% static 'js/addJob.js' %}"></script>
-    =======
     <!--<script src="../js/addJob.js"></script> -->
-    >>>>>>> main
   </body>
 </html>

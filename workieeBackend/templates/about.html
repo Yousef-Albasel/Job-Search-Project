@@ -1,25 +1,22 @@
 {% load static %}
-
 <!DOCTYPE html>
-<html>
-
-<head>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/jobDescription.css' %}"> 
-    
+    <title>About Us</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>Workiee | Job Details</title>
+    
 </head>
-
-<div>
-    <!-- ===========Navbar============-->
+<body>
+    <!-- Header Section -->
     <div class="header">
         <script>
         function logout() {
@@ -36,7 +33,7 @@
             <ul>
                 <li><a href="{%url 'index'%}">Home</a></li>
                 <li name="dashboard"><a href="{%url 'admin-dashboard'%}">Dashboard</a></li>
-                <li><a href="{%url 'browse'%}" class="selected">Browse</a></li>
+                <li><a href="{%url 'browse'%}" >Browse</a></li>
                 <li name="login" role="authentication"><a href="{%url 'login'%}">Login</a></li>
                 <li name="register" role="authentication"><a href="{%url 'register'%}">Register</a></li>
                 <div class="nav-profile">
@@ -55,38 +52,30 @@
             <i class="fas fa-bars"></i>
         </div>
     </div>
-    <!-- ===========Content============-->
+    <!-- Content-->
     <div class="content">
-        <div class="job-header">
-            <h1>Job Title</h1>
-            <p class="comp"><span class="comp-name"> </span> - <span class="comp-address"> </span></p>
-            <!-- <button onclick="location.href='applyJob.html'">Apply</button> -->
-        </div>
-        <div class="job-details">
-            <h3>Job Details</h3>
-            <p class="y-exp"> </p>
-            <p class="salary"> </p>
-            <p class="job-status"> </p>
-        </div>
-        <div class="job-description">
-            <h3>Job Description</h3>
-            <p> </p>
-        </div>
-        <div class="job-requirements">
-            <h3>Job Requirements</h3>
-            <p> </p>
-
-        </div>
+        <h2>About Us</h2>
+        <h3>Our Story</h3>
+        <p>Founded in 2024<br>Workiee was born out of a passion for innovation and a desire to make work easier and more efficient for everyone.<br>Our mission is to provide cutting-edge tools and resources that empower individuals and businesses to achieve their goals.</p>
+        <h3>Our Mission</h3>
+        <p>At Workiee, our mission is to revolutionize the way people work by offering a platform that is intuitive, powerful, and accessible to all.<br>We believe in fostering a culture of collaboration, creativity, and continuous improvement.</p>
+        <h3>Our Values</h3>
+        <ul>
+            <li><strong>Innovation:</strong> We are committed to pushing the boundaries of technology to bring you the best solutions.</li>
+            <li><strong>Customer-Centricity:</strong> Our users are at the heart of everything we do. We listen, we learn, and we strive to exceed your expectations.</li>
+            <li><strong>Integrity:</strong> We uphold the highest standards of integrity in all our actions and decisions.</li>
+            <li><strong>Community:</strong> We believe in the power of community and work to create a supportive and inclusive environment for all.</li>
+        </ul>
+        <h3>Meet the Team</h3>
+        <p>Our team is composed of passionate professionals with diverse backgrounds in technology, design, and business.<br>We are united by a shared vision to transform the workplace and make a positive impact on the world.</p>
     </div>
-    <!-- ===========Footer============-->
+    
+    <!-- footer --->
     <footer>
         <a href="{% url 'contact'%}">Get in touch</a>
-        <a href="{% url 'about'%}">About us</a>
         <a href="{% url 'help'%}">Help</a>
     </footer>
 
-    <script src="{% static 'js/jobDescription.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
-
 </html>
