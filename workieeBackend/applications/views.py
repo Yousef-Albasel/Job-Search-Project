@@ -20,6 +20,9 @@ def update_user_profile(request):
             current_job = data.get('currentJob')
             company_name = data.get('companyName')
             skills = data.get('skills')
+            resume = data.get('resume')
+            pic = data.get('pic')
+            description = data.get('description')
             user = User.objects.get(id=user_id)
             if username:
                 user.username = username
@@ -31,6 +34,12 @@ def update_user_profile(request):
                 user.company_name = company_name
             if skills:
                 user.skills = skills
+            if resume:
+                user.resume_link = resume
+            if pic:
+                user.picture_link = pic
+            if description:
+                user.profile_description = description
             user.save()
             return JsonResponse({'status': 'success'})
         except User.DoesNotExist:

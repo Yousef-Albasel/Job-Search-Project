@@ -37,7 +37,7 @@
                 <li name="login" role="authentication"><a href="{%url 'login'%}">Login</a></li>
                 <li name="register" role="authentication"><a href="{%url 'register'%}">Register</a></li>
                 <div class="nav-profile">
-                    <a href="{%url 'profile'%}"><img src="https://avatar.iran.liara.run/public/37" alt=""></a>
+                    <a href="{%url 'profile'%}"><img src="https://avatar.iran.liara.run/public/37" alt="" ></a>
                     <div class="dropdown">
                         <li><a href="{%url 'profile'%}">View Profile</a></li>
                         <li><a href="#" onclick="logout()">Log Out</a></li>
@@ -54,12 +54,46 @@
     </div>
     <div class="main">
         <div class="profile-container">
+            <div id="myModal" class="modal modal-resume">
+
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Please enter the link to your resume</p>
+                  <input type="text" name="resume-link" id="resume-link">
+                  <button id="resume-save">Save</button>
+                </div>
+              
+            </div> 
+            <div id="myModal" class="modal modal-pic">
+
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Please enter the link to your profile picture</p>
+                  <input type="text" name="pic-link" id="pic-link">
+                  <button id="pic-save">Save</button>
+                </div>
+              
+            </div>  
+
+            <div id="myModal" class="modal modal-desc">
+
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Update your profile profile description</p>
+                    <div style="display: flex;">
+                      <textarea type="text" rows="5" cols="60"></textarea>
+                      <button id="desc-save" >Save</button>
+                    </div>
+                </div>
+              
+            </div>  
             <div class="profile-description">
                 <div class="profile-elements">
                     <img src="https://avatar.iran.liara.run/public/37" alt="Profile Image" id="profile-image" class="profile-image" width="150px" height="150px">
                     <h3 id="user-account-name">N/A</h3>
                     <span id="user-account-job">N/A</span>
-                    <p id="user-accout-description">N/A</p>
+                    <div style="display: flex; gap:10px;"><p id="user-accout-description">N/A</p> <i class="far fa-edit"style="
+    font-size: 13px; cursor: pointer;" id="description-button"></i> </div>
                     <div class="skills">
                         <i class="fas fa-plus"></i>
                     </div>

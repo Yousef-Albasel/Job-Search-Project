@@ -24,7 +24,7 @@ body{
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 0fr 1fr 1fr;
     gap: 20px 20px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -49,9 +49,13 @@ body{
     }
 
 
+#desc-save {
+        align-self: center;
+        height: auto;
+        margin-left: 20px;
+    }
 
 .profile-elements p {
-    padding-top: 10px;
     text-align: center;
     font-size: 12px;
 }
@@ -304,7 +308,9 @@ body{
 }
 
 
-
+.far .fa-edit{
+    font-size: 12px;
+}
 
 @media only screen and (max-width: 768px) {
     .profile-container {
@@ -317,3 +323,67 @@ body{
         "job-applications";
     }
 }
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  .modal-content input {
+    padding: 8px 25px;
+    width: 30%;
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: none;
+    margin-top: 20px;
+    transition: all 0.2s;  
+}
+  
+.modal-content button{
+    padding: 10px 25px;
+    /* margin-right: 0; */
+    background-color: var(--primary-style-color);
+    color: var(--primary-text-color-light);
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right : 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-content input:focus {
+    outline: none;
+    border: 1px solid var(--primary-style-color);
+}
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }

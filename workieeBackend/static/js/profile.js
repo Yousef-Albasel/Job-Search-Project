@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function() {
     var users = await getUsers();
     var userAccount = JSON.parse(sessionStorage.getItem("UserAccount"));
+    if (userAccount.is_company_admin) document.querySelector(".job-applications").style.display = "none";
     if (users) {
         document.querySelector('#user-name').innerHTML = userAccount.username;
         document.querySelector('#user-account-name').innerHTML = userAccount.username;
@@ -8,6 +9,12 @@ document.addEventListener("DOMContentLoaded", async function() {
         document.querySelector('#current-job').innerHTML = userAccount.current_job;
         document.querySelector('#user-account-job').innerHTML = userAccount.current_job;
         document.querySelector('#company-name').innerHTML = userAccount.company_name;
+        document.querySelector('#user-accout-description').innerHTML = userAccount.profile_description;
+        if (userAccount.picture_link != "N/A"){
+            document.querySelector('#profile-image').src = userAccount.picture_link;
+        }else{
+            document.querySelector('#profile-image').src = "https://avatar.iran.liara.run/public/37";
+        }
     }
     await displayApplicants();
 });

@@ -159,8 +159,6 @@ function getJobId(button) {
 
 async function applyForJob(jobId) {
     let userAccountStr = sessionStorage.getItem("UserAccount");
-    let apps = await getApplications();
-
 
     if (!userAccountStr) {
         alert('No user account found in session storage.');
@@ -168,18 +166,11 @@ async function applyForJob(jobId) {
     }
     var userAccount = JSON.parse(userAccountStr);
     const user_id = userAccount.id;
-    const existingApp = apps.find(app => app.user_id === user_id && app.job_id === jobId);
-
-    if (existingApp) {
-        alert('You have already applied for this job.');
-        return false;
-    }
 
     const data = {
         user_id,
         job_id: jobId
     };
-    try {
         const response = await fetch('apply/', { 
             method: 'POST',
             headers: {
@@ -188,17 +179,15 @@ async function applyForJob(jobId) {
             body: JSON.stringify(data),
         });
 
-        if (!response.ok) {
-            throw new Error(`HTTP error status: ${response.status}`);
-        }
-
         const responseData = await response.json();
-        
-        return (responseData.status === 'success')? true : false;
-    } catch (error) {
-        console.error('There was a problem applying for the job:', error);
-        alert('An unexpected error occurred. Please try again later.'); 
-    }
+        if (responseData.status === 'success') {
+            alert('Application submitted successfully!');
+            return true;
+        } else {
+            alert(responseData.message || 'Failed to apply for the job.');
+            return false;
+        }
+        return true;
 }
 
 async function getApplications() {

@@ -22,6 +22,12 @@ function checkUserCredentials() {
         
         profileDiv.style.display = "flex"; // Show profile info
         profileDiv.querySelector("div span").innerHTML = user.username;
+        if (user.picture_link != "N/A"){
+            document.querySelector(".nav-profile a img").src = user.picture_link;
+        }else{
+            document.querySelector(".nav-profile a img").src = "https://avatar.iran.liara.run/public/37";
+        }
+        
         authroizationButtons.forEach(button => {
         button.style.display = "none";
             const link = button.querySelector("a");

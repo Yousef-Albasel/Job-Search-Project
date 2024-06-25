@@ -19,13 +19,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         const email = emailSpan.innerHTML;
         const currentJob = currentJobSpan.innerHTML;
         const companyName = companyNameSpan.innerHTML;
+        const resume = resumeLink;
+        const pic = picLink;
+        const description = profileDesc;
         
         const data = {
             userId,
             username,   
             email,
             currentJob,
-            companyName
+            companyName,
+            resume,
+            pic,
+            description
         };
         
         try {
@@ -106,4 +112,67 @@ newSkillInput.addEventListener('keypress', function (e) {
             skillsContainer.removeChild(tag);
         });
     }
+});
+// Select elements
+const modal = document.querySelector(".modal-resume");
+const modalPic = document.querySelector(".modal-pic");
+const modalDesc = document.querySelector(".modal-desc");
+
+const btn = document.getElementById("resume-button");
+const btnPic = document.getElementById("picture-button");
+const btnDesc = document.getElementById("description-button");
+
+const resumeSaveBtn = document.getElementById("resume-save");
+const picSaveBtn = document.getElementById("pic-save");
+const descSaveBtn = modalDesc.querySelector("#desc-save");
+
+const resumeInput = document.getElementById("resume-link");
+const picInput = document.getElementById("pic-link");
+const descInput = modalDesc.querySelector("textarea");
+
+const closeButtons = document.querySelectorAll(".close");
+
+// Initialize links
+let resumeLink = "";
+let picLink = "";
+let profileDesc = "";
+
+// Event handlers
+const openModal = modal => modal.style.display = "block";
+const closeModal = modal => modal.style.display = "none";
+
+btn.addEventListener('click', () => openModal(modal));
+btnPic.addEventListener('click', () => openModal(modalPic));
+btnDesc.addEventListener('click', () => openModal(modalDesc));
+
+closeButtons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    if (index === 0) closeModal(modal);
+    if (index === 1) closeModal(modalPic);
+    if (index === 2) closeModal(modalDesc);
+  });
+});
+
+window.addEventListener('click', event => {
+  if (event.target === modal) closeModal(modal);
+  if (event.target === modalPic) closeModal(modalPic);
+  if (event.target === modalDesc) closeModal(modalDesc);
+});
+
+resumeSaveBtn.addEventListener('click', () => {
+  resumeLink = resumeInput.value;
+  resumeInput.value = "";
+  closeModal(modal);
+});
+
+picSaveBtn.addEventListener('click', () => {
+  picLink = picInput.value;
+  picInput.value = "";
+  closeModal(modalPic);
+});
+
+descSaveBtn.addEventListener('click', () => {
+  profileDesc = descInput.value;
+  descInput.value = "";
+  closeModal(modalDesc);
 });

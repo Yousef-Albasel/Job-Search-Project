@@ -132,6 +132,8 @@ async function displayJobs() {
         jobSalary.style.fontWeight = '600';
         jobSalary.textContent = job.jobsalary;
 
+        
+
         requiredSkills.appendChild(yearsOfExperience);
         requiredSkills.appendChild(jobSalary);
 
@@ -200,7 +202,7 @@ async function getUserUsingAppID(appId){
     user = users.find(u => u.id === appId);    
     return user;
 }
-function createApplicantElement(applicantUsername,JobTitle) {
+function createApplicantElement(user,JobTitle) {
     const divApplicant = document.createElement('div');
     divApplicant.classList.add('application');
 
@@ -213,7 +215,7 @@ function createApplicantElement(applicantUsername,JobTitle) {
 
     const h1Name = document.createElement('h1');
     h1Name.setAttribute('id', 'applicant-name');
-    h1Name.textContent = applicantUsername;
+    h1Name.textContent = user.username;
 
     const pAppliedFor = document.createElement('p');
     pAppliedFor.textContent = 'Applied for ';
@@ -228,7 +230,19 @@ function createApplicantElement(applicantUsername,JobTitle) {
 
     const aViewProfile = document.createElement('a');
     aViewProfile.setAttribute('href', '#');
-    aViewProfile.textContent = 'View Profile';
+    aViewProfile.textContent = 'View Resume';
+    
+    aViewProfile.addEventListener('click',()=>{
+        if (user.resume_link != "N/A"){
+            window.location.href = user.resume_link;
+        }
+    })
+
+    if (user.picture_link != "N/A"){
+        img.src = user.picture_link;
+    }else{
+        img.src = "https://avatar.iran.liara.run/public/37";
+    }
 
     divApplicant.appendChild(img);
     divApplicant.appendChild(divInfo);
@@ -240,13 +254,15 @@ function createApplicantElement(applicantUsername,JobTitle) {
 async function displayApplicants() {
     const container = document.querySelector('.applicants');
     const applicants = await getApplications();
-
+    let cnt = 0;
     if (!applicants) return;
     applicants.forEach(async applicant => {
+        cnt++;
         const job = await getJobUsingAppID(applicant.job_id);
         const user = await getUserUsingAppID(applicant.user_id); 
-        const applicantElement = createApplicantElement(user.username, job.jobtitle);
+        const applicantElement = createApplicantElement(user, job.jobtitle);
         container.appendChild(applicantElement);
+        document.querySelector("#NoOfApps").innerHTML = cnt;
     });
 }
 
@@ -269,4 +285,4 @@ async function getUsers() {
         console.error('Error fetching users:', error);
         return null;
     }
-}
+} 

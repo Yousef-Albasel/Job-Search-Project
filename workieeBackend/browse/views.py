@@ -26,22 +26,25 @@ def browse(request):
 def details(request):
     return render(request, "jobDescription.html")
     
-
 def apply(request):
     if request.method == 'POST':
         data = json.loads(request.body)
         user_id = data.get('user_id')
         job_id = data.get('job_id')
+        # check for duplicates
+        existing_application = jobApplication.objects.filter(user_id=user_id, job_id=job_id).exists()
+        if existing_application:
+            return JsonResponse({'status': 'error', 'message': 'Application already exists'}, status=400)
 
         application = jobApplication.objects.create(
             user_id=user_id,
             job_id=job_id
         )
         application.save()
-        return JsonResponse({'status': 'success'})
+        return JsonResponse({'status': 'success','message': 'You Successfully applied for the job'})
     else:
         return JsonResponse({'status': 'error', 'message': 'Only POST requests are allowed'}, status=405)
-    
+
 def getApplications(request):
     is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
     if is_ajax:  

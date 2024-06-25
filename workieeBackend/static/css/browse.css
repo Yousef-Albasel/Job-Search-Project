@@ -222,6 +222,11 @@
    color: var(--primary-text-color-light);
 }
 
+.applied{
+   color: var(--secondary-style-shade);
+   opacity: 50%;
+}
+
 /*=============== Card Media queries =============*/
 
 @media (max-width: 550px) {
