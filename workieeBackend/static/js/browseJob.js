@@ -46,7 +46,7 @@ async function displayJobs(){
     let jobs = await getJobData();
     let userAccountStr = sessionStorage.getItem("UserAccount");
     if (!userAccountStr) {
-        alert('No user account found in session storage.');
+        alert('Login or Register to browse jobs');
         return;
     }
     var userAccount = JSON.parse(userAccountStr);
